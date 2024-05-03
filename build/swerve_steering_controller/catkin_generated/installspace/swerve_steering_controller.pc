@@ -1,0 +1,8 @@
+prefix=/home/avinaash/ForkLift_AMR/install
+
+Name: swerve_steering_controller
+Description: Description of swerve_steering_controller
+Version: 0.0.0
+Cflags: -I${prefix}/include -I/usr/include
+Libs: -L${prefix}/lib -lswerve_steering_controller
+Requires: controller_interface control_msgs geometry_msgs hardware_interface nav_msgs realtime_tools tf

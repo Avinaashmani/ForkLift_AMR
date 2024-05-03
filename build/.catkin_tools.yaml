@@ -1,0 +1,6 @@
+devel_space: /home/avinaash/ForkLift_AMR/devel
+install: false
+install_space: /home/avinaash/ForkLift_AMR/install
+profile: default
+source_space: /home/avinaash/ForkLift_AMR/src
+workspace: /home/avinaash/ForkLift_AMR

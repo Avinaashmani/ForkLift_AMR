@@ -1,0 +1,8 @@
+prefix=/home/avinaash/ForkLift_AMR/devel/.private/joint_state_controller
+
+Name: joint_state_controller
+Description: Description of joint_state_controller
+Version: 0.19.0
+Cflags: -I/home/avinaash/ForkLift_AMR/src/ros_controllers/joint_state_controller/include
+Libs: -L${prefix}/lib -ljoint_state_controller
+Requires: controller_interface hardware_interface realtime_tools roscpp sensor_msgs

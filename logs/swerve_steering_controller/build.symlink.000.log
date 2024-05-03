@@ -1,0 +1,4 @@
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/libswerve_steering_controller.so
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/swerve_steering_controller.pc
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/swerve_steering_controller/cmake/swerve_steering_controllerConfig.cmake
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/swerve_steering_controller/cmake/swerve_steering_controllerConfig-version.cmake

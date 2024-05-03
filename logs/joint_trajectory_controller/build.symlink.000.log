@@ -1,0 +1,6 @@
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/libjoint_trajectory_controller.so
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/joint_trajectory_controller.pc
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/joint_trajectory_controller/rrbot
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/joint_trajectory_controller/rrbot_wrapping
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/joint_trajectory_controller/cmake/joint_trajectory_controllerConfig.cmake
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/joint_trajectory_controller/cmake/joint_trajectory_controllerConfig-version.cmake

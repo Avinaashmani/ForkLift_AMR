@@ -1,0 +1,10 @@
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/libcontroller_manager_tests.so
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/python3/dist-packages/controller_manager_tests/__init__.py
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/controller_manager_tests.pc
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/controller_manager_tests/controller_manager_interface_test.py
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/controller_manager_tests/cm_test
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/controller_manager_tests/controller_manager_scripts.py
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/controller_manager_tests/cmake.lock
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/controller_manager_tests/dummy_app
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/controller_manager_tests/cmake/controller_manager_testsConfig.cmake
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/controller_manager_tests/cmake/controller_manager_testsConfig-version.cmake

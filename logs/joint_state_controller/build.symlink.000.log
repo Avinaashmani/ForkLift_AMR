@@ -1,0 +1,4 @@
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/libjoint_state_controller.so
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/joint_state_controller.pc
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/joint_state_controller/cmake/joint_state_controllerConfig.cmake
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/joint_state_controller/cmake/joint_state_controllerConfig-version.cmake

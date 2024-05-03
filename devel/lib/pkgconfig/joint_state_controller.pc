@@ -1,0 +1,1 @@
+/home/avinaash/ForkLift_AMR/devel/.private/joint_state_controller/lib/pkgconfig/joint_state_controller.pc

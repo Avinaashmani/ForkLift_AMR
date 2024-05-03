@@ -1,0 +1,1 @@
+/home/avinaash/ForkLift_AMR/devel/.private/controller_manager/lib/pkgconfig/controller_manager.pc

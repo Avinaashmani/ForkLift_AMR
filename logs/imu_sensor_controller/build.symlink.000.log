@@ -1,0 +1,4 @@
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/libimu_sensor_controller.so
+Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/imu_sensor_controller.pc
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/imu_sensor_controller/cmake/imu_sensor_controllerConfig.cmake
+Symlinking /home/avinaash/ForkLift_AMR/devel/share/imu_sensor_controller/cmake/imu_sensor_controllerConfig-version.cmake

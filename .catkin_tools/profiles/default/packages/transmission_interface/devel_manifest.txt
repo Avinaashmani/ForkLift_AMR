@@ -1,0 +1,8 @@
+ros_control/transmission_interface
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/cmake.lock /home/avinaash/ForkLift_AMR/devel/./cmake.lock
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/lib/libtransmission_interface_loader.so /home/avinaash/ForkLift_AMR/devel/lib/libtransmission_interface_loader.so
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/lib/libtransmission_interface_loader_plugins.so /home/avinaash/ForkLift_AMR/devel/lib/libtransmission_interface_loader_plugins.so
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/lib/libtransmission_interface_parser.so /home/avinaash/ForkLift_AMR/devel/lib/libtransmission_interface_parser.so
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/lib/pkgconfig/transmission_interface.pc /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/transmission_interface.pc
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/share/transmission_interface/cmake/transmission_interfaceConfig.cmake /home/avinaash/ForkLift_AMR/devel/share/transmission_interface/cmake/transmission_interfaceConfig.cmake
+/home/avinaash/ForkLift_AMR/devel/.private/transmission_interface/share/transmission_interface/cmake/transmission_interfaceConfig-version.cmake /home/avinaash/ForkLift_AMR/devel/share/transmission_interface/cmake/transmission_interfaceConfig-version.cmake
