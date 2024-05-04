@@ -5,6 +5,7 @@ import math
 from math import sqrt, pow, atan2
 from rclpy.node import Node
 from rclpy.time import Time
+from example_interfaces.srv import SetBool
 
 import tf2_ros
 from geometry_msgs.msg import Twist
@@ -40,10 +41,11 @@ class Dockpallet(Node):
         self.move_tug = Twist()
 
         self.create_timer(0.1, self.dock_func)
+        self.docking_service = self.create_service(SetBool, 'Docking', self.dock_func)
 
-    def dock_func(self):
+    def dock_func(self, request, response):
 
-        if self.navigate_flag and self.pallet_frame != False:
+        if self.navigate_flag and self.pallet_frame and request.data is True:
             try:
                 tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
                 pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
@@ -84,8 +86,12 @@ class Dockpallet(Node):
                 self.move_tug.linear.x = 0.0
                 self.move_tug.angular.z = 0.0
                 self.dock_flag = False
+                response.data = True
+                return response
         else:
-            self.get_logger().warn("Navigation is still under process...")
+            self.get_logger().warn("Not Going to Dock !")
+            response.data = False
+            return response
     
     def update_frame(self, tb3_frame, target_frame):
         self.tb3_x = tb3_frame.transform.translation.x
