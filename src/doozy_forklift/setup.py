@@ -20,7 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': 
-        ['Client_01 = doozy_forklift.client_01:main'
+        ['Client_01 = doozy_forklift.client_01:main',
+         'Dock_with_Pallet_01 = doozy_forklift.dock_with_pallet_01:main',
+         'Detect_Pallet_01 = doozy_forklift.detect_pallet_01:main',
+         'Publish_TF = doozy_forklift.publish_tf_01:main'
         ],
     },
 )

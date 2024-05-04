@@ -23,17 +23,12 @@ class Client_01(Node):
         
         while not self.client_docking.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("Service not available, waiting again...")
-        
+
         self.client_docking.call_async(self.docking_request)
-        time.sleep(5)
-        self.client_docking.call_async(False)
+
         
-        while not self.client_undocking.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info("Service not available, waiting again...")
-        
-        self.client_undocking.call_async(True)
-        time.sleep(5)
-        self.client_undocking.call_async(False)
+
+
 
 def main():
     rclpy.init()

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import rclpy
+import time
 from rclpy.node import Node
 from std_msgs.msg import Bool
 from example_interfaces.srv import SetBool
@@ -13,14 +14,21 @@ class Client_01(Node):
         self.create_subscription(Bool, '/navigation_status', self.navigation_callback, 10)
 
         self.client_docking = self.create_client(SetBool, 'Docking')
+        self.client_undocking = self.create_client(SetBool, 'UnDocking')
         self.docking_request = SetBool.Request()
 
     def navigation_callback(self, msg):
         self.get_logger().info(f"Navigation Status = {msg.data}")
         self.docking_request.data = msg.data
+        
         while not self.client_docking.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("Service not available, waiting again...")
+
+        # if self.docking_request is True:
+
         self.client_docking.call_async(self.docking_request)
+
+
 
 def main():
     rclpy.init()
