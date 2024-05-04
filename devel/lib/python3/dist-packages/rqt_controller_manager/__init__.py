@@ -1,1 +1,0 @@
-/home/avinaash/ForkLift_AMR/devel/.private/rqt_controller_manager/lib/python3/dist-packages/rqt_controller_manager/__init__.py

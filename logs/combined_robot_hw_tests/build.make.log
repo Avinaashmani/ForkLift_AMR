@@ -1,7 +1,0 @@
-[35m[1mScanning dependencies of target combined_robot_hw_tests[0m
-[ 20%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_3.cpp.o[0m
-[ 60%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_1.cpp.o[0m
-[ 60%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_2.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/combined_robot_hw_tests.dir/src/my_robot_hw_4.cpp.o[0m
-[100%] [32m[1mLinking CXX shared library /home/avinaash/ForkLift_AMR/devel/.private/combined_robot_hw_tests/lib/libcombined_robot_hw_tests.so[0m
-[100%] Built target combined_robot_hw_tests

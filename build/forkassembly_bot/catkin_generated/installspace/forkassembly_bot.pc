@@ -1,8 +1,0 @@
-prefix=/home/avinaash/ForkLift_AMR/install
-
-Name: forkassembly_bot
-Description: Description of forkassembly_bot
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,6 +1,0 @@
-
-rrbot_controller:
-  type: "position_controllers/JointTrajectoryController"
-  joints:
-    - body_joint
-

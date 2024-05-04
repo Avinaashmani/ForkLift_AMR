@@ -1,0 +1,5 @@
+  File "/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/client_01.py", line 33
+    def navigation_callback(self, msg)
+                                     ^
+SyntaxError: invalid syntax
+

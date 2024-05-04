@@ -1,0 +1,24 @@
+[0.997s] Invoking command in '/home/avinaash/ForkLift_AMR/src/doozy_forklift': PYTHONPATH=/home/avinaash/ForkLift_AMR/build/doozy_forklift/prefix_override:/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/doozy_forklift build --build-base /home/avinaash/ForkLift_AMR/build/doozy_forklift/build install --record /home/avinaash/ForkLift_AMR/build/doozy_forklift/install.log --single-version-externally-managed install_data
+[1.155s] running egg_info
+[1.155s] writing ../../build/doozy_forklift/doozy_forklift.egg-info/PKG-INFO
+[1.155s] writing dependency_links to ../../build/doozy_forklift/doozy_forklift.egg-info/dependency_links.txt
+[1.155s] writing entry points to ../../build/doozy_forklift/doozy_forklift.egg-info/entry_points.txt
+[1.156s] writing requirements to ../../build/doozy_forklift/doozy_forklift.egg-info/requires.txt
+[1.156s] writing top-level names to ../../build/doozy_forklift/doozy_forklift.egg-info/top_level.txt
+[1.178s] reading manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+[1.179s] writing manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+[1.179s] running build
+[1.179s] running build_py
+[1.179s] copying doozy_forklift/client_01.py -> /home/avinaash/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.179s] running install
+[1.180s] running install_lib
+[1.181s] copying /home/avinaash/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift/client_01.py -> /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift
+[1.181s] byte-compiling /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/client_01.py to client_01.cpython-38.pyc
+[1.182s] running install_data
+[1.182s] running install_egg_info
+[1.183s] removing '/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info' (and everything under it)
+[1.183s] Copying ../../build/doozy_forklift/doozy_forklift.egg-info to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info
+[1.184s] running install_scripts
+[1.197s] Installing Client_01 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.197s] writing list of installed files to '/home/avinaash/ForkLift_AMR/build/doozy_forklift/install.log'
+[1.229s] Invoked command in '/home/avinaash/ForkLift_AMR/src/doozy_forklift' returned '0': PYTHONPATH=/home/avinaash/ForkLift_AMR/build/doozy_forklift/prefix_override:/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/doozy_forklift build --build-base /home/avinaash/ForkLift_AMR/build/doozy_forklift/build install --record /home/avinaash/ForkLift_AMR/build/doozy_forklift/install.log --single-version-externally-managed install_data

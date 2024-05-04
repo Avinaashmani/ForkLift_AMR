@@ -1,0 +1,87 @@
+[1.330s] Invoking command in '/home/avinaash/ForkLift_AMR/src/turtlebot3/turtlebot3_example': PYTHONPATH=/home/avinaash/ForkLift_AMR/build/turtlebot3_example/prefix_override:/home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_example build --build-base /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build install --record /home/avinaash/ForkLift_AMR/build/turtlebot3_example/install.log --single-version-externally-managed install_data
+[1.496s] running egg_info
+[1.496s] creating ../../../build/turtlebot3_example/turtlebot3_example.egg-info
+[1.496s] writing ../../../build/turtlebot3_example/turtlebot3_example.egg-info/PKG-INFO
+[1.497s] writing dependency_links to ../../../build/turtlebot3_example/turtlebot3_example.egg-info/dependency_links.txt
+[1.497s] writing entry points to ../../../build/turtlebot3_example/turtlebot3_example.egg-info/entry_points.txt
+[1.497s] writing requirements to ../../../build/turtlebot3_example/turtlebot3_example.egg-info/requires.txt
+[1.497s] writing top-level names to ../../../build/turtlebot3_example/turtlebot3_example.egg-info/top_level.txt
+[1.499s] writing manifest file '../../../build/turtlebot3_example/turtlebot3_example.egg-info/SOURCES.txt'
+[1.521s] reading manifest file '../../../build/turtlebot3_example/turtlebot3_example.egg-info/SOURCES.txt'
+[1.522s] writing manifest file '../../../build/turtlebot3_example/turtlebot3_example.egg-info/SOURCES.txt'
+[1.522s] running build
+[1.522s] running build_py
+[1.522s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build
+[1.523s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib
+[1.523s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example
+[1.523s] copying turtlebot3_example/__init__.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example
+[1.523s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server
+[1.523s] copying turtlebot3_example/turtlebot3_patrol_server/turtlebot3_path.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server
+[1.523s] copying turtlebot3_example/turtlebot3_patrol_server/__init__.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server
+[1.524s] copying turtlebot3_example/turtlebot3_patrol_server/main.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server
+[1.524s] copying turtlebot3_example/turtlebot3_patrol_server/turtlebot3_patrol_server.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server
+[1.524s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection
+[1.524s] copying turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection
+[1.524s] copying turtlebot3_example/turtlebot3_obstacle_detection/__init__.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection
+[1.524s] copying turtlebot3_example/turtlebot3_obstacle_detection/main.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection
+[1.524s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control
+[1.525s] copying turtlebot3_example/turtlebot3_position_control/turtlebot3_position_control.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control
+[1.525s] copying turtlebot3_example/turtlebot3_position_control/turtlebot3_path.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control
+[1.525s] copying turtlebot3_example/turtlebot3_position_control/__init__.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control
+[1.525s] copying turtlebot3_example/turtlebot3_position_control/main.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control
+[1.525s] creating /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client
+[1.525s] copying turtlebot3_example/turtlebot3_patrol_client/__init__.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client
+[1.525s] copying turtlebot3_example/turtlebot3_patrol_client/turtlebot3_patrol_client.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client
+[1.525s] copying turtlebot3_example/turtlebot3_patrol_client/main.py -> /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client
+[1.526s] running install
+[1.527s] running install_lib
+[1.527s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example
+[1.527s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server
+[1.527s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server/turtlebot3_path.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server
+[1.527s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server/__init__.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server
+[1.527s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server/main.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server
+[1.528s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_server/turtlebot3_patrol_server.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server
+[1.528s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection
+[1.528s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection
+[1.528s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection/__init__.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection
+[1.528s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_obstacle_detection/main.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection
+[1.528s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control
+[1.528s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control/turtlebot3_position_control.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control/turtlebot3_path.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control/__init__.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_position_control/main.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/__init__.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example
+[1.529s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client/__init__.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client/turtlebot3_patrol_client.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client
+[1.529s] copying /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build/lib/turtlebot3_example/turtlebot3_patrol_client/main.py -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server/turtlebot3_path.py to turtlebot3_path.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server/__init__.py to __init__.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server/main.py to main.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_server/turtlebot3_patrol_server.py to turtlebot3_patrol_server.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection/turtlebot3_obstacle_detection.py to turtlebot3_obstacle_detection.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection/__init__.py to __init__.cpython-38.pyc
+[1.529s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_obstacle_detection/main.py to main.cpython-38.pyc
+[1.530s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control/turtlebot3_position_control.py to turtlebot3_position_control.cpython-38.pyc
+[1.530s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control/turtlebot3_path.py to turtlebot3_path.cpython-38.pyc
+[1.530s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control/__init__.py to __init__.cpython-38.pyc
+[1.530s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_position_control/main.py to main.cpython-38.pyc
+[1.530s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/__init__.py to __init__.cpython-38.pyc
+[1.531s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client/__init__.py to __init__.cpython-38.pyc
+[1.531s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client/turtlebot3_patrol_client.py to turtlebot3_patrol_client.cpython-38.pyc
+[1.531s] byte-compiling /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example/turtlebot3_patrol_client/main.py to main.cpython-38.pyc
+[1.531s] running install_data
+[1.531s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/share/ament_index
+[1.531s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/share/ament_index/resource_index
+[1.531s] creating /home/avinaash/ForkLift_AMR/install/turtlebot3_example/share/ament_index/resource_index/packages
+[1.531s] copying resource/turtlebot3_example -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/share/ament_index/resource_index/packages
+[1.531s] copying package.xml -> /home/avinaash/ForkLift_AMR/install/turtlebot3_example/share/turtlebot3_example
+[1.531s] running install_egg_info
+[1.533s] Copying ../../../build/turtlebot3_example/turtlebot3_example.egg-info to /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages/turtlebot3_example-2.1.4-py3.8.egg-info
+[1.533s] running install_scripts
+[1.547s] Installing turtlebot3_obstacle_detection script to /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/turtlebot3_example
+[1.547s] Installing turtlebot3_patrol_client script to /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/turtlebot3_example
+[1.547s] Installing turtlebot3_patrol_server script to /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/turtlebot3_example
+[1.548s] Installing turtlebot3_position_control script to /home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/turtlebot3_example
+[1.548s] writing list of installed files to '/home/avinaash/ForkLift_AMR/build/turtlebot3_example/install.log'
+[1.595s] Invoked command in '/home/avinaash/ForkLift_AMR/src/turtlebot3/turtlebot3_example' returned '0': PYTHONPATH=/home/avinaash/ForkLift_AMR/build/turtlebot3_example/prefix_override:/home/avinaash/ForkLift_AMR/install/turtlebot3_example/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_example build --build-base /home/avinaash/ForkLift_AMR/build/turtlebot3_example/build install --record /home/avinaash/ForkLift_AMR/build/turtlebot3_example/install.log --single-version-externally-managed install_data

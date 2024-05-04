@@ -1,0 +1,4 @@
+Invoking command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_interfaces -- -j16 -l16
+Invoked command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_interfaces -- -j16 -l16
+Invoking command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/forklift_interfaces
+Invoked command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/forklift_interfaces

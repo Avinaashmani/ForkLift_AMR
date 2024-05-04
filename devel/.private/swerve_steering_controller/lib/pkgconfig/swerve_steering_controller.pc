@@ -1,8 +1,0 @@
-prefix=/home/avinaash/ForkLift_AMR/devel/.private/swerve_steering_controller
-
-Name: swerve_steering_controller
-Description: Description of swerve_steering_controller
-Version: 0.0.0
-Cflags: -I/home/avinaash/ForkLift_AMR/src/ros_controllers/swerve_steering_controller/include -I/usr/include
-Libs: -L${prefix}/lib -lswerve_steering_controller
-Requires: controller_interface control_msgs geometry_msgs hardware_interface nav_msgs realtime_tools tf

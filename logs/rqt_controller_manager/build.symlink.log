@@ -1,6 +1,0 @@
-Symlinking /home/avinaash/ForkLift_AMR/devel/lib/python3/dist-packages/rqt_controller_manager/__init__.py
-Symlinking /home/avinaash/ForkLift_AMR/devel/lib/pkgconfig/rqt_controller_manager.pc
-Symlinking /home/avinaash/ForkLift_AMR/devel/lib/rqt_controller_manager/rqt_controller_manager
-Symlinking /home/avinaash/ForkLift_AMR/devel/lib/rqt_controller_manager/cmake.lock
-Symlinking /home/avinaash/ForkLift_AMR/devel/share/rqt_controller_manager/cmake/rqt_controller_managerConfig-version.cmake
-Symlinking /home/avinaash/ForkLift_AMR/devel/share/rqt_controller_manager/cmake/rqt_controller_managerConfig.cmake

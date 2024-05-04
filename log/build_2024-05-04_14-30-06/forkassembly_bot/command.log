@@ -1,0 +1,2 @@
+Invoking command in '/home/avinaash/ForkLift_AMR/build/forkassembly_bot': /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/forkassembly_bot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/forkassembly_bot
+Invoked command in '/home/avinaash/ForkLift_AMR/build/forkassembly_bot' returned '1': /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/forkassembly_bot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/forkassembly_bot

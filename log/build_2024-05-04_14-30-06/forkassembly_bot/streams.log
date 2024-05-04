@@ -1,0 +1,35 @@
+[0.181s] Invoking command in '/home/avinaash/ForkLift_AMR/build/forkassembly_bot': /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/forkassembly_bot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/forkassembly_bot
+[0.327s] -- The C compiler identification is GNU 9.4.0
+[0.438s] -- The CXX compiler identification is GNU 9.4.0
+[0.445s] -- Check for working C compiler: /usr/bin/cc
+[0.506s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.507s] -- Detecting C compiler ABI info
+[0.566s] -- Detecting C compiler ABI info - done
+[0.579s] -- Detecting C compile features
+[0.579s] -- Detecting C compile features - done
+[0.582s] -- Check for working CXX compiler: /usr/bin/c++
+[0.650s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.652s] -- Detecting CXX compiler ABI info
+[0.726s] -- Detecting CXX compiler ABI info - done
+[0.739s] -- Detecting CXX compile features
+[0.739s] -- Detecting CXX compile features - done
+[0.751s] CMake Error at CMakeLists.txt:5 (find_package):
+[0.752s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[0.752s]   asked CMake to find a package configuration file provided by "catkin", but
+[0.752s]   CMake did not find one.
+[0.752s] 
+[0.752s]   Could not find a package configuration file provided by "catkin" with any
+[0.752s]   of the following names:
+[0.752s] 
+[0.752s]     catkinConfig.cmake
+[0.752s]     catkin-config.cmake
+[0.753s] 
+[0.753s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[0.753s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[0.753s]   provides a separate development package or SDK, be sure it has been
+[0.753s]   installed.
+[0.753s] 
+[0.753s] 
+[0.753s] -- Configuring incomplete, errors occurred!
+[0.753s] See also "/home/avinaash/ForkLift_AMR/build/forkassembly_bot/CMakeFiles/CMakeOutput.log".
+[0.754s] Invoked command in '/home/avinaash/ForkLift_AMR/build/forkassembly_bot' returned '1': /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/forkassembly_bot -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/forkassembly_bot

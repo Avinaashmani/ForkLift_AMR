@@ -1,0 +1,227 @@
+[0.248s] Invoking command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/turtlebot3_simulations/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo
+[0.717s] -- The C compiler identification is GNU 9.4.0
+[0.717s] -- The CXX compiler identification is GNU 9.4.0
+[0.717s] -- Check for working C compiler: /usr/bin/cc
+[0.717s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.717s] -- Detecting C compiler ABI info
+[0.717s] -- Detecting C compiler ABI info - done
+[0.717s] -- Detecting C compile features
+[0.717s] -- Detecting C compile features - done
+[0.717s] -- Check for working CXX compiler: /usr/bin/c++
+[0.717s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.717s] -- Detecting CXX compiler ABI info
+[0.717s] -- Detecting CXX compiler ABI info - done
+[0.717s] -- Detecting CXX compile features
+[0.717s] -- Detecting CXX compile features - done
+[0.717s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.717s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.717s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.736s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+[0.741s] -- Checking for module 'bullet>=2.82'
+[0.759s] --   Found bullet, version 2.88
+[0.913s] -- Found ccd: /usr/include (found suitable version "2.0", minimum required is "2.0") 
+[0.975s] -- Found fcl: /usr/include (found suitable version "0.5.0", minimum required is "0.3.2") 
+[1.045s] -- Found assimp: /usr/include (found version "5.0.0") 
+[1.079s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[1.373s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found suitable version "1.71.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[1.399s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found version "3.6.1") 
+[1.406s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.413s] -- Searching for dependencies of ignition-math6
+[1.416s] -- Looking for OGRE...
+[1.417s] -- OGRE_PREFIX_WATCH changed.
+[1.423s] -- Checking for module 'OGRE'
+[1.441s] --   Found OGRE, version 1.9.0
+[1.470s] -- Found Ogre Ghadamon (1.9.0)
+[1.477s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[1.484s] -- Looking for OGRE_Paging...
+[1.492s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[1.492s] -- Looking for OGRE_Terrain...
+[1.497s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[1.497s] -- Looking for OGRE_Property...
+[1.501s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[1.501s] -- Looking for OGRE_RTShaderSystem...
+[1.506s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[1.506s] -- Looking for OGRE_Volume...
+[1.510s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[1.510s] -- Looking for OGRE_Overlay...
+[1.517s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[1.613s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.616s] -- Looking for ignition-transport8 -- found version 8.5.0
+[1.616s] -- Searching for dependencies of ignition-transport8
+[1.643s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[1.647s] -- Checking for module 'libzmq >= 4'
+[1.667s] --   Found libzmq , version 4.3.2
+[1.715s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[1.723s] -- Checking for module 'uuid'
+[1.738s] --   Found uuid, version 2.34.0
+[1.774s] -- Found UUID: TRUE  
+[1.777s] -- Looking for ignition-msgs5 -- found version 5.11.0
+[1.778s] -- Searching for dependencies of ignition-msgs5
+[1.793s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread (found suitable version "3.6.1", minimum required is "3") 
+[1.793s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.797s] -- Checking for module 'tinyxml2'
+[1.814s] --   Found tinyxml2, version 6.2.0
+[1.854s] -- Looking for ignition-msgs5 -- found version 5.11.0
+[1.859s] -- Looking for ignition-common3 -- found version 3.17.0
+[1.859s] -- Searching for dependencies of ignition-common3
+[1.860s] -- Looking for dlfcn.h - found
+[1.860s] -- Looking for libdl - found
+[1.861s] -- Found DL: TRUE  
+[1.870s] -- Searching for <ignition-common3> component [graphics]
+[1.872s] -- Looking for ignition-common3-graphics -- found version 3.17.0
+[1.872s] -- Searching for dependencies of ignition-common3-graphics
+[1.873s] -- Looking for ignition-math6 -- found version 6.15.1
+[1.875s] -- Looking for ignition-fuel_tools4 -- found version 4.9.1
+[1.876s] -- Searching for dependencies of ignition-fuel_tools4
+[1.941s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.68.0")  
+[1.947s] -- Checking for module 'jsoncpp'
+[1.961s] --   Found jsoncpp, version 1.7.4
+[2.005s] -- Found JSONCPP: TRUE  
+[2.012s] -- Checking for module 'libzip'
+[2.036s] --   Found libzip, version 1.5.1
+[2.086s] -- Found ZIP: TRUE  
+[2.086s] -- Looking for ignition-common3 -- found version 3.17.0
+[2.087s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.087s] -- Looking for ignition-msgs5 -- found version 5.11.0
+[2.091s] -- Found gazebo_ros_pkgs: 3.5.2 (/opt/ros/galactic/share/gazebo_ros_pkgs/cmake)
+[2.093s] -- Found geometry_msgs: 2.2.4 (/opt/ros/galactic/share/geometry_msgs/cmake)
+[2.122s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.130s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[2.243s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[2.283s] -- Found FastRTPS: /opt/ros/galactic/include  
+[2.389s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.504s] -- Found nav_msgs: 2.2.4 (/opt/ros/galactic/share/nav_msgs/cmake)
+[2.604s] -- Found rclcpp: 9.2.2 (/opt/ros/galactic/share/rclcpp/cmake)
+[2.669s] -- Found rmw_implementation_cmake: 3.3.1 (/opt/ros/galactic/share/rmw_implementation_cmake/cmake)
+[2.673s] -- Found rmw_cyclonedds_cpp: 0.22.6 (/opt/ros/galactic/share/rmw_cyclonedds_cpp/cmake)
+[2.698s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[2.700s] -- Found Threads: TRUE  
+[2.889s] -- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)
+[2.987s] -- Found tf2: 0.17.5 (/opt/ros/galactic/share/tf2/cmake)
+[3.091s] -- Configuring done
+[3.158s] -- Generating done
+[3.162s] -- Build files have been written to: /home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo
+[3.186s] Invoked command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/turtlebot3_simulations/turtlebot3_gazebo -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo
+[3.190s] Invoking command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo -- -j16 -l16
+[3.248s] [35m[1mScanning dependencies of target turtlebot3_drive[0m
+[3.248s] [35m[1mScanning dependencies of target obstacle2[0m
+[3.249s] [35m[1mScanning dependencies of target obstacle1[0m
+[3.249s] [35m[1mScanning dependencies of target obstacles[0m
+[3.312s] [ 12%] [32mBuilding CXX object CMakeFiles/turtlebot3_drive.dir/src/turtlebot3_drive.cpp.o[0m
+[3.443s] [ 25%] [32mBuilding CXX object CMakeFiles/obstacles.dir/models/turtlebot3_dqn_world/obstacle_plugin/obstacles.cc.o[0m
+[3.449s] [ 50%] [32mBuilding CXX object CMakeFiles/obstacle2.dir/models/turtlebot3_dqn_world/obstacle_plugin/obstacle2.cc.o[0m
+[3.450s] [ 50%] [32mBuilding CXX object CMakeFiles/obstacle1.dir/models/turtlebot3_dqn_world/obstacle_plugin/obstacle1.cc.o[0m
+[12.466s] [ 62%] [32m[1mLinking CXX shared library libobstacle2.so[0m
+[12.506s] [ 75%] [32m[1mLinking CXX shared library libobstacle1.so[0m
+[12.622s] [ 87%] [32m[1mLinking CXX executable turtlebot3_drive[0m
+[12.652s] [100%] [32m[1mLinking CXX shared library libobstacles.so[0m
+[12.796s] [100%] Built target obstacle1
+[12.797s] [100%] Built target obstacle2
+[12.894s] [100%] Built target obstacles
+[12.957s] [100%] Built target turtlebot3_drive
+[12.964s] Invoked command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo -- -j16 -l16
+[12.998s] Invoking command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo
+[13.004s] -- Install configuration: ""
+[13.004s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/lib/turtlebot3_gazebo/turtlebot3_drive
+[13.007s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/lib/turtlebot3_gazebo/turtlebot3_drive" to ""
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage1.launch.py
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_world.launch.py
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage2.launch.py
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/robot_state_publisher.launch.py
+[13.007s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage4.launch.py
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/spawn_turtlebot3.launch.py
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_house.launch.py
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/empty_world.launch.py
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage3.launch.py
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacle2.cc
+[13.008s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacles.cc
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/CMakeLists.txt
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacle1.cc
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.config
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.sdf
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.config
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.sdf
+[13.009s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.config
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.sdf
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.config
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.config
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.sdf
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.config
+[13.010s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.sdf
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.sdf
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.config
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.sdf
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.config
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model-1_4_.sdf
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.sdf
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle
+[13.011s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model-1_4.sdf
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.config
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.sdf
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/lds.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/tire.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/r200.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/burger_base.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_base.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_pi_base.dae
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/model.config
+[13.012s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model-1_4.sdf
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.config
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.sdf
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/hexagon.dae
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/wall.dae
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model-1_4.sdf
+[13.013s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.config
+[13.014s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.sdf
+[13.014s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//rviz
+[13.014s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//rviz/tb3_gazebo.rviz
+[13.014s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf
+[13.014s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/common_properties.urdf
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle.urdf
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_burger.urdf
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage3.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_world.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_house.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage4.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/include/
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/include//turtlebot3_gazebo
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/include//turtlebot3_gazebo/turtlebot3_drive.hpp
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/ament_index/resource_index/package_run_dependencies/turtlebot3_gazebo
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/ament_index/resource_index/parent_prefix_path/turtlebot3_gazebo
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.sh
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.dsv
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.sh
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.dsv
+[13.016s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.bash
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.sh
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.zsh
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.dsv
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.dsv
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/ament_index/resource_index/packages/turtlebot3_gazebo
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_include_directories-extras.cmake
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_dependencies-extras.cmake
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig.cmake
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig-version.cmake
+[13.017s] -- Installing: /home/avinaash/ForkLift_AMR/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.xml
+[13.017s] Invoked command in '/home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/turtlebot3_gazebo

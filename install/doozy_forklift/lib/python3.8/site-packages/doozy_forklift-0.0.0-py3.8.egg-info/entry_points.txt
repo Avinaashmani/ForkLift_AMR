@@ -1,0 +1,3 @@
+[console_scripts]
+Client_01 = doozy_forklift.client_01:main
+

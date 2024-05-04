@@ -1,1 +1,0 @@
-/home/avinaash/ForkLift_AMR/devel/.private/forkassembly_bot/lib/pkgconfig/forkassembly_bot.pc
