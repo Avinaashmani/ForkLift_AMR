@@ -16,23 +16,28 @@ class Client_01(Node):
         self.client_docking = self.create_client(SetBool, 'Docking')
         self.client_undocking = self.create_client(SetBool, 'UnDocking')
         self.docking_request = SetBool.Request()
+        # self.response = SetBool.Response().success
 
     def navigation_callback(self, msg):
-        self.get_logger().info(f"Navigation Status = {msg.data}")
+        # self.get_logger().info(f"Navigation Status = {msg.data}")
         self.docking_request.data = msg.data
         
         while not self.client_docking.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("Service not available, waiting again...")
-
-        # if self.docking_request is True:
-
-        self.client_docking.call_async(self.docking_request)
-
+        if msg.data is True:
+            future = self.client_docking.call_async(self.docking_request)
+            # self.get_logger().info(future.result())
+            return future.result()
+        else:
+            future = self.client_docking.call_async(self.docking_request)
+            # self.get_logger().info(future.result())
+            return future.result()
 
 
 def main():
     rclpy.init()
     client_01 = Client_01()
+
     rclpy.spin(client_01)
     rclpy.shutdown()
 

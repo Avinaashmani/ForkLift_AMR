@@ -55,7 +55,8 @@ class Dockpallet(Node):
 
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().warn("LookupException: {0}".format(str(e)))
-                pass
+                response.message = str(e)
+                # return response
                 
             distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
             angle_difference = self.pallet_angle_z - self.tb3_angle_z
@@ -83,12 +84,13 @@ class Dockpallet(Node):
                 self.dock_flag = False
                 
                 response.success = True
-                return response
+                # return response
         else:
             self.get_logger().warn("Not Going to Dock !")
             response.success = False
-            return response
-            
+            # return response
+        # response.success = False
+        return response    
     
     def update_frame(self, tb3_frame, target_frame):
         self.tb3_x = tb3_frame.transform.translation.x
