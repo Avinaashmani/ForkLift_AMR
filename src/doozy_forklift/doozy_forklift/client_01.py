@@ -27,13 +27,20 @@ class Client_01(Node):
         
         self.undocking_result = SetBool.Response()
         self.undocking_request= SetBool.Request()
-       
+        
+        self.docking_done = False
+        self.undocking_done = False
+        self.create_timer(0.1, self.compute)
+        
     def navigation_callback(self, msg):
         self.navigation_status.data = msg.data
     
     def send_dock_request(self, dock_req):
+        
         self.docking_request.data = dock_req
         self.dock_future = self.client_docking.call_async(self.docking_request)
+        self.docking_result.success = self.dock_future.result().success
+        
         print(f"Printing Docking Request... {self.docking_request.data}")
 
     def send_undock_request(self, undock_req):
@@ -41,46 +48,42 @@ class Client_01(Node):
         self.undock_future = self.client_undocking.call_async(self.undocking_request)
         print(f"Printing Docking Request... {self.undocking_request.data}")
 
+    def compute(self):
+        
+        if self.navigation_status.data is True:
+            self.send_dock_request(True)
+            docked_response = self.docking_result.success
+            self.get_logger().info(str(docked_response))
+        
+            if docked_response.success is True:
+                self.docking_done = True
+            else:
+                self.docking_done = False
+                self.get_logger().info('Docking is still under process....')
+        else:
+            self.get_logger().info('Navigation is still under process....')
+            self.docking_done = False
+            self.send_dock_request(False)
+            
+        if self.docking_done:
+            self.send_undock_request(True)
+            undocked_response = self.undock_future.result()
+            self.get_logger().info(str(undocked_response.success))
+            
+            if undocked_response.success is True:
+                self.undocking_done = True
+            else:
+                self.undocking_done = False   
+        else:
+            self.get_logger().info('Docking Still underprocess....')
+            self.undocking_done = False
+            self.send_undock_request(False) 
+            
+        if self.docking_done and self.undocking_done:
+            self.get_logger("Task Complete....")
 def main():
-    
     rclpy.init()
     client_01 = Client_01()
-    rclpy.spin_once(client_01)
-    
-    if client_01.navigation_status.data is True:
-        client_01.send_dock_request(dock_req=True)
-        
-        while rclpy.ok():
-            rclpy.spin_once(client_01)
-            
-            if client_01.dock_future.done():
-                
-                try:
-                    response_dock = client_01.dock_future.result()
-                    # response_undock = client_01.undock_future.result()
-                    
-                    if response_dock is True:
-                        client_01.send_undock_request(True)
-                        
-                        try:
-                            response_undock = client_01.undock_future.result()
-                        
-                        except Exception as e:
-                            client_01.get_logger().error(str(e))      
-                              
-                except Exception as e:
-                    client_01.get_logger().error(str(e))
-                
-                else:
-                    client_01.get_logger().info(str(response_dock.success))
-                    client_01.get_logger().info(str(response_undock.success))
-    else:
-        client_01.send_dock_request(dock_req=False)
-        client_01.send_undock_request(undock_req=False)  
-        client_01.get_logger().info('Navigation under process...')             
-        
-    client_01.destroy_node()
-    rclpy.shutdown()
-                
+    rclpy.spin(client_01)             
 if __name__ == '__main__':
     main()

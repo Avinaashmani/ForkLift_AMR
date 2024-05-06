@@ -1,0 +1,37 @@
+running egg_info
+writing ../../build/doozy_forklift/doozy_forklift.egg-info/PKG-INFO
+writing dependency_links to ../../build/doozy_forklift/doozy_forklift.egg-info/dependency_links.txt
+writing entry points to ../../build/doozy_forklift/doozy_forklift.egg-info/entry_points.txt
+writing requirements to ../../build/doozy_forklift/doozy_forklift.egg-info/requires.txt
+writing top-level names to ../../build/doozy_forklift/doozy_forklift.egg-info/top_level.txt
+reading manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+writing manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+running build
+running build_py
+copying doozy_forklift/client_02.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/client_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/publish_tf_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/detect_pallet_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/client_03.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/dock_with_pallet_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+copying doozy_forklift/__init__.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+running install
+running install_lib
+copying /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift/detect_pallet_01.py -> /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift
+copying /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift/dock_with_pallet_01.py -> /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift
+byte-compiling /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift/detect_pallet_01.py to detect_pallet_01.cpython-310.pyc
+byte-compiling /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift/dock_with_pallet_01.py to dock_with_pallet_01.cpython-310.pyc
+running install_data
+copying resource/doozy_forklift -> /home/doozy/ForkLift_AMR/install/doozy_forklift/share/ament_index/resource_index/packages
+copying package.xml -> /home/doozy/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift
+running install_egg_info
+removing '/home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/doozy_forklift/doozy_forklift.egg-info to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Client_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Client_02 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Client_03 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Detect_Pallet_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Dock_with_Pallet_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Publish_TF script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+writing list of installed files to '/home/doozy/ForkLift_AMR/build/doozy_forklift/install.log'

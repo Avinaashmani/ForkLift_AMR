@@ -10,6 +10,8 @@ setup.py
 ../../build/doozy_forklift/doozy_forklift.egg-info/zip-safe
 doozy_forklift/__init__.py
 doozy_forklift/client_01.py
+doozy_forklift/client_02.py
+doozy_forklift/client_03.py
 doozy_forklift/detect_pallet_01.py
 doozy_forklift/dock_with_pallet_01.py
 doozy_forklift/publish_tf_01.py
