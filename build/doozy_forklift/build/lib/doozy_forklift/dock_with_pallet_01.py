@@ -2,6 +2,7 @@
 
 import rclpy
 import math
+import time
 from math import sqrt, pow, atan2
 from rclpy.node import Node
 from rclpy.time import Time
@@ -42,8 +43,10 @@ class Dockpallet(Node):
         self.navigate_err = ''
 
         self.move_tug = Twist()
+        
 
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
+        self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
 
     def dock_func(self, request, response):
         dock_call = request.data
@@ -56,7 +59,8 @@ class Dockpallet(Node):
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().warn("LookupException: {0}".format(str(e)))
                 response.message = str(e)
-                # return response
+                response.success = False
+                return response
                 
             distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
             angle_difference = self.pallet_angle_z - self.tb3_angle_z
@@ -84,14 +88,32 @@ class Dockpallet(Node):
                 self.dock_flag = False
                 
                 response.success = True
-                # return response
+                return response
         else:
             self.get_logger().warn("Not Going to Dock !")
             response.success = False
             # return response
-        # response.success = False
+
         return response    
     
+    def undock_func(self, request, response):
+        if request.data is True:
+            self.move_tug.linear.x = 0.5
+            time.sleep(5)
+            self.move_tug.linear.x = 0.0
+            self.move_tug.angular.z = 0.0
+            
+            self.get_logger().info('Undocking completed....')
+            response.success = True
+            response.message = "Undocking completed...."
+            return response
+            
+        else:
+            self.get_logger().info('Waiting to complete docking....')
+            response.success = False
+            response.message = "Waiting to complete docking...."
+            return response
+                
     def update_frame(self, tb3_frame, target_frame):
         self.tb3_x = tb3_frame.transform.translation.x
         self.tb3_y = tb3_frame.transform.translation.y
@@ -141,6 +163,7 @@ def main():
     rclpy.init()
     docker = Dockpallet()
     rclpy.spin(docker)
+    rclpy.shutdown()
 
 if __name__=='__main__':
     main()
