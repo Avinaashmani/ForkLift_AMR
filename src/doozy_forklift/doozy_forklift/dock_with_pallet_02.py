@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 import rclpy
+import tf2_ros
 import math
-import time
-from math import sqrt, pow, atan2
+from math import sqrt
 from rclpy.node import Node
 from rclpy.time import Time
 from rclpy.executors import SingleThreadedExecutor
 from example_interfaces.srv import SetBool
-import tf2_ros
 from geometry_msgs.msg import Twist
-from std_msgs.msg import String, Bool
+from std_msgs.msg import Bool
+from sick_visionary_t_mini.msg import SickTMini
 
 class Dockpallet(Node):
 
@@ -22,9 +22,9 @@ class Dockpallet(Node):
 
         self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
         self.create_subscription(Bool, '/navigation_status', self.navigation_status_callback, 10)
-        self.create_subscription(Bool, '/sick_camera', self.sick_callback, 10)
+        self.create_subscription(SickTMini, '/pallet_detection', self.sick_callback, 10)
 
-        self.pallet_presence = True
+        self.pallet_presence = False
         self.pallet_frame = 'pallet_center'
         self.source_frame = 'map'
         self.tb3_x = 0.0
@@ -36,14 +36,20 @@ class Dockpallet(Node):
         self.pallet_angle_z = 0.0
 
         self.navigate_flag = False
+        
         self.dock_flag = False
+        self.undock_flag = False
+        
         self.dock_completed_flag = False
+        self.undock_completed_flag = False
 
         self.move_tug = Twist()
         
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
         self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
+        
         self.create_timer(0.1, self.check_distance)
+        self.create_timer(0.1, self.undock_forklift)
     
     def dock_func(self, request, response):
         
@@ -54,11 +60,20 @@ class Dockpallet(Node):
                 response.message = "Docking complete"
                 response.success = True
                 return response
-            else:
-                response.message = "Docking Uncomplete"
-                response.success = False
         return response
-
+    
+    def undock_func(self, request, response):
+        
+        if self.navigate_flag and request.data is True:
+            self.undock_flag = True
+            
+            if self.undock_completed_flag is True:
+                response.message = "Undocking complete"
+                response.success = True
+                return response
+            
+        return response
+    
     def check_distance(self):
         if self.dock_flag and self.navigate_flag:
             try:
@@ -73,40 +88,41 @@ class Dockpallet(Node):
                     print(distance)
                     print("---------------")
                     self.dock_completed_flag = False
+                    
                 else:
                     self.move_tug.linear.x = 0.0
                     self.move_tug.angular.z = 0.0
                     self.cmd_pub.publish(self.move_tug)
-                    self.dock_flag = False
                     self.dock_completed_flag = True
+                    self.get_logger().warn("Docking completed :)")
+                    self.dock_flag = False
+                    return True
 
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().warn("LookupException: {0}".format(str(e)))
                 self.dock_flag = False
                 self.dock_completed_flag = False
-        else:
-            self.get_logger().warn("Not Going to Dock !")
-            self.dock_completed_flag = False
-    
-    def undock_func(self, request, response):
-        if request.data and self.navigate_flag:
-            self.move_tug.linear.x = 0.5
-            self.move_tug.angular.z = 0.0
-            self.cmd_pub.publish(self.move_tug)
 
-            self.get_logger().info('Undocking completed....')
-            response.success = True
-            response.message = "Undocking completed...."
-            return response
-        
-        else:
-            self.get_logger().info('Waiting to complete docking....')
-            response.success = False
-            self.move_tug.linear.x = 0.0
-            self.move_tug.angular.z = 0.0
-            self.cmd_pub.publish(self.move_tug)
-            response.message = "Waiting to complete docking...."
-            return response
+    def undock_forklift(self):
+        if self.undock_flag and self.navigate_flag:
+            
+            if self.pallet_presence:
+                try:
+                    self.move_tug.linear.x = -0.5
+                    self.move_tug.angular.z = 0.0
+                    self.cmd_pub.publish(self.move_tug)
+            
+                except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+                    self.get_logger().warn("LookupException: {0}".format(str(e)))
+                    self.dock_flag = False
+                    self.dock_completed_flag = False        
+            else:
+                self.get_logger().info('Waiting to complete docking....')
+                self.undock_completed_flag = False
+                self.move_tug.linear.x = 0.0
+                self.move_tug.angular.z = 0.0
+                self.cmd_pub.publish(self.move_tug)
+
                 
     def update_frame(self,target_frame):
         self.pallet_x = target_frame.transform.translation.x
@@ -141,6 +157,9 @@ class Dockpallet(Node):
         yaw_z = math.atan2(t3, t4)
 
         return yaw_z
+    
+    def sick_callback(self, msg):
+        self.pallet_presence = msg.pallet_found
 
 def main():
     rclpy.init()

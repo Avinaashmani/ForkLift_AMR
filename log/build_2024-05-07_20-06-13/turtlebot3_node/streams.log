@@ -1,0 +1,86 @@
+[0.074s] Invoking command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake /home/doozy/ForkLift_AMR/src/turtlebot3/turtlebot3_node -DCMAKE_INSTALL_PREFIX=/home/doozy/ForkLift_AMR/install/turtlebot3_node
+[0.772s] -- The C compiler identification is GNU 11.4.0
+[0.772s] -- The CXX compiler identification is GNU 11.4.0
+[0.773s] -- Detecting C compiler ABI info
+[0.773s] -- Detecting C compiler ABI info - done
+[0.773s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.773s] -- Detecting C compile features
+[0.774s] -- Detecting C compile features - done
+[0.774s] -- Detecting CXX compiler ABI info
+[0.774s] -- Detecting CXX compiler ABI info - done
+[0.774s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.774s] -- Detecting CXX compile features
+[0.774s] -- Detecting CXX compile features - done
+[0.774s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.774s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.896s] -- Found dynamixel_sdk: 3.7.60 (/opt/ros/humble/share/dynamixel_sdk/cmake)
+[0.908s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.012s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.026s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.047s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.072s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.123s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.274s] -- Found message_filters: 4.3.3 (/opt/ros/humble/share/message_filters/cmake)
+[1.385s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.394s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.522s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.560s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.611s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.632s] -- Looking for pthread.h
+[1.690s] -- Looking for pthread.h - found
+[1.690s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.753s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.755s] -- Found Threads: TRUE  
+[1.912s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.999s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.095s] -- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)
+[2.133s] -- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)
+[2.170s] -- Found tf2_ros: 0.25.6 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.559s] -- Found turtlebot3_msgs: 2.2.3 (/home/doozy/turtlebot3_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake)
+[2.752s] -- Configuring done
+[2.773s] -- Generating done
+[2.776s] -- Build files have been written to: /home/doozy/ForkLift_AMR/build/turtlebot3_node
+[2.786s] Invoked command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake /home/doozy/ForkLift_AMR/src/turtlebot3/turtlebot3_node -DCMAKE_INSTALL_PREFIX=/home/doozy/ForkLift_AMR/install/turtlebot3_node
+[2.788s] Invoking command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake --build /home/doozy/ForkLift_AMR/build/turtlebot3_node -- -j16 -l16
+[2.838s] [ 14%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/motor_power.cpp.o[0m
+[2.838s] [ 14%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/diff_drive_controller.cpp.o[0m
+[2.838s] [ 28%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/battery_state.cpp.o[0m
+[2.839s] [ 35%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/sound.cpp.o[0m
+[2.839s] [ 35%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/turtlebot3.cpp.o[0m
+[2.839s] [ 42%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/imu.cpp.o[0m
+[2.839s] [ 50%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/odometry.cpp.o[0m
+[2.839s] [ 57%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/reset.cpp.o[0m
+[2.840s] [ 64%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/dynamixel_sdk_wrapper.cpp.o[0m
+[2.841s] [ 71%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/sensor_state.cpp.o[0m
+[2.853s] [ 78%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/joint_state.cpp.o[0m
+[19.643s] [ 85%] [32m[1mLinking CXX static library libturtlebot3_node_lib.a[0m
+[20.081s] [ 85%] Built target turtlebot3_node_lib
+[20.097s] [ 92%] [32mBuilding CXX object CMakeFiles/turtlebot3_ros.dir/src/node_main.cpp.o[0m
+[22.578s] [100%] [32m[1mLinking CXX executable turtlebot3_ros[0m
+[23.806s] [100%] Built target turtlebot3_ros
+[23.815s] Invoked command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake --build /home/doozy/ForkLift_AMR/build/turtlebot3_node -- -j16 -l16
+[23.861s] Invoking command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake --install /home/doozy/ForkLift_AMR/build/turtlebot3_node
+[23.867s] -- Install configuration: ""
+[23.867s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/param
+[23.867s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/param/waffle_pi.yaml
+[23.867s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/param/burger.yaml
+[23.868s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/param/waffle.yaml
+[23.868s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/lib/turtlebot3_node/turtlebot3_ros
+[23.876s] -- Set runtime path of "/home/doozy/ForkLift_AMR/install/turtlebot3_node/lib/turtlebot3_node/turtlebot3_ros" to ""
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/ament_index/resource_index/package_run_dependencies/turtlebot3_node
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/ament_index/resource_index/parent_prefix_path/turtlebot3_node
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/environment/ament_prefix_path.sh
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/environment/ament_prefix_path.dsv
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/environment/path.sh
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/environment/path.dsv
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/local_setup.bash
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/local_setup.sh
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/local_setup.zsh
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/local_setup.dsv
+[23.876s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/package.dsv
+[23.877s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/ament_index/resource_index/packages/turtlebot3_node
+[23.877s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/cmake/ament_cmake_export_include_directories-extras.cmake
+[23.877s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/cmake/turtlebot3_nodeConfig.cmake
+[23.877s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/cmake/turtlebot3_nodeConfig-version.cmake
+[23.877s] -- Installing: /home/doozy/ForkLift_AMR/install/turtlebot3_node/share/turtlebot3_node/package.xml
+[23.879s] Invoked command in '/home/doozy/ForkLift_AMR/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/doozy/ForkLift_AMR/install/doozy_forklift:/home/doozy/turtlebot3_ws/install/turtlebot3_teleop:/home/doozy/turtlebot3_ws/install/turtlebot3_example:/home/doozy/turtlebot3_ws/install/autonomous_tb3:/home/doozy/doozy_ws/install/task_py:/home/doozy/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/doozy/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/home/doozy/ros2_ws/install/hotel_package:/home/doozy/ros2_ws/install/deffy:/home/doozy/do_ws/install/task_py:/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led:/opt/ros/humble /usr/bin/cmake --install /home/doozy/ForkLift_AMR/build/turtlebot3_node

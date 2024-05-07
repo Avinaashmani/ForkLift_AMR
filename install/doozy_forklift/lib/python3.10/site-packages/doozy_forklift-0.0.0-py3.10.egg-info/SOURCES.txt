@@ -15,6 +15,7 @@ doozy_forklift/client_03.py
 doozy_forklift/detect_pallet_01.py
 doozy_forklift/dock_with_pallet_01.py
 doozy_forklift/dock_with_pallet_02.py
+doozy_forklift/dock_with_pallet_03.py
 doozy_forklift/publish_tf_01.py
 resource/doozy_forklift
 test/test_copyright.py
