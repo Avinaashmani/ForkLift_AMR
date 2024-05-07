@@ -44,42 +44,40 @@ class Dockpallet(Node):
 
     def dock_func(self, request, response):
         if self.navigate_flag and request.data is True:
-            flag = True
-            while flag:
-                try:
-                    pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
-                    self.update_frame(target_frame=pallet_transform)
+            try:
+                pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
+                self.update_frame(target_frame=pallet_transform)
 
-                except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
-                    self.get_logger().warn("LookupException: {0}".format(str(e)))
-                    response.message = str(e)
-                    response.success = False
-                    return response
-            # angle_difference = self.pallet_angle_z - self.tb3_angle_z
-            # distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
-            # yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
-                distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
-            
-                if distance > 0.75:
-                
-                    print("---------------")
-                    print(distance)
-                    print("---------------")
-                
-                    response.success = False
-                else:
-                    response.success = True
-                    flag = False
-                    self.cmd_pub.publish(self.move_tug)
-                    self.move_tug.linear.x = 0.0
-                    self.move_tug.angular.z = 0.0
-                    self.dock_flag = False
-                    flag = False
-                    return response
-            else:
-                self.get_logger().warn("Not Going to Dock !")
+            except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+                self.get_logger().warn("LookupException: {0}".format(str(e)))
+                response.message = str(e)
                 response.success = False
                 return response
+            angle_difference = self.pallet_angle_z - self.tb3_angle_z
+            distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
+            yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
+            distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
+            
+            if distance > 0.75:
+                
+                print("---------------")
+                print(distance)
+                print("---------------")
+                
+                response.success = False
+            else:
+                response.success = True
+                flag = False
+                self.cmd_pub.publish(self.move_tug)
+                self.move_tug.linear.x = 0.0
+                self.move_tug.angular.z = 0.0
+                self.dock_flag = False
+
+                return response
+        else:
+            self.get_logger().warn("Not Going to Dock !")
+            response.success = False
+            return response
     
     def undock_func(self, request, response):
         if request.data is True:

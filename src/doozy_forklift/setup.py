@@ -24,6 +24,7 @@ setup(
          'Client_02 = doozy_forklift.client_02:main',
          'Client_03 = doozy_forklift.client_03:main',
          'Dock_with_Pallet_01 = doozy_forklift.dock_with_pallet_01:main',
+         'Dock_with_Pallet_02 = doozy_forklift.dock_with_pallet_02:main',
          'Detect_Pallet_01 = doozy_forklift.detect_pallet_01:main',
          'Publish_TF = doozy_forklift.publish_tf_01:main'
         ],
