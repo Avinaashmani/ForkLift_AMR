@@ -4,6 +4,9 @@ source;share/sick_visionary_t_mini/hook/cmake_prefix_path.sh
 source;share/sick_visionary_t_mini/hook/ld_library_path_lib.ps1
 source;share/sick_visionary_t_mini/hook/ld_library_path_lib.dsv
 source;share/sick_visionary_t_mini/hook/ld_library_path_lib.sh
+source;share/sick_visionary_t_mini/hook/pythonpath.ps1
+source;share/sick_visionary_t_mini/hook/pythonpath.dsv
+source;share/sick_visionary_t_mini/hook/pythonpath.sh
 source;share/sick_visionary_t_mini/local_setup.bash
 source;share/sick_visionary_t_mini/local_setup.dsv
 source;share/sick_visionary_t_mini/local_setup.ps1

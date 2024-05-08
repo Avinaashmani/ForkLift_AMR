@@ -3,13 +3,14 @@
 import rclpy
 import tf2_ros
 import math
+import time
 from math import sqrt, atan2
 from rclpy.node import Node
 from rclpy.time import Time
 from rclpy.executors import SingleThreadedExecutor
 from example_interfaces.srv import SetBool
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Bool
+from std_msgs.msg import Bool, String
 from sick_visionary_t_mini.msg import SickTMini
 
 class Dockpallet(Node):
@@ -21,6 +22,7 @@ class Dockpallet(Node):
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
 
         self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.docking_undocking_diagnostics = self.create_publisher(String, '/dock_undock_diag', 10)
         self.create_subscription(Bool, '/navigation_status', self.navigation_status_callback, 10)
         self.create_subscription(SickTMini, '/pallet_detection', self.sick_callback, 10)
 
@@ -46,6 +48,7 @@ class Dockpallet(Node):
         self.undock_completed_flag = False
 
         self.move_tug = Twist()
+        self.diagnostics = String()
         
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
         self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
@@ -77,7 +80,9 @@ class Dockpallet(Node):
         return response
     
     def check_distance(self):
+
         if self.dock_flag and self.navigate_flag:
+
             try:
                 pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
                 tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
@@ -96,7 +101,10 @@ class Dockpallet(Node):
                     print(yaw_angle_error)
                     print("---------------")
                     self.dock_completed_flag = False
-                    
+
+                    self.diagnostics.data = "Docking Under Process..."
+                    self.docking_undocking_diagnostics.publish(self.diagnostics)
+
                     if abs(yaw_angle_error) > 0.10:
                         
                         if abs(angle_difference) > 0.1:
@@ -122,32 +130,77 @@ class Dockpallet(Node):
                     self.dock_completed_flag = True
                     self.get_logger().warn("Docking completed :)")
                     self.dock_flag = False
+
+                    self.diagnostics.data = "Docking Completed."
+                    self.docking_undocking_diagnostics.publish(self.diagnostics)
                     return True
 
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().warn("LookupException: {0}".format(str(e)))
+                self.diagnostics.data = "Docking Error. Please Check !"
+                self.docking_undocking_diagnostics.publish(self.diagnostics)
                 self.dock_flag = False
                 self.dock_completed_flag = False
 
     def undock_forklift(self):
+
         if self.undock_flag and self.navigate_flag:
             
-            if self.pallet_presence:
-                try:
-                    self.move_tug.linear.x = -0.5
+            try:
+                pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
+                tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
+                self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
+
+                distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
+                angle_difference = self.pallet_angle_z - self.tb3_angle_z
+                distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
+                yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
+
+                if abs(distance) < 0.7:
+                    
+                    self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
+                    
+                    print("---------------")
+                    print(distance)
+                    print(distance_error)
+                    print(yaw_angle_error)
+                    print(angle_difference)
+                    print("---------------")
+
+                    self.move_tug.linear.x = -0.07
+                    self.cmd_pub.publish(self.move_tug) 
+
+                    self.diagnostics.data = "Undocking Under Process..."
+                    self.docking_undocking_diagnostics.publish(self.diagnostics)
+
+                # if abs(yaw_angle_error) < 0.10:
+                        
+                #     if abs(angle_difference) > 0.1:
+                            
+
+                #         self.move_tug.angular.z = 0.2
+                #         self.cmd_pub.publish(self.move_tug)
+                    
+                #     else:
+                #         self.move_tug.angular.z = -0.2
+                #         self.cmd_pub.publish(self.move_tug)
+                else:
+                    self.move_tug.linear.x = 0.0
                     self.move_tug.angular.z = 0.0
                     self.cmd_pub.publish(self.move_tug)
-            
-                except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
-                    self.get_logger().warn("LookupException: {0}".format(str(e)))
-                    self.dock_flag = False
-                    self.dock_completed_flag = False        
-            else:
-                self.get_logger().info('Waiting to complete docking....')
+                    self.undock_completed_flag = True
+                    self.get_logger().warn("Undocking completed :)")
+                    self.diagnostics.data = "Undocking Completed."
+                    self.docking_undocking_diagnostics.publish(self.diagnostics)
+                    self.undock_flag = False
+                    return True
+
+            except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+                self.get_logger().warn("LookupException: {0}".format(str(e)))
+                self.diagnostics.data = "Undocking Error, Please Check !"
+                self.docking_undocking_diagnostics.publish(self.diagnostics)
+                self.undock_flag = False
                 self.undock_completed_flag = False
-                self.move_tug.linear.x = 0.0
-                self.move_tug.angular.z = 0.0
-                self.cmd_pub.publish(self.move_tug)
 
                 
     def update_frame(self,target_frame, tb3_frame):

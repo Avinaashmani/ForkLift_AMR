@@ -1,9 +1,0 @@
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/uninstall.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/turtlebot3_cartographer_uninstall.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/test.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/edit_cache.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/rebuild_cache.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/list_install_components.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/install.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/install/local.dir
-/home/doozy/ForkLift_AMR/build/turtlebot3_cartographer/CMakeFiles/install/strip.dir

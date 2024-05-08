@@ -4,8 +4,8 @@
 
 #include "cstddef"
 #include "rosidl_runtime_c/message_type_support_struct.h"
+#include "sick_visionary_t_mini/msg/rosidl_typesupport_c__visibility_control.h"
 #include "sick_visionary_t_mini/msg/detail/sick_t_mini__struct.h"
-#include "sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.h"
 #include "rosidl_typesupport_c/identifier.h"
 #include "rosidl_typesupport_c/message_type_support_dispatch.h"
 #include "rosidl_typesupport_c/type_support_map.h"
@@ -85,6 +85,7 @@ extern "C"
 {
 #endif
 
+ROSIDL_TYPESUPPORT_C_EXPORT_sick_visionary_t_mini
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, sick_visionary_t_mini, msg, SickTMini)() {
   return &::sick_visionary_t_mini::msg::rosidl_typesupport_c::SickTMini_message_type_support_handle;

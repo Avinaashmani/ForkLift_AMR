@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/avinaash/ForkLift_AMR/build/forklift_interfaces/rosidl_generator_c/forklift_interfaces/srv/detail/fork_lift_dock__functions.c
+forklift_interfaces/srv/detail/fork_lift_dock__functions.h
+/home/avinaash/ForkLift_AMR/build/forklift_interfaces/rosidl_generator_c/forklift_interfaces/srv/detail/forklift_interfaces/srv/detail/fork_lift_dock__functions.h
+assert.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+
+/opt/ros/galactic/include/rosidl_runtime_c/visibility_control.h
+
+rosidl_generator_c/forklift_interfaces/msg/rosidl_generator_c__visibility_control.h
+
+rosidl_generator_c/forklift_interfaces/srv/detail/fork_lift_dock__functions.h
+stdbool.h
+-
+stdlib.h
+-
+rosidl_runtime_c/visibility_control.h
+rosidl_generator_c/forklift_interfaces/srv/detail/rosidl_runtime_c/visibility_control.h
+forklift_interfaces/msg/rosidl_generator_c__visibility_control.h
+rosidl_generator_c/forklift_interfaces/srv/detail/forklift_interfaces/msg/rosidl_generator_c__visibility_control.h
+forklift_interfaces/srv/detail/fork_lift_dock__struct.h
+rosidl_generator_c/forklift_interfaces/srv/detail/forklift_interfaces/srv/detail/fork_lift_dock__struct.h
+
+rosidl_generator_c/forklift_interfaces/srv/detail/fork_lift_dock__struct.h
+stdbool.h
+-
+stddef.h
+-
+stdint.h
+-
+
