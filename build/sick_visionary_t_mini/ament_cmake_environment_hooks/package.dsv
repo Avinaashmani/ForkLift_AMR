@@ -1,0 +1,4 @@
+source;share/sick_visionary_t_mini/local_setup.bash
+source;share/sick_visionary_t_mini/local_setup.dsv
+source;share/sick_visionary_t_mini/local_setup.sh
+source;share/sick_visionary_t_mini/local_setup.zsh

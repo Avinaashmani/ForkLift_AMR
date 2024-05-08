@@ -1,0 +1,4 @@
+source;share/sick_visionary_t_mini/environment/ament_prefix_path.sh
+source;share/sick_visionary_t_mini/environment/library_path.sh
+source;share/sick_visionary_t_mini/environment/path.sh
+source;share/sick_visionary_t_mini/environment/pythonpath.sh
