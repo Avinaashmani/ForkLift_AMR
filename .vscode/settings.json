@@ -44,5 +44,6 @@
         "/home/doozy/neuronbot2_ros2_ws/install/neuronbot2_led/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/home/avinaash/ForkLift_AMR/build/forklift_interfaces/forklift_interfaces__py"
 }
