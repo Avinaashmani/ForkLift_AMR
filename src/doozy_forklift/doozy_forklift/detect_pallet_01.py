@@ -39,7 +39,7 @@ class PalletDetection(Node):
             self.sick_msg.header_pallet_detection.stamp = self.get_clock().now().to_msg()
             self.sick_msg.header_pallet_detection.frame_id = 'map'
             self.sick_msg.message = response.json()['header']['message']
-            print(f"Left Pocket: {self.sick_msg.left_pocket.x}-> Center Pocket {self.sick_msg.center_point.x}<-{self.sick_msg.right_pocket.x} Right Pocket")
+            print(f"Left Pocket: {self.sick_msg.left_pocket.x}-> Center Pocket {self.sick_msg.center_point.x}<-{self.sick_msg.right_pocket.x} Right Pocket === Pallet_Presence {self.sick_msg.pallet_found}" )
             
 
             self.sick_pallet_pub.publish(self.sick_msg)
