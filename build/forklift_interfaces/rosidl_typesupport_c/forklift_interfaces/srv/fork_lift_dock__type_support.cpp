@@ -4,8 +4,8 @@
 
 #include "cstddef"
 #include "rosidl_runtime_c/message_type_support_struct.h"
-#include "forklift_interfaces/msg/rosidl_typesupport_c__visibility_control.h"
 #include "forklift_interfaces/srv/detail/fork_lift_dock__struct.h"
+#include "forklift_interfaces/srv/detail/fork_lift_dock__type_support.h"
 #include "rosidl_typesupport_c/identifier.h"
 #include "rosidl_typesupport_c/message_type_support_dispatch.h"
 #include "rosidl_typesupport_c/type_support_map.h"
@@ -85,7 +85,6 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_C_EXPORT_forklift_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, forklift_interfaces, srv, ForkLiftDock_Request)() {
   return &::forklift_interfaces::srv::rosidl_typesupport_c::ForkLiftDock_Request_message_type_support_handle;
@@ -100,9 +99,9 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, forklift
 // already included above
 // #include "rosidl_runtime_c/message_type_support_struct.h"
 // already included above
-// #include "forklift_interfaces/msg/rosidl_typesupport_c__visibility_control.h"
-// already included above
 // #include "forklift_interfaces/srv/detail/fork_lift_dock__struct.h"
+// already included above
+// #include "forklift_interfaces/srv/detail/fork_lift_dock__type_support.h"
 // already included above
 // #include "rosidl_typesupport_c/identifier.h"
 // already included above
@@ -187,7 +186,6 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_C_EXPORT_forklift_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, forklift_interfaces, srv, ForkLiftDock_Response)() {
   return &::forklift_interfaces::srv::rosidl_typesupport_c::ForkLiftDock_Response_message_type_support_handle;
@@ -201,7 +199,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, forklift
 // #include "cstddef"
 #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
-// #include "forklift_interfaces/msg/rosidl_typesupport_c__visibility_control.h"
+// #include "forklift_interfaces/srv/detail/fork_lift_dock__type_support.h"
 // already included above
 // #include "rosidl_typesupport_c/identifier.h"
 #include "rosidl_typesupport_c/service_type_support_dispatch.h"
@@ -283,7 +281,6 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_C_EXPORT_forklift_interfaces
 const rosidl_service_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, forklift_interfaces, srv, ForkLiftDock)() {
   return &::forklift_interfaces::srv::rosidl_typesupport_c::ForkLiftDock_service_type_support_handle;
