@@ -1,0 +1,43 @@
+[0.910s] Invoking command in '/home/doozy/ForkLift_AMR/src/doozy_forklift': PYTHONPATH=/home/doozy/ForkLift_AMR/build/doozy_forklift/prefix_override:/home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/doozy_forklift build --build-base /home/doozy/ForkLift_AMR/build/doozy_forklift/build install --record /home/doozy/ForkLift_AMR/build/doozy_forklift/install.log --single-version-externally-managed install_data
+[1.169s] running egg_info
+[1.188s] writing ../../build/doozy_forklift/doozy_forklift.egg-info/PKG-INFO
+[1.188s] writing dependency_links to ../../build/doozy_forklift/doozy_forklift.egg-info/dependency_links.txt
+[1.188s] writing entry points to ../../build/doozy_forklift/doozy_forklift.egg-info/entry_points.txt
+[1.188s] writing requirements to ../../build/doozy_forklift/doozy_forklift.egg-info/requires.txt
+[1.188s] writing top-level names to ../../build/doozy_forklift/doozy_forklift.egg-info/top_level.txt
+[1.226s] reading manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+[1.227s] writing manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+[1.227s] running build
+[1.227s] running build_py
+[1.227s] copying doozy_forklift/client_02.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.227s] copying doozy_forklift/publish_tf_02.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/dock_with_pallet_02.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/client_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/publish_tf_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/detect_pallet_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/dock_with_pallet_03.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/dock_with_pallet_04.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.228s] copying doozy_forklift/client_03.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.229s] copying doozy_forklift/dock_with_pallet_01.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.229s] copying doozy_forklift/__init__.py -> /home/doozy/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+[1.229s] running install
+[1.235s] running install_lib
+[1.255s] running install_data
+[1.255s] copying resource/doozy_forklift -> /home/doozy/ForkLift_AMR/install/doozy_forklift/share/ament_index/resource_index/packages
+[1.255s] copying package.xml -> /home/doozy/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift
+[1.255s] running install_egg_info
+[1.275s] removing '/home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift-0.0.0-py3.10.egg-info' (and everything under it)
+[1.275s] Copying ../../build/doozy_forklift/doozy_forklift.egg-info to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages/doozy_forklift-0.0.0-py3.10.egg-info
+[1.276s] running install_scripts
+[1.447s] Installing Client_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Client_02 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Client_03 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Detect_Pallet_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Dock_with_Pallet_01 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Dock_with_Pallet_02 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.447s] Installing Dock_with_Pallet_03 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.448s] Installing Dock_with_Pallet_04 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.448s] Installing Publish_TF script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.448s] Installing Publish_TF_2 script to /home/doozy/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+[1.448s] writing list of installed files to '/home/doozy/ForkLift_AMR/build/doozy_forklift/install.log'
+[1.467s] Invoked command in '/home/doozy/ForkLift_AMR/src/doozy_forklift' returned '0': PYTHONPATH=/home/doozy/ForkLift_AMR/build/doozy_forklift/prefix_override:/home/doozy/ForkLift_AMR/install/doozy_forklift/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/doozy_forklift build --build-base /home/doozy/ForkLift_AMR/build/doozy_forklift/build install --record /home/doozy/ForkLift_AMR/build/doozy_forklift/install.log --single-version-externally-managed install_data

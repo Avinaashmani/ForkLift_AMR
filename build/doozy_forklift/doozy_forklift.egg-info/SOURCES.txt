@@ -13,10 +13,10 @@ doozy_forklift/client_01.py
 doozy_forklift/client_02.py
 doozy_forklift/client_03.py
 doozy_forklift/detect_pallet_01.py
-doozy_forklift/dock_wiith_pallet_04.py
 doozy_forklift/dock_with_pallet_01.py
 doozy_forklift/dock_with_pallet_02.py
 doozy_forklift/dock_with_pallet_03.py
+doozy_forklift/dock_with_pallet_04.py
 doozy_forklift/publish_tf_01.py
 doozy_forklift/publish_tf_02.py
 resource/doozy_forklift
