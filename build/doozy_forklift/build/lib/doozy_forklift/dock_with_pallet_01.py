@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+import serial.serialutil
 import rclpy
 import math
 import time
+import serial
 from math import sqrt, pow, atan2
 from rclpy.node import Node
 from rclpy.time import Time
@@ -30,6 +32,8 @@ class Dockpallet(Node):
         self.tb3_y = 0.0
         self.tb3_angle_z = 0.0
 
+        self.switch_value = False
+
         self.pallet_x = 0.0
         self.pallet_y = 0.0
         self.pallet_angle_z = 0.0
@@ -39,8 +43,14 @@ class Dockpallet(Node):
 
         self.move_tug = Twist()
         
-        self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
-        self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
+        # self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
+        # self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
+
+        self.port = '/dev/ttyUSB0'
+        self.baudrate = 9600
+        self.arduino_1 = serial.Serial(self.port, self.baudrate, timeout=0)
+
+        self.create_timer(0.1, self.read_arduino)
 
     def dock_func(self, request, response):
         if self.navigate_flag and request.data is True:
@@ -53,6 +63,7 @@ class Dockpallet(Node):
                 response.message = str(e)
                 response.success = False
                 return response
+           
             angle_difference = self.pallet_angle_z - self.tb3_angle_z
             distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
             yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
@@ -110,6 +121,21 @@ class Dockpallet(Node):
         self.pallet_angle_z = self.euler_from_quaternion(pallet_angle_x, pallet_angle_y, 
                                                         pallet_angle_z, pallet_angle_w)
         
+    
+    def read_arduino(self):
+        
+        try:
+            self.arduino_01 = serial.Serial(self.port, self.baudrate, timeout=0.1)
+            switch_state = self.arduino_01.readline().decode().strip()
+            if switch_state == '0':
+                self.switch_value = True
+            else:
+                self.switch_value = False
+            print(self.switch_value)
+        
+        except serial.serialutil.SerialException as e:
+            self.get_logger().warn(e)
+    
     def navigation_status_callback(self, msg):
         self.navigate_flag = msg.data
     

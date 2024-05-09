@@ -1,6 +1,6 @@
 # generated from ament_cmake_export_include_directories/cmake/ament_cmake_export_include_directories-extras.cmake.in
 
-set(_exported_include_dirs "${sick_visionary_t_mini_DIR}/../../../include/sick_visionary_t_mini")
+set(_exported_include_dirs "${sick_visionary_t_mini_DIR}/../../../include")
 
 # append include directories to sick_visionary_t_mini_INCLUDE_DIRS
 # warn about not existing paths

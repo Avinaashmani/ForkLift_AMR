@@ -1,0 +1,216 @@
+[0.186s] Invoking command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/sick_visionary_t_mini -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini
+[0.225s] -- The C compiler identification is GNU 9.4.0
+[0.271s] -- The CXX compiler identification is GNU 9.4.0
+[0.274s] -- Check for working C compiler: /usr/bin/cc
+[0.333s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.334s] -- Detecting C compiler ABI info
+[0.390s] -- Detecting C compiler ABI info - done
+[0.397s] -- Detecting C compile features
+[0.397s] -- Detecting C compile features - done
+[0.399s] -- Check for working CXX compiler: /usr/bin/c++
+[0.472s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.473s] -- Detecting CXX compiler ABI info
+[0.544s] -- Detecting CXX compiler ABI info - done
+[0.551s] -- Detecting CXX compile features
+[0.552s] -- Detecting CXX compile features - done
+[0.553s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.575s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.575s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.641s] -- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)
+[0.662s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.667s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.736s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.759s] -- Found FastRTPS: /opt/ros/galactic/include  
+[0.817s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.847s] -- Found geometry_msgs: 2.2.4 (/opt/ros/galactic/share/geometry_msgs/cmake)
+[0.871s] -- Found rclpy: 1.9.3 (/opt/ros/galactic/share/rclpy/cmake)
+[0.872s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[0.881s] -- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+[0.962s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[1.058s] -- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)
+[1.252s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.323s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.347s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+[1.350s] -- Found python_cmake_module: 0.8.1 (/opt/ros/galactic/share/python_cmake_module/cmake)
+[1.378s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5") 
+[1.378s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.378s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+[1.379s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+[1.402s] -- Found PythonExtra: .so  
+[1.473s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.474s] -- Added test 'lint_cmake' to check CMake code style
+[1.474s] -- Added test 'xmllint' to check XML markup files
+[1.479s] -- Configuring done
+[1.515s] -- Generating done
+[1.517s] -- Build files have been written to: /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini
+[1.530s] Invoked command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/sick_visionary_t_mini -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini
+[1.533s] Invoking command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16
+[1.577s] [35m[1mScanning dependencies of target sick_visionary_t_mini__cpp[0m
+[1.581s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.587s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.769s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_generator_c[0m
+[1.775s] [  6%] Built target sick_visionary_t_mini__cpp
+[1.778s] [  9%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__rosidl_generator_c.dir/rosidl_generator_c/sick_visionary_t_mini/msg/detail/sick_t_mini__functions.c.o[0m
+[1.784s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.784s] [ 19%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.784s] [ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.816s] [ 22%] [32m[1mLinking C shared library libsick_visionary_t_mini__rosidl_generator_c.so[0m
+[1.849s] [ 22%] Built target sick_visionary_t_mini__rosidl_generator_c
+[1.858s] [ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.858s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.955s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_cpp[0m
+[1.970s] [ 32%] [32mBuilding CXX object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/sick_visionary_t_mini/msg/sick_t_mini__type_support.cpp.o[0m
+[1.971s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_introspection_cpp[0m
+[1.983s] [ 35%] [32mBuilding CXX object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.cpp.o[0m
+[1.996s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp[0m
+[2.011s] [ 38%] [32mBuilding CXX object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/sick_visionary_t_mini/msg/detail/dds_fastrtps/sick_t_mini__type_support.cpp.o[0m
+[2.032s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_c[0m
+[2.045s] [ 41%] [32mBuilding CXX object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_c.dir/rosidl_typesupport_c/sick_visionary_t_mini/msg/sick_t_mini__type_support.cpp.o[0m
+[2.068s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_introspection_c[0m
+[2.072s] [ 45%] [32m[1mLinking CXX shared library libsick_visionary_t_mini__rosidl_typesupport_c.so[0m
+[2.082s] [ 48%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.c.o[0m
+[2.108s] [ 48%] Built target sick_visionary_t_mini__rosidl_typesupport_c
+[2.111s] [ 51%] [32m[1mLinking C shared library libsick_visionary_t_mini__rosidl_typesupport_introspection_c.so[0m
+[2.138s] [ 51%] Built target sick_visionary_t_mini__rosidl_typesupport_introspection_c
+[2.260s] [ 54%] [32m[1mLinking CXX shared library libsick_visionary_t_mini__rosidl_typesupport_introspection_cpp.so[0m
+[2.299s] [ 58%] [32m[1mLinking CXX shared library libsick_visionary_t_mini__rosidl_typesupport_cpp.so[0m
+[2.343s] [ 58%] Built target sick_visionary_t_mini__rosidl_typesupport_introspection_cpp
+[2.347s] [ 58%] Built target sick_visionary_t_mini__rosidl_typesupport_cpp
+[2.477s] [ 61%] [32m[1mLinking CXX shared library libsick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.563s] [ 61%] Built target sick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp
+[2.572s] [ 64%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.755s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_fastrtps_c[0m
+[2.769s] [ 67%] [32mBuilding CXX object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support_c.cpp.o[0m
+[3.049s] [ 70%] [32m[1mLinking CXX shared library libsick_visionary_t_mini__rosidl_typesupport_fastrtps_c.so[0m
+[3.124s] [ 70%] Built target sick_visionary_t_mini__rosidl_typesupport_fastrtps_c
+[3.134s] [35m[1mScanning dependencies of target sick_visionary_t_mini[0m
+[3.145s] [ 70%] Built target sick_visionary_t_mini
+[3.155s] [35m[1mScanning dependencies of target sick_visionary_t_mini__py[0m
+[3.165s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.516s] [ 74%] Built target sick_visionary_t_mini__py
+[3.524s] [35m[1mScanning dependencies of target sick_visionary_t_mini__python[0m
+[3.542s] [ 77%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__python.dir/rosidl_generator_py/sick_visionary_t_mini/msg/_sick_t_mini_s.c.o[0m
+[3.609s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/sick_visionary_t_mini/libsick_visionary_t_mini__python.so[0m
+[3.650s] [ 80%] Built target sick_visionary_t_mini__python
+[3.658s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_introspection_c__pyext[0m
+[3.658s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_c__pyext[0m
+[3.661s] [35m[1mScanning dependencies of target sick_visionary_t_mini__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.671s] [ 83%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/sick_visionary_t_mini/_sick_visionary_t_mini_s.ep.rosidl_typesupport_c.c.o[0m
+[3.674s] [ 87%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/sick_visionary_t_mini/_sick_visionary_t_mini_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.678s] [ 90%] [32mBuilding C object CMakeFiles/sick_visionary_t_mini__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/sick_visionary_t_mini/_sick_visionary_t_mini_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.728s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.729s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.735s] [100%] [32m[1mLinking CXX shared library rosidl_generator_py/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[3.761s] [100%] Built target sick_visionary_t_mini__rosidl_typesupport_introspection_c__pyext
+[3.769s] [100%] Built target sick_visionary_t_mini__rosidl_typesupport_c__pyext
+[3.792s] [100%] Built target sick_visionary_t_mini__rosidl_typesupport_fastrtps_c__pyext
+[3.807s] Invoked command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16
+[3.863s] Invoking command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini
+[3.869s] -- Install configuration: ""
+[3.869s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/ament_index/resource_index/rosidl_interfaces/sick_visionary_t_mini
+[3.869s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.869s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/sick_t_mini.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/rosidl_generator_c__visibility_control.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__struct.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__functions.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__functions.c
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/library_path.sh
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/library_path.dsv
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_generator_c.so
+[3.870s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_generator_c.so" to ""
+[3.870s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.870s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.870s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__rosidl_typesupport_fastrtps_c.h
+[3.870s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_fastrtps_c.so
+[3.871s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_fastrtps_c.so" to ""
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__rosidl_typesupport_fastrtps_cpp.hpp
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/dds_fastrtps
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp.so
+[3.871s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.871s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.c
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__rosidl_typesupport_introspection_c.h
+[3.871s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_introspection_c.so
+[3.872s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_introspection_c.so" to ""
+[3.872s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_c.so
+[3.872s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_c.so" to ""
+[3.872s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.872s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.872s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.872s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__struct.hpp
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__traits.hpp
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__builder.hpp
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/sick_t_mini.hpp
+[3.873s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini
+[3.873s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg
+[3.873s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__rosidl_typesupport_introspection_cpp.hpp
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/include/sick_visionary_t_mini/msg/detail/sick_t_mini__type_support.cpp
+[3.873s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_introspection_cpp.so
+[3.874s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_introspection_cpp.so" to ""
+[3.874s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_cpp.so
+[3.874s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__rosidl_typesupport_cpp.so" to ""
+[3.874s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/pythonpath.sh
+[3.874s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/pythonpath.dsv
+[3.874s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/__init__.py
+[3.900s] Compiling '/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/__init__.py'...
+[3.903s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/msg
+[3.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/msg/_sick_t_mini.py
+[3.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/msg/__init__.py
+[3.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/msg/_sick_t_mini_s.c
+[3.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[3.905s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[3.906s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.907s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[3.907s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/python3.8/site-packages/sick_visionary_t_mini/sick_visionary_t_mini_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[3.908s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__python.so
+[3.908s] -- Set runtime path of "/home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/lib/libsick_visionary_t_mini__python.so" to ""
+[3.908s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/msg/SickTMini.idl
+[3.908s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/msg/SickTMini.msg
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/ament_index/resource_index/package_run_dependencies/sick_visionary_t_mini
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/ament_index/resource_index/parent_prefix_path/sick_visionary_t_mini
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/ament_prefix_path.sh
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/ament_prefix_path.dsv
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/path.sh
+[3.909s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/environment/path.dsv
+[3.910s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/local_setup.bash
+[3.910s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/local_setup.sh
+[3.910s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/local_setup.zsh
+[3.910s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/local_setup.dsv
+[3.910s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/package.dsv
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/ament_index/resource_index/packages/sick_visionary_t_mini
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_generator_cExport.cmake
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_generator_cExport-noconfig.cmake
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_introspection_cExport.cmake
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.911s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_cExport.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_cExport-noconfig.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_generator_cppExport.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_introspection_cppExport.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_cppExport.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_mini__rosidl_typesupport_cppExport-noconfig.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/rosidl_cmake-extras.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.912s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/ament_cmake_export_libraries-extras.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/ament_cmake_export_targets-extras.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_miniConfig.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/cmake/sick_visionary_t_miniConfig-version.cmake
+[3.913s] -- Installing: /home/avinaash/ForkLift_AMR/install/sick_visionary_t_mini/share/sick_visionary_t_mini/package.xml
+[3.916s] Invoked command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_robot:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini

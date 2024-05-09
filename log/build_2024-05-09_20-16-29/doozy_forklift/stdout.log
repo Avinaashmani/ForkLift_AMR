@@ -1,0 +1,31 @@
+running egg_info
+writing ../../build/doozy_forklift/doozy_forklift.egg-info/PKG-INFO
+writing dependency_links to ../../build/doozy_forklift/doozy_forklift.egg-info/dependency_links.txt
+writing entry points to ../../build/doozy_forklift/doozy_forklift.egg-info/entry_points.txt
+writing requirements to ../../build/doozy_forklift/doozy_forklift.egg-info/requires.txt
+writing top-level names to ../../build/doozy_forklift/doozy_forklift.egg-info/top_level.txt
+reading manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+writing manifest file '../../build/doozy_forklift/doozy_forklift.egg-info/SOURCES.txt'
+running build
+running build_py
+copying doozy_forklift/dock_with_pallet_03.py -> /home/avinaash/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift
+running install
+running install_lib
+copying /home/avinaash/ForkLift_AMR/build/doozy_forklift/build/lib/doozy_forklift/dock_with_pallet_03.py -> /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift
+byte-compiling /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_03.py to dock_with_pallet_03.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/doozy_forklift/doozy_forklift.egg-info to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info
+running install_scripts
+Installing Client_01 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Client_02 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Client_03 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Detect_Pallet_01 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Dock_with_Pallet_01 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Dock_with_Pallet_02 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Dock_with_Pallet_03 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Dock_with_Pallet_04 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Publish_TF script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+Installing Publish_TF_2 script to /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift
+writing list of installed files to '/home/avinaash/ForkLift_AMR/build/doozy_forklift/install.log'

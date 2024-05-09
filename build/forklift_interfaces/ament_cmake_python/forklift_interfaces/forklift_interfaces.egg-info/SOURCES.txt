@@ -1,8 +1,0 @@
-setup.py
-forklift_interfaces/__init__.py
-forklift_interfaces.egg-info/PKG-INFO
-forklift_interfaces.egg-info/SOURCES.txt
-forklift_interfaces.egg-info/dependency_links.txt
-forklift_interfaces.egg-info/top_level.txt
-forklift_interfaces/srv/__init__.py
-forklift_interfaces/srv/_fork_lift_dock.py

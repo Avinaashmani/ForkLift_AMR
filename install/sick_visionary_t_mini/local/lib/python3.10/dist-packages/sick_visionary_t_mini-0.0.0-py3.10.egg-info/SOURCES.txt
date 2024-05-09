@@ -1,8 +1,0 @@
-setup.py
-sick_visionary_t_mini/__init__.py
-sick_visionary_t_mini.egg-info/PKG-INFO
-sick_visionary_t_mini.egg-info/SOURCES.txt
-sick_visionary_t_mini.egg-info/dependency_links.txt
-sick_visionary_t_mini.egg-info/top_level.txt
-sick_visionary_t_mini/msg/__init__.py
-sick_visionary_t_mini/msg/_sick_t_mini.py

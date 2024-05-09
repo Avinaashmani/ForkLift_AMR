@@ -4,6 +4,7 @@ import rclpy
 import tf2_ros
 import math
 import time
+import serial
 from math import sqrt, atan2
 from rclpy.node import Node
 from rclpy.time import Time
@@ -25,6 +26,10 @@ class Dockpallet(Node):
         self.docking_undocking_diagnostics = self.create_publisher(String, '/dock_undock_diag', 10)
         self.create_subscription(Bool, '/navigation_status', self.navigation_status_callback, 10)
         self.create_subscription(SickTMini, '/pallet_detection', self.sick_callback, 10)
+
+        self.port = '/dev/ttyUSB01'
+
+        self.limit_switch_01 = serial.Serial()
 
         self.pallet_presence = False
         self.pallet_frame = 'pallet_center'
