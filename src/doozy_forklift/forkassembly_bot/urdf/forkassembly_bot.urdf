@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="forkassembly_bot">
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="0 -2.77555756156289E-17 0.015"
+        rpy="0 0 0" />
+      <mass
+        value="9.42477796076938E-05" />
+      <inertia
+        ixx="7.09214541547896E-09"
+        ixy="2.47386779877309E-27"
+        ixz="-2.70420608685873E-26"
+        iyy="7.09214541547896E-09"
+        iyz="-2.1405907164421E-26"
+        izz="4.71238898038469E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0775302608852084 -0.00277914212900654 -0.183841215131505"
+        rpy="0 0 0" />
+      <mass
+        value="5.14595920970675" />
+      <inertia
+        ixx="0.0392351899209992"
+        ixy="0.000591771072706495"
+        ixz="2.361947889653E-11"
+        iyy="0.0226822685145334"
+        iyz="-6.01231772547955E-13"
+        izz="0.0362321664032743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="revolute">
+    <origin
+      xyz="0.081948 0.0029317 0.327"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00106067575604794 -0.0296480490530116 1.65067645663264E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.21637691245054" />
+      <inertia
+        ixx="0.00444641009837512"
+        ixy="-0.000135205852675951"
+        ixz="-4.91413457532059E-07"
+        iyy="0.00822090600872782"
+        iyz="-1.76549881580738E-08"
+        izz="0.00444460729125196" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.091779 0.27189 -0.226"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_wheel_link" />
+    <axis
+      xyz="0.035752 -0.99936 0" />
+    <dynamics
+      friction="1000" />
+  </joint>
+  <link
+    name="r_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.00106067575155485 0.0296480490531726 1.65109847738432E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.21637691245054" />
+      <inertia
+        ixx="0.00444641036674466"
+        ixy="-0.000135205843054646"
+        ixz="4.92241199112388E-07"
+        iyy="0.0082209060090726"
+        iyz="1.76846137222775E-08"
+        izz="0.00444460702253732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.072116 -0.27776 -0.226"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_wheel_link" />
+    <axis
+      xyz="-0.035752 0.99936 0" />
+    <dynamics
+      friction="1000" />
+  </joint>
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="-0.360061124429578 6.14083033533275E-05 -0.058829360255419"
+        rpy="0 0 0" />
+      <mass
+        value="27.9556346595846" />
+      <inertia
+        ixx="2.13609819501259"
+        ixy="-8.37726757678595E-05"
+        ixz="-0.596469627860742"
+        iyy="2.85649733446574"
+        iyz="9.61587497073129E-05"
+        izz="3.29047551528355" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/body_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/body_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="body_joint"
+    type="continuous">
+    <origin
+      xyz="-0.081948 -0.0029317 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="body_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_laser_link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 -0.0395000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.39709731141375" />
+      <inertia
+        ixx="0.000365362617943268"
+        ixy="1.83524188162459E-51"
+        ixz="-1.21245706409418E-36"
+        iyy="0.000365362617943268"
+        iyz="6.46109837352298E-20"
+        izz="0.000317677849131001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_laser_jont"
+    type="fixed">
+    <origin
+      xyz="0.37683 0.36832 -0.18564"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="l_laser_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r_laser_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 1.38777878078145E-16 -0.0395"
+        rpy="0 0 0" />
+      <mass
+        value="0.39709731141375" />
+      <inertia
+        ixx="0.000365362617943268"
+        ixy="2.74225140408896E-51"
+        ixz="-1.21245706409418E-36"
+        iyy="0.000365362617943268"
+        iyz="1.53831787512682E-19"
+        izz="0.000317677849131001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.37683 -0.36832 -0.18564"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="r_laser_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_roller_link">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 -0.0449999999999999 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.312850268419892" />
+      <inertia
+        ixx="0.00030732466509109"
+        ixy="2.86780554083019E-19"
+        ixz="-2.02528219753744E-21"
+        iyy="0.000204892709371601"
+        iyz="1.21721281498403E-19"
+        izz="0.00030732466509109" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/l_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.3688 0.245 -0.26964"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="l_roller_link" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="r_roller_link">
+    <inertial>
+      <origin
+        xyz="-4.44089209850063E-16 0.0450000000000001 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.312850268419892" />
+      <inertia
+        ixx="0.00030732466509109"
+        ixy="2.84239455241256E-19"
+        ixz="-2.2592442056983E-21"
+        iyy="0.000204892709371601"
+        iyz="2.17548501101446E-19"
+        izz="0.00030732466509109" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forkassembly_bot/meshes/r_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.3688 -0.245 -0.26964"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="r_roller_link" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+</robot>
