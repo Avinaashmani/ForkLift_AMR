@@ -124,17 +124,17 @@ class Dockpallet(Node):
     
     def read_arduino(self):
         
-        try:
-            self.arduino_01 = serial.Serial(self.port, self.baudrate, timeout=0.1)
-            switch_state = self.arduino_01.readline().decode().strip()
-            if switch_state == '0':
-                self.switch_value = True
-            else:
-                self.switch_value = False
-            print(self.switch_value)
+        # try:
+        self.arduino_01 = serial.Serial(self.port, self.baudrate, timeout=0.1)
+        switch_state = self.arduino_01.readline().decode().strip()
+        if switch_state == '0':
+            self.switch_value = True
+        else:
+            self.switch_value = False
+        print(self.switch_value)
         
-        except serial.serialutil.SerialException as e:
-            self.get_logger().warn(e)
+        # except serial.serialutil.SerialException as e:
+        #     self.get_logger().warn(e)
     
     def navigation_status_callback(self, msg):
         self.navigate_flag = msg.data

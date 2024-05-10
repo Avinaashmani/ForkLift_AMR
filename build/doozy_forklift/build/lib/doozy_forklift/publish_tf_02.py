@@ -32,7 +32,7 @@ class PalletTF(Node):
 
         # self.create_subscription(SickTMini, '/pallet_detection', self.sick_callback, 10)
         self.create_timer(0.1, self.publish_tf)
-        self.base_frame = 'map'
+        self.base_frame = 'odom'
 
     def publish_tf(self):
 
@@ -40,31 +40,31 @@ class PalletTF(Node):
         tf1.header.frame_id = self.base_frame
         tf1.child_frame_id = 'pallet_center'
         tf1.header.stamp = Time().to_msg()
-        tf1.transform.translation.x = 1.0
+        tf1.transform.translation.x = 2.0
         tf1.transform.translation.y = 0.0
         tf1.transform.rotation.z = 1.0 
         tf1.transform.rotation.w = 0.0
         self.tf_broadcaster.sendTransform(tf1)
         
-        # tf2 = TransformStamped()
-        # tf2.header.frame_id = self.base_frame
-        # tf2.child_frame_id = 'dolly_02'
-        # tf2.header.stamp = Time().to_msg()
-        # tf2.transform.translation.x = -1.75910
-        # tf2.transform.translation.y = -1.40089
-        # tf2.transform.rotation.z = 1.0 
-        # tf2.transform.rotation.w = 0.0
-        # self.tf_broadcaster.sendTransform(tf2)
+        tf2 = TransformStamped()
+        tf2.header.frame_id = self.base_frame
+        tf2.child_frame_id = 'pallet_right_corner'
+        tf2.header.stamp = Time().to_msg()
+        tf2.transform.translation.x = 2.0
+        tf2.transform.translation.y = -0.5
+        tf2.transform.rotation.z = 1.0 
+        tf2.transform.rotation.w = 0.0
+        self.tf_broadcaster.sendTransform(tf2)
 
-        # sick_tf = TransformStamped()
-        # sick_tf.header.frame_id = self.base_frame
-        # sick_tf.child_frame_id = 'sick_visionary_t_mini'
-        # sick_tf.header.stamp = Time().to_msg()
-        # sick_tf.transform.translation.x = self.x_point
-        # sick_tf.transform.translation.y = self.y_point
-        # sick_tf.transform.rotation.z = 1.0
-        # sick_tf.transform.rotation.w = 0.0
-        # self.tf_broadcaster.sendTransform(sick_tf)
+        sick_tf = TransformStamped()
+        sick_tf.header.frame_id = self.base_frame
+        sick_tf.child_frame_id = 'pallet_left_corner'
+        sick_tf.header.stamp = Time().to_msg()
+        sick_tf.transform.translation.x = 2.0
+        sick_tf.transform.translation.y = 0.5
+        sick_tf.transform.rotation.z = 1.0
+        sick_tf.transform.rotation.w = 0.0
+        self.tf_broadcaster.sendTransform(sick_tf)
 
         # print(self.x_point)
         # print(self.y_point)
