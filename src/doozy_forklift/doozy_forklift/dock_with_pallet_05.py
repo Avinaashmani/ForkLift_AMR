@@ -150,8 +150,7 @@ class Dockpallet(Node):
             distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
             yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
 
-            if abs(distance) > 0.5  'and                                                                                                                                                                                                            ':
-                    
+            if abs(distance) > 0.5 :
                 if self.load_present is True:
                     self.move_tug.linear.x = 0.0
                     self.move_tug.angular.z = 0.0
