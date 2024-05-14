@@ -1,0 +1,43 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/doozy/ForkLift_AMR/install/sick_visionary_t_mini/include/**",
+        "/home/doozy/ForkLift_AMR/install/forklift_interfaces/include/**",
+        "/home/doozy/doozy_robotics/doozy_ws_2/install/sick_visionary_t_mini/include/**",
+        "/home/doozy/do_ws/install/undock_msgs/include/**",
+        "/home/doozy/do_ws/install/doozy_interface/include/**",
+        "/home/doozy/do_ws/install/autodock_msgs/include/**",
+        "/home/doozy/ros2_ws/install/twist_mux/include/**",
+        "/home/doozy/ros2_ws/install/serial/include/**",
+        "/home/doozy/ros2_ws/install/pointcloud_to_laserscan/include/**",
+        "/home/doozy/ros2_ws/install/nav2_collision_monitor/include/**",
+        "/home/doozy/ros2_ws/install/nav2_util/include/**",
+        "/home/doozy/ros2_ws/install/nav2_msgs/include/**",
+        "/home/doozy/ros2_ws/install/doozy_interface/include/**",
+        "/home/doozy/neuronbot2_ros2_ws/install/serial/include/**",
+        "/home/doozy/neuronbot2_ros2_ws/install/openslam_gmapping/include/**",
+        "/home/doozy/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/home/doozy/turtlebot3_ws/install/turtlebot3_msgs/include/**",
+        "/home/doozy/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/doozy/turtlebot3_ws/install/nav2_straightline_planner/include/**",
+        "/home/doozy/turtlebot3_ws/install/nav2_custom_local_planner_controller/include/**",
+        "/home/doozy/turtlebot3_ws/install/custom_msgs/include/**",
+        "/home/doozy/daimler_tugger/doozy_ws_2/install/sick_visionary_t_mini/include/**",
+        "/home/doozy/daimler_tugger/doozy_ws_2/install/doozy_actions/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

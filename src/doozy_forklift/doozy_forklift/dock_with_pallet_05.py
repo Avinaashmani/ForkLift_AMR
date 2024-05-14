@@ -50,8 +50,8 @@ class Dockpallet(Node):
 
         self.pallet_presence = True
         self.pallet_frame = 'pallet_center'
-        self.source_frame = 'odom'
-        self.tb3_frame = 'base_link'
+        self.source_frame = 'map'
+        self.tb3_frame = 'map'
 
         self.tb3_x = 0.0
         self.tb3_y = 0.0
@@ -141,13 +141,16 @@ class Dockpallet(Node):
                 self.docking_undocking_diagnostics.publish(self.diagnostics)
                 self.dock_flag = False
                 self.dock_completed_flag = False
+                self.move_tug.linear.x = 0.0
+                self.move_tug.angular.z = 0.0
+                self.cmd_pub.publish(self.move_tug)
                 
             distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
             angle_difference = self.pallet_angle_z - self.tb3_angle_z
             distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
             yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
 
-            if abs(distance) > 1.0:
+            if abs(distance) > 0.5  'and                                                                                                                                                                                                            ':
                     
                 if self.load_present is True:
                     self.move_tug.linear.x = 0.0
@@ -171,18 +174,18 @@ class Dockpallet(Node):
                     self.diagnostics.data = "Docking : LOADED : Underprocess."
                     self.docking_undocking_diagnostics.publish(self.diagnostics)
 
-                    if abs(yaw_angle_error) > 0.10:
+                    if abs(yaw_angle_error) > 0.50:
                         
                         if abs(angle_difference) > 0.1:
                             
                             if yaw_angle_error > 0.0:
-                                self.move_tug.angular.z = 0.2
+                                self.move_tug.angular.z = 0.1
                                 self.cmd_pub.publish(self.move_tug)
                             else:
-                                self.move_tug.angular.z = -0.2
+                                self.move_tug.angular.z = -0.1
                                 self.cmd_pub.publish(self.move_tug)
                     else:
-                        self.move_tug.linear.x = 0.09
+                        self.move_tug.linear.x = 0.10
                         self.cmd_pub.publish(self.move_tug)
             else:         
                 self.move_tug.linear.x = 0.02
@@ -211,23 +214,23 @@ class Dockpallet(Node):
                 distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
                 yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
 
-                if self.no_load_present
-                if abs(distance) < 0.7:
+                if self.no_load_present:
+                    if abs(distance) < 0.7:
                     
-                    self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
+                        self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
                     
-                    print("---------------")
-                    print(distance)
-                    print(distance_error)
-                    print(yaw_angle_error)
-                    print(angle_difference)
-                    print("---------------")
+                        print("---------------")
+                        print(distance)
+                        print(distance_error)
+                        print(yaw_angle_error)
+                        print(angle_difference)
+                        print("---------------")
 
-                    self.move_tug.linear.x = -0.07
-                    self.cmd_pub.publish(self.move_tug) 
+                        self.move_tug.linear.x = -0.07
+                        self.cmd_pub.publish(self.move_tug) 
 
-                    self.diagnostics.data = "Undocking :LOADED : Underprocess..."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics)
+                        self.diagnostics.data = "Undocking :LOADED : Underprocess..."
+                        self.docking_undocking_diagnostics.publish(self.diagnostics)
 
                 # if abs(yaw_angle_error) < 0.10:
                         
@@ -241,18 +244,18 @@ class Dockpallet(Node):
                 #         self.move_tug.angular.z = -0.2
                 #         self.cmd_pub.publish(self.move_tug)
                 
-                else:
-                    self.move_tug.linear.x = 0.0
-                    self.move_tug.angular.z = 0.0
-                    self.cmd_pub.publish(self.move_tug)
-                    self.undock_completed_flag = True
+                    else:
+                        self.move_tug.linear.x = 0.0
+                        self.move_tug.angular.z = 0.0
+                        self.cmd_pub.publish(self.move_tug)
+                        self.undock_completed_flag = True
                     
-                    self.get_logger().warn("Undocking : LOADED :Completed.")
-                    self.diagnostics.data = "Undocking : LOADED :Completed."
+                        self.get_logger().warn("Undocking : LOADED :Completed.")
+                        self.diagnostics.data = "Undocking : LOADED :Completed."
                     
-                    self.docking_undocking_diagnostics.publish(self.diagnostics)
-                    self.undock_flag = False
-                    return True
+                        self.docking_undocking_diagnostics.publish(self.diagnostics)
+                        self.undock_flag = False
+                        return True
 
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().error("LookupException: {0}".format(str(e)))
