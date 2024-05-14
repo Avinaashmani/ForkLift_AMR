@@ -1,0 +1,409 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <model name='testfork_bot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>0 0 0.066 0 -0 0</pose>
+        <mass>0.0103673</mass>
+        <inertia>
+          <ixx>1.51181e-05</ixx>
+          <ixy>2.20927e-53</ixy>
+          <ixz>-6.61135e-39</ixz>
+          <iyy>1.51181e-05</iyy>
+          <iyz>5.11843e-20</iyz>
+          <izz>1.29591e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- BASE JOINT -->
+
+    <joint name='base_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 0 0.313 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>base_link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='base_link'>
+      <pose relative_to='base_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.046634 0.001668 -0.197948 0 -0 0</pose>
+        <mass>4.40746</mass>
+        <inertia>
+          <ixx>0.0217845</ixx>
+          <ixy>0.000191989</ixy>
+          <ixz>-1.19463e-08</ixz>
+          <iyy>0.016425</iyy>
+          <iyz>3.33903e-07</iyz>
+          <izz>0.026132</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- FORK JOINT -->
+
+    <joint name='fork_joint' type='revolute'>
+      <pose relative_to='base_link'>0 0 0 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>fork_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fork_link'>
+      <pose relative_to='fork_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.321016 -0.005211 -0.126239 0 -0 0</pose>
+        <mass>4.34612</mass>
+        <inertia>
+          <ixx>0.235356</ixx>
+          <ixy>0.0129971</ixy>
+          <ixz>-0.197767</ixz>
+          <iyy>0.850051</iyy>
+          <iyz>-0.000466808</iyz>
+          <izz>0.912405</izz>
+        </inertia>
+      </inertial>
+      <collision name='fork_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/fork_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='fork_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/fork_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- LEFT ROLLER -->
+
+    <joint name='l_roller_joint' type='revolute'>
+      <pose relative_to='fork_link'>-1.2 0.235 -0.277 0 -0 0</pose>
+      <parent>fork_link</parent>
+      <child>l_roller_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_roller_link'>
+      <pose relative_to='l_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.03 0 0 -0 0</pose>
+        <mass>0.296881</mass>
+        <inertia>
+          <ixx>0.000209672</ixx>
+          <ixy>-1.02523e-19</ixy>
+          <ixz>-5.97749e-34</ixz>
+          <iyy>0.000241215</iyy>
+          <iyz>1.71101e-19</iyz>
+          <izz>0.000209672</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_roller_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/l_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_roller_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/l_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- LIDAR -->
+
+    <link name='laser_link'>
+      <pose relative_to='laser_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.0395 0 -0 0</pose>
+        <mass>0.397097</mass>
+        <inertia>
+          <ixx>0.000365363</ixx>
+          <ixy>4.15988e-51</ixy>
+          <ixz>-1.21246e-36</ixz>
+          <iyy>0.000365363</iyy>
+          <iyz>6.4611e-20</iyz>
+          <izz>0.000317678</izz>
+        </inertia>
+      </inertial>
+      <collision name='laser_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='laser_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- RIGHT ROLLER -->
+
+    <joint name='r_roller_joint' type='revolute'>
+      <pose relative_to='fork_link'>-1.2 -0.235 -0.277 0 -0 0</pose>
+      <parent>fork_link</parent>
+      <child>r_roller_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_roller_link'>
+      <pose relative_to='r_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.03 0 0 -0 0</pose>
+        <mass>0.296881</mass>
+        <inertia>
+          <ixx>0.000209672</ixx>
+          <ixy>-1.02523e-19</ixy>
+          <ixz>2.96329e-34</ixz>
+          <iyy>0.000241215</iyy>
+          <iyz>-8.4872e-20</iyz>
+          <izz>0.000209672</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_roller_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/r_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_roller_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/r_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- LEFT WHEEL -->
+
+    <joint name='l_wheel_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.00808 0.22586 -0.238 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>l_wheel_link</child>
+      <axis>
+        <xyz>0.035753 -0.99936 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1000</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_wheel_link'>
+      <pose relative_to='l_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000981 -0.027433 0 0 -0 0</pose>
+        <mass>0.919701</mass>
+        <inertia>
+          <ixx>0.00159108</ixx>
+          <ixy>-3.20791e-05</ixy>
+          <ixz>-1.09337e-22</ixz>
+          <iyy>0.00248659</iyy>
+          <iyz>1.60764e-19</iyz>
+          <izz>0.00158993</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+<!-- RIGHT WHEEL -->
+
+    <joint name='r_wheel_joint' type='revolute'>
+      <pose relative_to='base_link'>0.00808 -0.22586 -0.238 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>r_wheel_link</child>
+      <axis>
+        <xyz>-0.035753 0.99936 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1000</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_wheel_link'>
+      <pose relative_to='r_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000981 0.027433 0 0 -0 0</pose>
+        <mass>0.919701</mass>
+        <inertia>
+          <ixx>0.00159108</ixx>
+          <ixy>-3.20791e-05</ixy>
+          <ixz>-6.27669e-20</ixz>
+          <iyy>0.00248659</iyy>
+          <iyz>-4.4271e-20</iyz>
+          <izz>0.00158993</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://testfork_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

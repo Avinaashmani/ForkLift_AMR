@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="testfork_bot">
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="0 1.11022302462516E-16 0.0660000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0103672557568463" />
+      <inertia
+        ixx="1.51180507074212E-05"
+        ixy="2.20927225779499E-53"
+        ixz="-6.61134905663436E-39"
+        iyy="1.51180507074212E-05"
+        iyz="5.11842726481812E-20"
+        izz="1.29590696960579E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0466338417542914 0.00166838658105484 -0.197948093967017"
+        rpy="0 0 0" />
+      <mass
+        value="4.40745620573922" />
+      <inertia
+        ixx="0.021784483413787"
+        ixy="0.000191988905873379"
+        ixz="-1.19463031961666E-08"
+        iyy="0.0164249823959744"
+        iyz="3.33903133803458E-07"
+        izz="0.0261319599388608" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.313"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+<gazebo reference="base_link">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+</gazebo>
+
+  <link
+    name="l_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.000981463839062835 -0.0274333457072393 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.919701249338412" />
+      <inertia
+        ixx="0.00159108258705644"
+        ixy="-3.20790516164024E-05"
+        ixz="-1.09337499599256E-22"
+        iyy="0.00248659119503753"
+        iyz="1.60764425995039E-19"
+        izz="0.00158993491700959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0080803 0.22586 -0.238"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_wheel_link" />
+    <axis
+      xyz="0.035753 -0.99936 0" />
+    <dynamics
+      friction="1000" />
+  </joint>
+  <link
+    name="r_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.000981463839062946 0.0274333457072392 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.919701249338412" />
+      <inertia
+        ixx="0.00159108258705644"
+        ixy="-3.20790516164023E-05"
+        ixz="-6.2766873479264E-20"
+        iyy="0.00248659119503753"
+        iyz="-4.42710351386093E-20"
+        izz="0.00158993491700959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0080803 -0.22586 -0.238"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_wheel_link" />
+    <axis
+      xyz="-0.035753 0.99936 0" />
+    <dynamics
+      friction="1000" />
+  </joint>
+  <link
+    name="fork_link">
+    <inertial>
+      <origin
+        xyz="-0.321016161245498 -0.00521093680723594 -0.126239405270938"
+        rpy="0 0 0" />
+      <mass
+        value="4.34611778129578" />
+      <inertia
+        ixx="0.235355673977776"
+        ixy="0.0129971217896649"
+        ixz="-0.197766588495587"
+        iyy="0.850050726085082"
+        iyz="-0.000466807633100775"
+        izz="0.912404778656017" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/fork_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/fork_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fork_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fork_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_roller_link">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -0.03 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.296880505764235" />
+      <inertia
+        ixx="0.000209671857195991"
+        ixy="-1.02523136977769E-19"
+        ixz="-5.97749268396192E-34"
+        iyy="0.000241215410933441"
+        iyz="1.71100655345369E-19"
+        izz="0.000209671857195991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/l_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/l_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="l_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.2 0.235 -0.277"
+      rpy="0 0 0" />
+    <parent
+      link="fork_link" />
+    <child
+      link="l_roller_link" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+
+  <link
+    name="r_roller_link">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 0.03 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.296880505764235" />
+      <inertia
+        ixx="0.000209671857195991"
+        ixy="-1.02523136977769E-19"
+        ixz="2.96328917385608E-34"
+        iyy="0.000241215410933441"
+        iyz="-8.48720395703909E-20"
+        izz="0.000209671857195991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/r_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/r_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="r_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.2 -0.235 -0.277"
+      rpy="0 0 0" />
+    <parent
+      link="fork_link" />
+    <child
+      link="r_roller_link" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="0 2.22044604925031E-16 -0.0395000000000003"
+        rpy="0 0 0" />
+      <mass
+        value="0.39709731141375" />
+      <inertia
+        ixx="0.000365362617943268"
+        ixy="4.15988159834906E-51"
+        ixz="-1.21245706409418E-36"
+        iyy="0.000365362617943268"
+        iyz="6.46109837352292E-20"
+        izz="0.000317677849131001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://testfork_bot/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.33 -0.22 -0.141"
+      rpy="0 0 0" />
+    <parent
+      link="fork_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+<gazebo reference="laser_link">
+  <disableFixedJointLumping>true</disableFixedJointLumping> 
+  <preserveFixedJoint>true</preserveFixedJoint>
+</gazebo>
+
+</robot>

@@ -1,0 +1,29 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"body_link" [label="body_link"];
+"l_laser_link" [label="l_laser_link"];
+"l_roller_link" [label="l_roller_link"];
+"r_laser_link" [label="r_laser_link"];
+"r_roller_link" [label="r_roller_link"];
+"l_wheel_link" [label="l_wheel_link"];
+"r_wheel_link" [label="r_wheel_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_joint" [label="xyz: 0.081948 0.0029317 0.327 \nrpy: 0 -0 0"]
+"base_joint" -> "base_link"
+"base_link" -> "body_joint" [label="xyz: -0.081948 -0.0029317 0 \nrpy: 0 -0 0"]
+"body_joint" -> "body_link"
+"body_link" -> "l_laser_jont" [label="xyz: 0.37683 0.36832 -0.18564 \nrpy: 0 -0 0"]
+"l_laser_jont" -> "l_laser_link"
+"body_link" -> "l_roller_joint" [label="xyz: -1.3688 0.245 -0.26964 \nrpy: 0 -0 0"]
+"l_roller_joint" -> "l_roller_link"
+"body_link" -> "r_laser_joint" [label="xyz: 0.37683 -0.36832 -0.18564 \nrpy: 0 -0 0"]
+"r_laser_joint" -> "r_laser_link"
+"body_link" -> "r_roller_joint" [label="xyz: -1.3688 -0.245 -0.26964 \nrpy: 0 -0 0"]
+"r_roller_joint" -> "r_roller_link"
+"base_link" -> "l_wheel_joint" [label="xyz: -0.091779 0.27189 -0.226 \nrpy: 0 -0 0"]
+"l_wheel_joint" -> "l_wheel_link"
+"base_link" -> "r_wheel_joint" [label="xyz: -0.072116 -0.27776 -0.226 \nrpy: 0 -0 0"]
+"r_wheel_joint" -> "r_wheel_link"
+}

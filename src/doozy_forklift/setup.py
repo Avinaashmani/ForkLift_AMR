@@ -1,5 +1,8 @@
 from setuptools import setup
-
+from glob import glob
+from setuptools import setup
+from setuptools import find_packages
+import os
 package_name = 'doozy_forklift'
 
 setup(
@@ -10,6 +13,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
+        (os.path.join('share', package_name), glob('urdf/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,7 +34,8 @@ setup(
          'Dock_with_Pallet_04 = doozy_forklift.dock_with_pallet_04:main',
          'Detect_Pallet_01 = doozy_forklift.detect_pallet_01:main',
          'Publish_TF = doozy_forklift.publish_tf_01:main',
-         'Publish_TF_2 = doozy_forklift.publish_tf_02:main'
+         'Publish_TF_2 = doozy_forklift.publish_tf_02:main',
+         'state_publisher = doozy_forklift.robot_state_publisher:main',
         ],
     },
 )

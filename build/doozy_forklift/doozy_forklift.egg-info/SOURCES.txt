@@ -19,7 +19,13 @@ doozy_forklift/dock_with_pallet_03.py
 doozy_forklift/dock_with_pallet_04.py
 doozy_forklift/publish_tf_01.py
 doozy_forklift/publish_tf_02.py
+doozy_forklift/robot_state_publisher.py
+launch/forklift_gazebo.launch.py
+launch/forklift_robot_state_publisher.launch.py
 resource/doozy_forklift
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
+urdf/test2_bot.csv
+urdf/test2_bot.sdf
+urdf/test2_bot.urdf

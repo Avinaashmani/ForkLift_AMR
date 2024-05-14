@@ -1,0 +1,56 @@
+[0.191s] Invoking command in '/home/avinaash/ForkLift_AMR/build/forklift_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_bot -- -j16 -l16
+[0.227s] Invoked command in '/home/avinaash/ForkLift_AMR/build/forklift_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_bot -- -j16 -l16
+[0.250s] Invoking command in '/home/avinaash/ForkLift_AMR/build/forklift_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/forklift_bot
+[0.255s] -- Install configuration: ""
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/launch
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/launch/display.launch.py
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/launch/gazebo.launch
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/launch/gazebo.launch.py
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/launch/display.launch
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/base_link.STL
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/r_laser_link.STL
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/l_laser_link.STL
+[0.256s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/body_link.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/r_wheel_link.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/r_roller_link.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/l_wheel_link.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/base_footprint.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/meshes/l_roller_link.STL
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun/model-1_4.sdf
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun/model-1_3.sdf
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun/model.config
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun/model-1_2.sdf
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/sun/model.sdf
+[0.257s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane
+[0.258s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane/model-1_4.sdf
+[0.258s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane/model-1_3.sdf
+[0.258s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane/model.config
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane/model-1_2.sdf
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/models/ground_plane/model.sdf
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf/forkassembly_bot.csv
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf/forkassembly_bot.urdf
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf/forkassembly_bot.pdf
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf/.~lock.forkassembly_bot.csv#
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/urdf/forkassembly_bot.gv
+[0.259s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/rviz
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/rviz/display.rviz
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/ament_index/resource_index/package_run_dependencies/forklift_bot
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/ament_index/resource_index/parent_prefix_path/forklift_bot
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/environment/ament_prefix_path.sh
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/environment/ament_prefix_path.dsv
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/environment/path.sh
+[0.260s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/environment/path.dsv
+[0.261s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/local_setup.bash
+[0.261s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/local_setup.sh
+[0.261s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/local_setup.zsh
+[0.261s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/local_setup.dsv
+[0.261s] -- Installing: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/package.dsv
+[0.262s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/ament_index/resource_index/packages/forklift_bot
+[0.262s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/cmake/forklift_botConfig.cmake
+[0.262s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/cmake/forklift_botConfig-version.cmake
+[0.262s] -- Up-to-date: /home/avinaash/ForkLift_AMR/install/forklift_bot/share/forklift_bot/package.xml
+[0.263s] Invoked command in '/home/avinaash/ForkLift_AMR/build/forklift_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/forklift_bot

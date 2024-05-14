@@ -9,4 +9,5 @@ Dock_with_Pallet_03 = doozy_forklift.dock_with_pallet_03:main
 Dock_with_Pallet_04 = doozy_forklift.dock_with_pallet_04:main
 Publish_TF = doozy_forklift.publish_tf_01:main
 Publish_TF_2 = doozy_forklift.publish_tf_02:main
+state_publisher = doozy_forklift.robot_state_publisher:main
 

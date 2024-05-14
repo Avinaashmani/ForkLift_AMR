@@ -1,0 +1,111 @@
+[0.177s] Invoking command in '/home/avinaash/ForkLift_AMR/build/test2_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/test2_bot -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/test2_bot
+[0.303s] -- The C compiler identification is GNU 9.4.0
+[0.415s] -- The CXX compiler identification is GNU 9.4.0
+[0.420s] -- Check for working C compiler: /usr/bin/cc
+[0.475s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.476s] -- Detecting C compiler ABI info
+[0.538s] -- Detecting C compiler ABI info - done
+[0.545s] -- Detecting C compile features
+[0.545s] -- Detecting C compile features - done
+[0.547s] -- Check for working CXX compiler: /usr/bin/c++
+[0.606s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.607s] -- Detecting CXX compiler ABI info
+[0.663s] -- Detecting CXX compiler ABI info - done
+[0.670s] -- Detecting CXX compile features
+[0.670s] -- Detecting CXX compile features - done
+[0.673s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.693s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.693s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.756s] -- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+[0.816s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.819s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.820s] -- Added test 'lint_cmake' to check CMake code style
+[0.820s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.822s] -- Added test 'xmllint' to check XML markup files
+[0.823s] -- Configuring done
+[0.825s] -- Generating done
+[0.826s] -- Build files have been written to: /home/avinaash/ForkLift_AMR/build/test2_bot
+[0.829s] Invoked command in '/home/avinaash/ForkLift_AMR/build/test2_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/test2_bot -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/test2_bot
+[0.831s] Invoking command in '/home/avinaash/ForkLift_AMR/build/test2_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/test2_bot -- -j16 -l16
+[0.862s] Invoked command in '/home/avinaash/ForkLift_AMR/build/test2_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/test2_bot -- -j16 -l16
+[0.898s] Invoking command in '/home/avinaash/ForkLift_AMR/build/test2_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/test2_bot
+[0.904s] -- Install configuration: ""
+[0.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/launch
+[0.904s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/launch/display.launch.py
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/launch/gazebo.launch
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/launch/gazebo.launch.py
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/launch/display.launch
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun/model-1_4.sdf
+[0.905s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun/model-1_3.sdf
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun/model.config
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun/model-1_2.sdf
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/sun/model.sdf
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes
+[0.906s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/base_link.STL
+[0.923s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/r_wheel_link.STL
+[0.923s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/sick_link.STL
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/l_wheel_link.STL
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/laser_link.STL
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/meshes/base_footprint.STL
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/model.config
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/test2_bot/model.sdf
+[0.924s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description
+[0.925s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes
+[0.925s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/wrist.stl
+[0.925s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/bicep.stl
+[0.926s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/elbow.stl
+[0.927s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/arm_base.stl
+[0.927s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/wheel.stl
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/meshes/robot_base.stl
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/model.config
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/two_wheeled_robot_description/model.sdf
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane/model-1_4.sdf
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane/model-1_3.sdf
+[0.928s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane/model.config
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane/model-1_2.sdf
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/models/ground_plane/model.sdf
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/urdf
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/urdf/test2_bot.urdf
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/urdf/test2_bot.csv
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/urdf/test2_bot.sdf
+[0.929s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/rviz
+[0.930s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/rviz/display.rviz
+[0.930s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes
+[0.930s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/base_link.STL
+[0.951s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/r_wheel_link.STL
+[0.951s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/sick_link.STL
+[0.952s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/l_wheel_link.STL
+[0.952s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/laser_link.STL
+[0.953s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/meshes/base_footprint.STL
+[0.953s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/config
+[0.953s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/config/joint_names_test2_bot.yaml
+[0.953s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/include
+[0.953s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/include/test2_bot
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_dqn_stage3.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_dqn_stage1.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_world.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_dqn_stage2.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_house.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/turtlebot3_dqn_stage4.world
+[0.954s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/worlds/empty_world.world
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/ament_index/resource_index/package_run_dependencies/test2_bot
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/ament_index/resource_index/parent_prefix_path/test2_bot
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/environment/ament_prefix_path.sh
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/environment/ament_prefix_path.dsv
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/environment/path.sh
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/environment/path.dsv
+[0.955s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/local_setup.bash
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/local_setup.sh
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/local_setup.zsh
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/local_setup.dsv
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/package.dsv
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/ament_index/resource_index/packages/test2_bot
+[0.956s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/cmake/test2_botConfig.cmake
+[0.957s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/cmake/test2_botConfig-version.cmake
+[0.957s] -- Installing: /home/avinaash/ForkLift_AMR/install/test2_bot/share/test2_bot/package.xml
+[0.960s] Invoked command in '/home/avinaash/ForkLift_AMR/build/test2_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/home/avinaash/doozy_robotics/doozy_ws_2/install/pallet_docker_02:/home/avinaash/doozy_robotics/doozy_ws_2/install/2_t_dolly_logistics_driver:/opt/ros/galactic /usr/bin/cmake --install /home/avinaash/ForkLift_AMR/build/test2_bot

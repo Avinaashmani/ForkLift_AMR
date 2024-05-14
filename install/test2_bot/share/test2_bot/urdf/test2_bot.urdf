@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="test2_bot">
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="0 0 0.0149999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="9.42477796076939E-05" />
+      <inertia
+        ixx="7.09214541547898E-09"
+        ixy="4.49335171613886E-27"
+        ixz="-6.31810279579998E-26"
+        iyy="7.09214541547898E-09"
+        iyz="3.33765753335012E-25"
+        izz="4.71238898038469E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.188789367124556 -0.00233662272062585 -0.0948005465329549"
+        rpy="0 0 0" />
+      <mass
+        value="9.69088504514813" />
+      <inertia
+        ixx="0.258417973471307"
+        ixy="0.0129971204834088"
+        ixz="-0.197764695640452"
+        iyy="0.867284062857697"
+        iyz="-0.000466471967625234"
+        izz="0.940382811687374" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.237"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="l_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 0 0.0274508966695131"
+        rpy="0 0 0" />
+      <mass
+        value="0.919701249338413" />
+      <inertia
+        ixx="0.00158993491700959"
+        ixy="-1.59616906901295E-20"
+        ixz="1.03640468293167E-20"
+        iyy="0.00158993491700959"
+        iyz="1.23805296699663E-20"
+        izz="0.00248773886508438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/l_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="l_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.221 -0.162"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="r_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 2.22044604925031E-16 -0.0274508966695133"
+        rpy="0 0 0" />
+      <mass
+        value="0.919701249338413" />
+      <inertia
+        ixx="0.0015899349170096"
+        ixy="-1.03193262957828E-19"
+        ixz="-2.31300660409568E-22"
+        iyy="0.00158993491700959"
+        iyz="-1.07341678411212E-19"
+        izz="0.00248773886508438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/r_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="r_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.221 -0.162"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="6.66133814775094E-16 0 -0.0395000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.39709731141375" />
+      <inertia
+        ixx="0.000365362617943268"
+        ixy="4.15988159834906E-51"
+        ixz="-1.21245706409418E-36"
+        iyy="0.000365362617943268"
+        iyz="6.46109837352292E-20"
+        izz="0.000317677849131001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.33 -0.22 -0.065"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="sick_link">
+    <inertial>
+      <origin
+        xyz="-0.0389772727272726 0 0.00215909090909072"
+        rpy="0 0 0" />
+      <mass
+        value="0.439999999999999" />
+      <inertia
+        ixx="0.000450282196969695"
+        ixy="-2.67057753333658E-20"
+        ixz="2.94715909090908E-05"
+        iyy="0.000432821969696968"
+        iyz="8.33858761481299E-21"
+        izz="0.000451873106060605" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/sick_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test2_bot/meshes/sick_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="sick_joint"
+    type="fixed">
+    <origin
+      xyz="-0.275 0 0.024"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="sick_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+    <gazebo>
+      <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+         <alwaysOn>true</alwaysOn>
+         <updateRate>100</updateRate>
+         <leftJoint>l_wheel_joint</leftJoint>
+         <rightJoint>r_wheel_joint</rightJoint>
+         <wheelSeparation>0.4</wheelSeparation>
+         <wheelDiameter>0.1</wheelDiameter>
+         <wheelTorque>20</wheelTorque>
+         <wheelAcceleration>5</wheelAcceleration>
+         <commandTopic>cmd_vel</commandTopic>
+         <odometryTopic>odom</odometryTopic>
+         <odometryFrame>odom</odometryFrame>
+         <publishTf>1</publishTf>
+         <publishWheelJointState>true</publishWheelJointState>
+         <robotBaseFrame>base_link</robotBaseFrame>
+      </plugin>
+    </gazebo>
+</robot>

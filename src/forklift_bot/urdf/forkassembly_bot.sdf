@@ -1,0 +1,360 @@
+<sdf version='1.7'>
+  <model name='forklift_bot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>0 -0 0.015 0 -0 0</pose>
+        <mass>9.42478e-05</mass>
+        <inertia>
+          <ixx>7.09215e-09</ixx>
+          <ixy>2.47387e-27</ixy>
+          <ixz>-2.70421e-26</ixz>
+          <iyy>7.09215e-09</iyy>
+          <iyz>-2.14059e-26</iyz>
+          <izz>4.71239e-11</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='base_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.081948 0.002932 0.327 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>base_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='base_link'>
+      <pose relative_to='base_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.369409 -0.002858 -0.081705 0 -0 0</pose>
+        <mass>33.8958</mass>
+        <inertia>
+          <ixx>2.36845</ixx>
+          <ixy>0.00040349</ixy>
+          <ixz>-0.320961</ixz>
+          <iyy>3.90077</iyy>
+          <iyz>0.000137071</iyz>
+          <izz>4.3713</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__body_link_collision_1'>
+        <pose>-0.081948 -0.002932 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/body_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__l_laser_link_collision_2'>
+        <pose>0.294882 0.365388 -0.18564 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__r_laser_link_collision_3'>
+        <pose>0.294882 -0.371252 -0.18564 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body_link_visual_1'>
+        <pose>-0.081948 -0.002932 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/body_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__l_laser_link_visual_2'>
+        <pose>0.294882 0.365388 -0.18564 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__r_laser_link_visual_3'>
+        <pose>0.294882 -0.371252 -0.18564 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>-1.45075 0.242068 -0.26964 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>l_roller_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_roller_link'>
+      <pose relative_to='l_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.045 0 0 -0 0</pose>
+        <mass>0.31285</mass>
+        <inertia>
+          <ixx>0.000307325</ixx>
+          <ixy>2.86781e-19</ixy>
+          <ixz>-2.02528e-21</ixz>
+          <iyy>0.000204893</iyy>
+          <iyz>1.21721e-19</iyz>
+          <izz>0.000307325</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_roller_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_roller_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_roller_joint' type='revolute'>
+      <pose relative_to='base_link'>-1.45075 -0.247932 -0.26964 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>r_roller_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_roller_link'>
+      <pose relative_to='r_roller_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.045 0 0 -0 0</pose>
+        <mass>0.31285</mass>
+        <inertia>
+          <ixx>0.000307325</ixx>
+          <ixy>2.84239e-19</ixy>
+          <ixz>-2.25924e-21</ixz>
+          <iyy>0.000204893</iyy>
+          <iyz>2.17549e-19</iyz>
+          <izz>0.000307325</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_roller_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_roller_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_roller_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wheel_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.091779 0.27189 -0.226 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>l_wheel_link</child>
+      <axis>
+        <xyz>0.035752 -0.99936 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1000</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_wheel_link'>
+      <pose relative_to='l_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.001061 -0.029648 0 0 -0 0</pose>
+        <mass>1.21638</mass>
+        <inertia>
+          <ixx>0.00444641</ixx>
+          <ixy>-0.000135206</ixy>
+          <ixz>-4.91413e-07</ixz>
+          <iyy>0.00822091</iyy>
+          <iyz>-1.7655e-08</iyz>
+          <izz>0.00444461</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wheel_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.072116 -0.27776 -0.226 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>r_wheel_link</child>
+      <axis>
+        <xyz>-0.035752 0.99936 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>1000</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_wheel_link'>
+      <pose relative_to='r_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.001061 0.029648 0 0 -0 0</pose>
+        <mass>1.21638</mass>
+        <inertia>
+          <ixx>0.00444641</ixx>
+          <ixy>-0.000135206</ixy>
+          <ixz>4.92241e-07</ixz>
+          <iyy>0.00822091</iyy>
+          <iyz>1.76846e-08</iyz>
+          <izz>0.00444461</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://forklift_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/steering_control</robotNamespace>
+    </plugin>
+    <frame name='l_laser_jont' attached_to='body_link'>
+      <pose>0.37683 0.36832 -0.18564 0 -0 0</pose>
+    </frame>
+    <frame name='l_laser_link' attached_to='l_laser_jont'/>
+    <frame name='r_laser_joint' attached_to='body_link'>
+      <pose>0.37683 -0.36832 -0.18564 0 -0 0</pose>
+    </frame>
+    <frame name='r_laser_link' attached_to='r_laser_joint'/>
+    <frame name='body_joint' attached_to='base_link'>
+      <pose>-0.081948 -0.002932 0 0 -0 0</pose>
+    </frame>
+    <frame name='body_link' attached_to='body_joint'/>
+  </model>
+</sdf>

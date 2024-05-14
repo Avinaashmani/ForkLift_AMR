@@ -1,0 +1,657 @@
+<sdf version='1.7'>
+  <model name='exfork_bot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>-0.72916 -0.001063 0.579382 0 -0 0</pose>
+        <mass>1028.71</mass>
+        <inertia>
+          <ixx>173.659</ixx>
+          <ixy>-0.0162842</ixy>
+          <ixz>5.37499</ixz>
+          <iyy>181.498</iyy>
+          <iyz>0.0115929</iyz>
+          <izz>179.794</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+        <pose>-0.45174 0 0.04 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__laser_link_collision_2'>
+        <pose>0 0 0.539 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__load_link_collision_3'>
+        <pose>-0.74422 -0.001094 0.09 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/load_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual_1'>
+        <pose>-0.45174 0 0.04 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__laser_link_visual_2'>
+        <pose>0 0 0.539 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__load_link_visual_3'>
+        <pose>-0.74422 -0.001094 0.09 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/load_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster3brkt_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.72869 0.62704 0.18265 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>caster3brkt_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster3brkt_link'>
+      <pose relative_to='caster3brkt_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.009658 0.000372 -0.044048 0 -0 0</pose>
+        <mass>0.18269</mass>
+        <inertia>
+          <ixx>9.5396e-05</ixx>
+          <ixy>1.0599e-11</ixy>
+          <ixz>-1.4055e-05</ixz>
+          <iyy>0.00010187</iyy>
+          <iyz>6.8222e-12</iyz>
+          <izz>0.0001147</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster3brkt_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster3brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster3brkt_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster3brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster3_joint' type='revolute'>
+      <pose relative_to='caster3brkt_link'>-0.034301 0.025 -0.1064 0 -0 0</pose>
+      <parent>caster3brkt_link</parent>
+      <child>caster3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster3_link'>
+      <pose relative_to='caster3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.025 0 0 -0 0</pose>
+        <mass>0.70703</mass>
+        <inertia>
+          <ixx>0.0011143</ixx>
+          <ixy>1.8839e-10</ixy>
+          <ixz>-2.2219e-09</ixz>
+          <iyy>0.0019972</iyy>
+          <iyz>-6.3511e-11</iyz>
+          <izz>0.0011143</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster3_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster3_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster3_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster4brkt_joint' type='revolute'>
+      <pose relative_to='base_footprint'>-0.72869 -0.63104 0.18265 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>caster4brkt_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster4brkt_link'>
+      <pose relative_to='caster4brkt_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.009658 0.000372 -0.044048 0 -0 0</pose>
+        <mass>0.18269</mass>
+        <inertia>
+          <ixx>9.5396e-05</ixx>
+          <ixy>1.0599e-11</ixy>
+          <ixz>-1.4055e-05</ixz>
+          <iyy>0.00010187</iyy>
+          <iyz>6.8222e-12</iyz>
+          <izz>0.0001147</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster4brkt_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster4brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster4brkt_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster4brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster4_joint' type='revolute'>
+      <pose relative_to='caster4brkt_link'>-0.034301 -0.025 -0.1064 0 -0 0</pose>
+      <parent>caster4brkt_link</parent>
+      <child>caster4_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster4_link'>
+      <pose relative_to='caster4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.025 0 0 -0 0</pose>
+        <mass>0.70703</mass>
+        <inertia>
+          <ixx>0.0011143</ixx>
+          <ixy>1.8839e-10</ixy>
+          <ixz>-2.2219e-09</ixz>
+          <iyy>0.0019972</iyy>
+          <iyz>-6.3511e-11</iyz>
+          <izz>0.0011143</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster4_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster4_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster4_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='casterarm_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.36031 0 0.2319 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>casterarm_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='casterarm_link'>
+      <pose relative_to='casterarm_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.076099 -0.000231 -0.008279 0 -0 0</pose>
+        <mass>1.7974</mass>
+        <inertia>
+          <ixx>0.0388653</ixx>
+          <ixy>-3.74697e-11</ixy>
+          <ixz>2.29004e-05</ixz>
+          <iyy>0.0015298</iyy>
+          <iyz>-1.08176e-12</iyz>
+          <izz>0.039033</izz>
+        </inertia>
+      </inertial>
+      <collision name='casterarm_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/casterarm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='casterarm_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/casterarm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster1brkt_joint' type='revolute'>
+      <pose relative_to='casterarm_link'>0.078 0.21133 -0.049249 0 -0 0</pose>
+      <parent>casterarm_link</parent>
+      <child>caster1brkt_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster1brkt_link'>
+      <pose relative_to='caster1brkt_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.009658 0.000372 -0.044048 0 -0 0</pose>
+        <mass>0.182687</mass>
+        <inertia>
+          <ixx>9.53962e-05</ixx>
+          <ixy>1.05992e-11</ixy>
+          <ixz>-1.40549e-05</ixz>
+          <iyy>0.000101867</iyy>
+          <iyz>6.82223e-12</iyz>
+          <izz>0.000114705</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster1brkt_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster1brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster1brkt_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster1brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster1_joint' type='revolute'>
+      <pose relative_to='caster1brkt_link'>-0.034301 0.025 -0.1064 0 -0 0</pose>
+      <parent>caster1brkt_link</parent>
+      <child>caster1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster1_link'>
+      <pose relative_to='caster1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.025 0 0 -0 0</pose>
+        <mass>0.707028</mass>
+        <inertia>
+          <ixx>0.00111429</ixx>
+          <ixy>1.8839e-10</ixy>
+          <ixz>-2.22191e-09</ixz>
+          <iyy>0.00199724</iyy>
+          <iyz>-6.35111e-11</iyz>
+          <izz>0.00111429</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster1_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster1_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster2brkt_joint' type='revolute'>
+      <pose relative_to='casterarm_link'>0.078 -0.21533 -0.049249 0 -0 0</pose>
+      <parent>casterarm_link</parent>
+      <child>caster2brkt_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster2brkt_link'>
+      <pose relative_to='caster2brkt_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.009658 0.000372 -0.044048 0 -0 0</pose>
+        <mass>0.182687</mass>
+        <inertia>
+          <ixx>9.53962e-05</ixx>
+          <ixy>1.05992e-11</ixy>
+          <ixz>-1.40549e-05</ixz>
+          <iyy>0.000101867</iyy>
+          <iyz>6.82223e-12</iyz>
+          <izz>0.000114705</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster2brkt_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster2brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster2brkt_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster2brkt_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='caster2_joint' type='revolute'>
+      <pose relative_to='caster2brkt_link'>-0.034301 0.025 -0.1064 0 -0 0</pose>
+      <parent>caster2brkt_link</parent>
+      <child>caster2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='caster2_link'>
+      <pose relative_to='caster2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.025 0 0 -0 0</pose>
+        <mass>0.707028</mass>
+        <inertia>
+          <ixx>0.00111429</ixx>
+          <ixy>1.8839e-10</ixy>
+          <ixz>-2.22191e-09</ixz>
+          <iyy>0.00199724</iyy>
+          <iyz>-6.35111e-11</iyz>
+          <izz>0.00111429</izz>
+        </inertia>
+      </inertial>
+      <collision name='caster2_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='caster2_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/caster2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.015 0.3245 0.1 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>l_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_wheel_link'>
+      <pose relative_to='l_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.021167 0 0 -0 0</pose>
+        <mass>1.2164</mass>
+        <inertia>
+          <ixx>0.0044416</ixx>
+          <ixy>-4.7872e-11</ixy>
+          <ixz>-4.9256e-07</ixz>
+          <iyy>0.0082257</iyy>
+          <iyz>-7.4615e-11</iyz>
+          <izz>0.0044446</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.015 -0.3245 0.1 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>r_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_wheel_link'>
+      <pose relative_to='r_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.021167 -0 0 -0 0</pose>
+        <mass>1.2164</mass>
+        <inertia>
+          <ixx>0.0044421</ixx>
+          <ixy>5.3112e-11</ixy>
+          <ixz>1.2861e-06</ixz>
+          <iyy>0.0082257</iyy>
+          <iyz>-1.1243e-10</iyz>
+          <izz>0.004444</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://exfork_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <frame name='laser_joint' attached_to='base_link'>
+      <pose>0.45174 0 0.499 0 -0 0</pose>
+    </frame>
+    <frame name='laser_link' attached_to='laser_joint'/>
+    <frame name='load_joint' attached_to='base_link'>
+      <pose>-0.29248 -0.001094 0.05 0 -0 0</pose>
+    </frame>
+    <frame name='load_link' attached_to='load_joint'/>
+    <frame name='base_joint' attached_to='base_footprint'>
+      <pose>-0.45174 0 0.04 0 -0 0</pose>
+    </frame>
+    <frame name='base_link' attached_to='base_joint'/>
+  </model>
+</sdf>

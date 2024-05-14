@@ -1,0 +1,218 @@
+<sdf version='1.7'>
+  <model name='test2_bot'>
+    <link name='base_footprint'>
+      <inertial>
+        <pose>-0.171194 -0.010449 0.146888 0 -0 0</pose>
+        <mass>10.5281</mass>
+        <inertia>
+          <ixx>0.283602</ixx>
+          <ixy>0.0563837</ixy>
+          <ixz>-0.192411</ixz>
+          <iyy>0.978929</iyy>
+          <iyz>-0.00182958</iyz>
+          <izz>1.06388</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+        <pose>0 0 0.237 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__laser_link_collision_2'>
+        <pose>0.33 -0.22 0.172 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__sick_link_collision_3'>
+        <pose>-0.275 0 0.261 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/sick_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_footprint_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/base_footprint.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual_1'>
+        <pose>0 0 0.237 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__laser_link_visual_2'>
+        <pose>0.33 -0.22 0.172 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/laser_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__sick_link_visual_3'>
+        <pose>-0.275 0 0.261 0 0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/sick_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='l_wheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 0.221 0.075 1.5708 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>l_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='l_wheel_link'>
+      <pose relative_to='l_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.027451 0 -0 0</pose>
+        <mass>0.919701</mass>
+        <inertia>
+          <ixx>0.00158993</ixx>
+          <ixy>-1.59617e-20</ixy>
+          <ixz>1.0364e-20</ixz>
+          <iyy>0.00158993</iyy>
+          <iyz>1.23805e-20</iyz>
+          <izz>0.00248774</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/l_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='r_wheel_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0 -0.221 0.075 1.5708 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>r_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='r_wheel_link'>
+      <pose relative_to='r_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.027451 0 -0 0</pose>
+        <mass>0.919701</mass>
+        <inertia>
+          <ixx>0.00158993</ixx>
+          <ixy>-1.03193e-19</ixy>
+          <ixz>-2.31301e-22</ixz>
+          <iyy>0.00158993</iyy>
+          <iyz>-1.07342e-19</iyz>
+          <izz>0.00248774</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wheel_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wheel_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://test2_bot/meshes/r_wheel_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+      <updateRate>12</updateRate>
+      <leftJoint>l_wheel_joint</leftJoint>
+      <rightJoint>r_wheel_joint</rightJoint>
+      <wheelSeparation>0.5380</wheelSeparation>
+      <wheelDiameter>0.2410</wheelDiameter>
+      <wheelAcceleration>1.0</wheelAcceleration>
+      <wheelTorque>20</wheelTorque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <odometrySource>1</odometrySource>
+      <publishWheelTF>1</publishWheelTF>
+      <publishOdom>1</publishOdom>
+      <publishWheelJointState>1</publishWheelJointState>
+      <legacyMode>0</legacyMode>
+    </plugin>
+    <frame name='laser_joint' attached_to='base_link'>
+      <pose>0.33 -0.22 -0.065 0 -0 0</pose>
+    </frame>
+    <frame name='laser_link' attached_to='laser_joint'/>
+    <frame name='sick_joint' attached_to='base_link'>
+      <pose>-0.275 0 0.024 0 -0 -3.14159</pose>
+    </frame>
+    <frame name='sick_link' attached_to='sick_joint'/>
+    <frame name='base_joint' attached_to='base_footprint'>
+      <pose>0 0 0.237 0 -0 0</pose>
+    </frame>
+    <frame name='base_link' attached_to='base_joint'/>
+  </model>
+</sdf>

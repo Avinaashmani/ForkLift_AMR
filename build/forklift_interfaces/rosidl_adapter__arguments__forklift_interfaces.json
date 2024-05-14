@@ -1,6 +1,0 @@
-{
-  "package_name": "forklift_interfaces",
-  "non_idl_tuples": [
-    "/home/avinaash/ForkLift_AMR/src/forklift_interfaces:srv/ForkLiftDock.srv"
-  ]
-}

@@ -6,6 +6,7 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/client_02.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_03.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_02.py
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/robot_state_publisher.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/publish_tf_01.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_01.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/client_01.py
@@ -17,11 +18,17 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/client_02.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_03.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_02.cpython-38.pyc
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/robot_state_publisher.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/publish_tf_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/client_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/share/ament_index/resource_index/packages/doozy_forklift
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/package.xml
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/launch/forklift_gazebo.launch.py
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/launch/forklift_robot_state_publisher.launch.py
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/test2_bot.urdf
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/test2_bot.csv
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/share/doozy_forklift/test2_bot.sdf
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info/top_level.txt
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info/SOURCES.txt
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift-0.0.0-py3.8.egg-info/requires.txt
@@ -39,3 +46,4 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Dock_with_Pallet_04
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Publish_TF
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Publish_TF_2
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/state_publisher

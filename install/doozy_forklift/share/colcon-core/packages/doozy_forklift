@@ -1,1 +1,1 @@
-example_interfaces:geometry_msgs:rclcpp:rclpy:std_msgs
+example_interfaces:geometry_msgs:joint_state_publisher:rclcpp:rclpy:robot_state_publisher:rviz:std_msgs
