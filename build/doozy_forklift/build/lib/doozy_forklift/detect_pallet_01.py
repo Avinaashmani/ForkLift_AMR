@@ -43,8 +43,7 @@ class PalletDetection(Node):
 
             pallet_present = response.json()['data']['detectionResult']['palletFound']
 
-            print(f"Left Pocket: {self.left.translation.x}-> Center Pocket {self.center.translation.x}<-{self.right.translation.x} 
-                  Right Pocket : Pallet Presence ===> {pallet_present}")
+            print(f"Left Pocket: {self.left.translation.x}-> Center Pocket {self.center.translation.x}<-{self.right.translation.x} Right Pocket : Pallet Presence ===> {pallet_present}")
 
             self.pallet_present.data = str(pallet_present)
             self.pallet_presence_pub.publish(self.pallet_present)
