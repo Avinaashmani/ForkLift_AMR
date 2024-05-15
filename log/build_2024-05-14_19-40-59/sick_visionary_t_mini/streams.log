@@ -1,0 +1,5 @@
+[0.197s] Invoking command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16
+[0.202s] CMake Error: The current CMakeCache.txt directory /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini/CMakeCache.txt is different than the directory /home/doozy/ForkLift_AMR/build/sick_visionary_t_mini where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+[0.205s] No such file or directory
+[0.205s] CMake Error: Generator: execution of make failed. Make command was: /usr/bin/gmake -j16 -l16 && 
+[0.207s] Invoked command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16

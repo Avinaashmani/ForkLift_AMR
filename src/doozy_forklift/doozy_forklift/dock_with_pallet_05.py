@@ -13,7 +13,7 @@ from rclpy.executors import SingleThreadedExecutor
 from example_interfaces.srv import SetBool
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool, String
-from sick_visionary_t_mini.msg import SickTMini
+# from sick_visionary_t_mini.msg import SickTMini
 
 class Dockpallet(Node):
 
@@ -178,16 +178,16 @@ class Dockpallet(Node):
                         if abs(angle_difference) > 0.1:
                             
                             if yaw_angle_error > 0.0:
-                                self.move_tug.angular.z = 0.1
+                                self.move_tug.angular.z = 0.05
                                 self.cmd_pub.publish(self.move_tug)
                             else:
-                                self.move_tug.angular.z = -0.1
+                                self.move_tug.angular.z = -0.05
                                 self.cmd_pub.publish(self.move_tug)
                     else:
-                        self.move_tug.linear.x = 0.10
+                        self.move_tug.linear.x = -0.07
                         self.cmd_pub.publish(self.move_tug)
             else:         
-                self.move_tug.linear.x = 0.02
+                self.move_tug.linear.x = -0.04
                 self.move_tug.angular.z = 0.0
                 self.cmd_pub.publish(self.move_tug)
                 
@@ -322,7 +322,26 @@ class Dockpallet(Node):
                 self.docking_undocking_diagnostics.publish(self.diagnostics)
                 self.undock_flag = False
                 self.undock_completed_flag = False
+    
+    def dock_2 (self):
+        
+        if self.dock_flag and self.navigate_flag:
 
+            try:
+                pallet_transform = self.tf_buffer.lookup_transform(self.source_frame, self.pallet_frame, Time())
+                tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
+                self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
+
+            except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+                self.get_logger().warn("LookupException: {0}".format(str(e)))
+                self.diagnostics.data = "Undocking : UNLOADED : Error, Please Check !"
+            
+            distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
+            angle_difference = self.pallet_angle_z - self.tb3_angle_z
+            distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
+            yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
+
+        
                 
     def update_frame(self,target_frame, tb3_frame):
         self.pallet_x = target_frame.transform.translation.x

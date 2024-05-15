@@ -1,0 +1,2 @@
+Invoking command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16
+Invoked command in '/home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/sick_visionary_t_mini -- -j16 -l16
