@@ -76,6 +76,17 @@ class PalletTF(Node):
         pallet_left_corner.transform.translation.y = self.left_pocket.translation.y
         pallet_left_corner.transform.rotation.z = 1.0
         pallet_left_corner.transform.rotation.w = 0.0
+
+        odom = TransformStamped()
+        
+        odom.header.frame_id = self.base_frame
+        odom.child_frame_id = 'odom'
+        
+        odom.transform.translation.x = 0.0
+        odom.transform.translation.y = 0.0
+
+        odom.transform.rotation.z = 1.0
+        odom.transform.rotation.w = 0.0
         
         if self.detected_pallet is True:
             self.tf_broadcaster.sendTransform(pallet_center)
