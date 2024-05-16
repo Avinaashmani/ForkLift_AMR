@@ -42,7 +42,7 @@ class PalletTF(Node):
         self.create_subscription(Transform, '/pallet_center', self.center_pallet, 10)
         # self.create_subscription(String, '/pallet_presence', self.detected_pallet, 10)
         
-        self.create_timer(0.05, self.sick_callback)
+        self.create_timer(0.01, self.sick_callback)
         self.base_frame = 'map'
 
         # print(self.y_point)

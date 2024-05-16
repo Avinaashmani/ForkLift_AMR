@@ -48,7 +48,7 @@ class Dockpallet(Node):
         self.pallet_released = False
         self.pallet_placed = False
 
-        self.pallet_presence = True
+        self.pallet_presence = False
         self.pallet_frame = 'pallet_center'
         self.source_frame = 'map'
         self.tb3_frame = 'map'
@@ -79,7 +79,7 @@ class Dockpallet(Node):
         # self.unloading_service = self.create_service(SetBool, 'Unload', self.unload)
         
         self.create_subscription(Bool, 'load_topic', self.load, 10)
-        
+        self.create_subscription(String, 'pallet_presence', self.pallet_present_callback, 10)
         self.create_timer(0.1, self.dock_load)
         # self.create_timer(0.1, self.undock_load)
         # self.create_timer(0.1, self.dock_unload)
@@ -129,81 +129,84 @@ class Dockpallet(Node):
         self.unload_flag = msg.data
                 
     def dock_load(self):
-        
+
         if self.dock_flag and self.navigate_flag :
             
-            try:
-                pallet_transform = self.tf_buffer.lookup_transform(self.source_frame,'pallet_left_corner', Time())
-                tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
-                self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
-                   
-            except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
-                
-                self.get_logger().warn("LookupException: {0}".format(str(e)))
-                self.diagnostics.data = "Docking Error. Please Check !"
-                self.docking_undocking_diagnostics.publish(self.diagnostics)
-                self.dock_flag = False
-                self.dock_completed_flag = False
-                
-            distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
-            angle_difference = self.pallet_angle_z - self.tb3_angle_z
-            distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
-            yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
-
-            if abs(distance) > 2.5:
-
-                self.alignment_1 = False
-
-                if self.load_present is True:
-                    self.move_tug.linear.x = 0.0
-                    self.move_tug.angular.z = 0.0
-                    self.cmd_pub.publish(self.move_tug)
-                    self.dock_completed_flag = False
-                    self.get_logger().error("Docking : LOADED : Switch Engaged Before reaching Tf.")
-                    self.dock_flag = False
-                    self.diagnostics.data = "Docking : LOADED : Error : Switch Engaged Before reaching Tf."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics) 
-                    
-                else:
+            if self.pallet_presence:
+            
+                try:
+                    pallet_transform = self.tf_buffer.lookup_transform(self.source_frame,'pallet_center', Time())
+                    tb3_transform = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
                     self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
-                    print("---------------")
-                    print(distance)
-                    print("Trying left pocket of pallet")
-                    print(yaw_angle_error)
-                    print(angle_difference)
-                    print("---------------")
 
-                    self.dock_completed_flag = False
+                    distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
+                    angle_difference = self.pallet_angle_z - self.tb3_angle_z
+                # distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
+                    yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
 
-                    self.diagnostics.data = "Docking : LOADED : Underprocess."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics)
-
-                    # if abs(angle_difference) > 3.0:
-                        
-                    if abs(yaw_angle_error) > 0.3:
-                            
-                        if  yaw_angle_error > 0:
-                            self.move_tug.angular.z = 0.05
-                            self.cmd_pub.publish(self.move_tug)
-                        elif yaw_angle_error < 0:
-                            self.move_tug.angular.z = -0.05
-                            self.cmd_pub.publish(self.move_tug)
+                    if abs(yaw_angle_error) > 0.1:
                     
-                    elif abs(yaw_angle_error) < 0.3:
-                        print("in alignment 1")
-                        self.move_tug.linear.x = -0.2
+                    ## STAGE 1 ALIGNMENT ##
+
+                        self.alignment_1 = False
+
+                    ## Safety Controller ##
+
+                        if self.load_present is True:
+                            self.move_tug.linear.x = 0.0
+                            self.move_tug.angular.z = 0.0
+                            self.cmd_pub.publish(self.move_tug)
+                            self.dock_completed_flag = False
+                            self.get_logger().error("Docking : LOADED : Switch Engaged Before reaching Tf.")
+                            self.dock_flag = False
+                            self.diagnostics.data = "Docking : LOADED : Error : Switch Engaged Before reaching Tf."
+                            self.docking_undocking_diagnostics.publish(self.diagnostics) 
+                    
+                        else:
+                            self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
+                            print("---------------")
+                            print(distance)
+                            print("Trying left pocket of pallet")
+                            print(yaw_angle_error)
+                            print(angle_difference)
+                            print("---------------")
+
+                            self.dock_completed_flag = False
+
+                            self.diagnostics.data = "Docking : LOADED : Underprocess."
+                            self.docking_undocking_diagnostics.publish(self.diagnostics)
+  
+                            if  yaw_angle_error > 0:
+                                self.move_tug.angular.z = 0.08
+                                self.cmd_pub.publish(self.move_tug)
+                            elif yaw_angle_error < 0:
+                                self.move_tug.angular.z = -0.08
+                                self.cmd_pub.publish(self.move_tug)
+                    
+                    elif abs(yaw_angle_error) < 0.1:
+                        print("aligned with left pocket")
+                        self.alignment_1 = True
+                        pass
+
+                    else:
                         self.move_tug.angular.z = 0.0
+                        self.move_tug.linear.x = 0.0
+                        self.cmd_pub.publish(self.move_tug)    
+            
+                    if self.switch_value is not True:
+                        self.move_tug.linear.x = -0.05
+                        self.cmd_pub.publish(self.move_tug)
+                    else:
+
+                        self.move_tug.angular.z = 0.0
+                        self.move_tug.linear.x = 0.0
                         self.cmd_pub.publish(self.move_tug)
 
-                        if abs(distance) < 2.5:
-                            self.alignment_1 = True
-
-            if self.alignment_1:   
-                self.alignment_2 = False
-                try:
-                    pallet_transform_2 = self.tf_buffer.lookup_transform(self.source_frame, 'pallet_center', Time())
-                    tb3_transform_2 = self.tf_buffer.lookup_transform(self.source_frame, self.tb3_frame, Time())
-                    self.update_frame(target_frame=pallet_transform_2, tb3_frame=tb3_transform_2)
+                        self.get_logger().info("Docking : LOADED : Completed.")
+                        self.dock_flag = False
+                        self.dock_completed_flag = True
+                        self.diagnostics.data = "Docking : LOADED : Completed."
+                        self.docking_undocking_diagnostics.publish(self.diagnostics)
                    
                 except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 
@@ -213,75 +216,8 @@ class Dockpallet(Node):
                     self.dock_flag = False
                     self.dock_completed_flag = False
                 
-                # distance_c = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
-                angle_difference = self.pallet_angle_z - self.tb3_angle_z
-                yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
 
-                if self.load_present is True:
-                    self.move_tug.linear.x = 0.0
-                    self.move_tug.angular.z = 0.0
-                    self.cmd_pub.publish(self.move_tug)
-                    self.dock_completed_flag = False
-                    self.get_logger().error("Docking : LOADED : Switch Engaged Before reaching Tf.")
-                    self.dock_flag = False
-                    self.diagnostics.data = "Docking : LOADED : Error : Switch Engaged Before reaching Tf."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics) 
-                    
-                else:
-                    self.update_frame(target_frame=pallet_transform, tb3_frame=tb3_transform)
-                    print("---------------")
-                    print(distance)
-                    print("Trying center of the Pallet...")
-                    print(yaw_angle_error)
-                    print(angle_difference)
-                    print("---------------")
-
-                    self.dock_completed_flag = False
-
-                    self.diagnostics.data = "Docking : LOADED : Underprocess."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics)
-
-                    # self.move_tug.linear.x = -0.1
-                    self.cmd_pub.publish(self.move_tug)
-
-                    # # if abs(angle_difference) > 3.0:
-                        
-                    if abs(yaw_angle_error) > 0.1 and abs(distance) < 2.5:
-                            
-                        if  yaw_angle_error > 0:
-                            self.move_tug.angular.z = 0.05
-                            self.cmd_pub.publish(self.move_tug)
-                        elif yaw_angle_error < 0:
-                            self.move_tug.angular.z = -0.05
-                            self.cmd_pub.publish(self.move_tug)
-                    
-                    elif abs(yaw_angle_error) < 0.1:
-                        self.move_tug.linear.x = -0.2
-                        self.move_tug.angular.z = 0.0
-                        self.cmd_pub.publish(self.move_tug)
-                        if abs(distance) < 2.0:
-                            alignment_2 = True
-            
-            if self.alignment_2:         
-                # self.move_tug.linear.x = -0.05
-                if abs(yaw_angle_error) > 0.1 and abs(distance) < 2.5:
-                            
-                    if  yaw_angle_error > 0:
-                        self.move_tug.angular.z = 0.05
-                        self.cmd_pub.publish(self.move_tug)
-                    elif yaw_angle_error < 0:
-                        self.move_tug.angular.z = -0.05
-                        self.cmd_pub.publish(self.move_tug)
-
-                self.cmd_pub.publish(self.move_tug)
                 
-                if self.switch_value is True:
-                    self.get_logger().info("Docking : LOADED : Completed.")
-                    self.dock_flag = False
-                    self.dock_completed_flag = True
-                    self.diagnostics.data = "Docking : LOADED : Completed."
-                    self.docking_undocking_diagnostics.publish(self.diagnostics)
-                    return True
 
     def undock(self):
 
@@ -429,6 +365,13 @@ class Dockpallet(Node):
             
         except serial.serialutil.SerialException as e:
             self.get_logger().warn(e)
+
+    def pallet_present_callback(self, msg):
+
+        if msg.data == 'True':
+            self.pallet_presence = True
+        else:
+            self.pallet_presence = False
 
 def main():
     rclpy.init()
