@@ -40,14 +40,14 @@ class PalletTF(Node):
         self.create_subscription(Transform, '/pallet_left', self.left_pallet, 10)
         self.create_subscription(Transform, '/pallet_right', self.right_pallet, 10)
         self.create_subscription(Transform, '/pallet_center', self.center_pallet, 10)
-        self.create_subscription(String, '/pallet_presence', self.detected_pallet, 10)
+        # self.create_subscription(String, '/pallet_presence', self.detected_pallet, 10)
         
-        self.create_timer(0.1, self.sick_callback)
+        self.create_timer(0.05, self.sick_callback)
         self.base_frame = 'map'
 
         # print(self.y_point)
 
-    def sick_callback(self ):
+    def sick_callback(self):
 
         pallet_center = TransformStamped()
         
@@ -77,51 +77,41 @@ class PalletTF(Node):
         pallet_left_corner.transform.rotation.z = 1.0
         pallet_left_corner.transform.rotation.w = 0.0
 
-        odom = TransformStamped()
+        # odom = TransformStamped()
         
-        odom.header.frame_id = self.base_frame
-        odom.child_frame_id = 'odom'
-        
-        odom.transform.translation.x = 0.0
-        odom.transform.translation.y = 0.0
+        # odom.header.frame_id = self.base_frame
+        # odom.child_frame_id = 'odom'
 
-        odom.transform.rotation.z = 1.0
-        odom.transform.rotation.w = 0.0
-        
-        if self.detected_pallet is True:
-            self.tf_broadcaster.sendTransform(pallet_center)
-            self.tf_broadcaster.sendTransform(pallet_right_corner)
-            self.tf_broadcaster.sendTransform(pallet_left_corner)
-        
-        else:
-            self.get_logger().error ("Pallet not Detecting ..")
+        # odom.transform.translation.x = 0.0
+        # odom.transform.translation.y = 0.0
+
+        # odom.transform.rotation.z = 1.0
+        # odom.transform.rotation.w = 0.0
+
+        self.tf_broadcaster.sendTransform(pallet_center)
+        self.tf_broadcaster.sendTransform(pallet_right_corner)
+        self.tf_broadcaster.sendTransform(pallet_left_corner)
 
         print(f"Center Pocket = {self.center_pocket}")
         print(f"Right Pocket = {self.right_pocket}")
         print(f"Left Pocket = {self.left_pocket}")
-        print (f"Pallet Presence = {self.pallet_detected}")
-    
-    def detected_pallet(self, msg):
-        if msg.data == 'true':
-            self.pallet_detected = True
-        else:
-            self.pallet_detected = False
-        
+        # print (f"Pallet Presence = {self.pallet_detected}")
+
     def left_pallet(self, msg):
         
-        self.left_pocket.translation.x = msg.transalation.x / 1000
-        self.left_pocket.translation.y = msg.transalation.y / 1000
-        self.left_pocket.translation.z = msg.transalation.z / 1000
+        self.left_pocket.translation.x = msg.translation.x / 1000
+        self.left_pocket.translation.y = msg.translation.y / 1000
+        self.left_pocket.translation.z = msg.translation.z / 1000
         
     def right_pallet(self, msg):
-        self.right_pocket.translation.x = msg.transalation.x / 1000
-        self.right_pocket.translation.y = msg.transalation.y / 1000
-        self.right_pocket.translation.z = msg.transalation.z / 1000
+        self.right_pocket.translation.x = msg.translation.x / 1000
+        self.right_pocket.translation.y = msg.translation.y / 1000
+        self.right_pocket.translation.z = msg.translation.z / 1000
   
     def center_pallet(self, msg):
-        self.center_pocket.translation.x = msg.transalation.x / 1000
-        self.center_pocket.translation.y = msg.transalation.y / 1000
-        self.center_pocket.translation.z = msg.transalation.z / 1000
+        self.center_pocket.translation.x = msg.translation.x / 1000
+        self.center_pocket.translation.y = msg.translation.y / 1000
+        self.center_pocket.translation.z = msg.translation.z / 1000
 
 def main():
 

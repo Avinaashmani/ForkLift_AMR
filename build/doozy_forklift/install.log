@@ -8,6 +8,7 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_undock_01.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_03.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_02.py
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_06.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/publish_tf_01.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_01.py
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/client_01.py
@@ -21,6 +22,7 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_undock_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_03.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_02.cpython-38.pyc
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_06.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/publish_tf_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/dock_with_pallet_01.cpython-38.pyc
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/__pycache__/client_01.cpython-38.pyc
@@ -42,5 +44,6 @@
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Dock_with_Pallet_03
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Dock_with_Pallet_04
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Dock_with_Pallet_05
+/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Dock_with_Pallet_06
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Publish_TF
 /home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/doozy_forklift/Publish_TF_2

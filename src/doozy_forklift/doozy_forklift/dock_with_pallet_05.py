@@ -147,11 +147,11 @@ class Dockpallet(Node):
             distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
             yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
             # print("Here")
-            if abs(distance) > 2.0:
+            if abs(distance) > 1.8:
                     
                 if self.load_present is True:
                     self.move_tug.linear.x = 0.0
-                    self.move_tug.anisgular.z = 0.0
+                    self.move_tug.angular.z = 0.0
                     self.cmd_pub.publish(self.move_tug)
                     self.dock_completed_flag = False
                     self.get_logger().error("Docking : LOADED : Switch Engaged Before reaching Tf.")
@@ -167,27 +167,29 @@ class Dockpallet(Node):
                     print(yaw_angle_error)
                     print(angle_difference)
                     print("---------------")
-                    
+
                     self.dock_completed_flag = False
 
                     self.diagnostics.data = "Docking : LOADED : Underprocess."
                     self.docking_undocking_diagnostics.publish(self.diagnostics)
 
-                    if abs(yaw_angle_error) > 0.02:
+                    # if abs(angle_difference) > 3.0:
                         
-                        if abs(angle_difference) > 0.1:
+                    if abs(yaw_angle_error) > 0.2:
                             
-                            if yaw_angle_error > 0.0:
-                                self.move_tug.angular.z = -0.2
-                                self.cmd_pub.publish(self.move_tug)
-                            else:
-                                self.move_tug.angular.z = 0.2
-                                self.cmd_pub.publish(self.move_tug)
-                    else:
-                        self.move_tug.linear.x = -0.05
+                        if  yaw_angle_error > 0:
+                            self.move_tug.angular.z = 0.05
+                            self.cmd_pub.publish(self.move_tug)
+                        elif yaw_angle_error < 0:
+                            self.move_tug.angular.z = -0.05
+                            self.cmd_pub.publish(self.move_tug)
+                    
+                    elif abs(yaw_angle_error) < 0.2:
+                        print("I am here")
+                        self.move_tug.linear.x = -0.1
                         self.cmd_pub.publish(self.move_tug)
             else:         
-                self.move_tug.linear.x = -0.02
+                self.move_tug.linear.x = 0.0
                 self.move_tug.angular.z = 0.0
                 self.cmd_pub.publish(self.move_tug)
                 
@@ -211,7 +213,7 @@ class Dockpallet(Node):
                 distance = math.fabs(sqrt(pow(self.pallet_x - self.tb3_x, 2) + pow(self.pallet_y - self.tb3_y, 2)))
                 angle_difference = self.pallet_angle_z - self.tb3_angle_z
                 distance_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x)
-                yaw_angle_error = atan2(self.pallet_y - self.tb3_y, self.pallet_x - self.tb3_x) - self.tb3_angle_z
+                yaw_angle_error = atan2(self.tb3_y - self.pallet_y, self.tb3_x - self.pallet_x) - self.tb3_angle_z
 
                 if abs(distance) < 0.7:
 
@@ -244,10 +246,10 @@ class Dockpallet(Node):
                         
                             if abs(angle_difference) > 0.1:
                         
-                                self.move_tug.angular.z = 0.1
+                                self.move_tug.angular.z = 0.05
                                 self.cmd_pub.publish(self.move_tug)
                         else:
-                            self.move_tug.angular.z = -0.1
+                            self.move_tug.angular.z = -0.05
                             self.cmd_pub.publish(self.move_tug)
                 else:
                     self.move_tug.linear.x = 0.0
@@ -326,7 +328,7 @@ class Dockpallet(Node):
                 if self.switch_prev_time is None:
                     self.switch_prev_time = time.time()
 
-                if time.time() - self.switch_prev_time > 1:
+                if time.time() - self.switch_prev_time > 0.5:
                     self.load_present = True
                     self.no_load_present = False
                 else:

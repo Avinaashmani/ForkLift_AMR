@@ -1,0 +1,5 @@
+checking if navigation is completed and whether the service is called.
+If all true, we get the tf from camera.
+calculate the distance from robot to pallet, and calculate the orientation.
+If i am over 2.5m, and switch is not pressed.
+check the yaw angle error and start aligning.
