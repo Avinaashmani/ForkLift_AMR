@@ -216,9 +216,6 @@ class Dockpallet(Node):
                     self.dock_flag = False
                     self.dock_completed_flag = False
                 
-
-                
-
     def undock(self):
 
         if self.undock_flag and self.navigate_flag :

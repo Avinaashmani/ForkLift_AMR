@@ -20,6 +20,7 @@ class Dockpallet(Node):
     def __init__(self):
         super().__init__('pallet_dock')
 
+
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
 
@@ -71,7 +72,7 @@ class Dockpallet(Node):
         self.switch = Bool()
         
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
-        self.undock_servicee = self.create_service(SetBool, 'UnDocking', self.undock_func)
+        self.undock_service = self.create_service(SetBool, 'UnDocking', self.undock_func)
         
         self.create_subscription(Bool, 'load_topic', self.load, 10)
         self.create_subscription(String, 'pallet_presence', self.pallet_present_callback, 10)
@@ -135,7 +136,8 @@ class Dockpallet(Node):
         self.unload_flag = msg.data
                 
     def dock_load(self):
-        print(self.angle_diff_c)
+
+
         if self.load_flag:
             self.move_tug.linear.x = 0.0
             self.move_tug.angular.z = 0.0
@@ -151,37 +153,75 @@ class Dockpallet(Node):
             if self.dock_flag and self.navigate_flag :
 
                 print("-----Pallet Center------")
-                print(self.angle_diff_c)
-                print("-----------------")
+                # print(self.angle_diff_c)
+                # print(self.distance)
+                # print("-----------------")
 
                 if abs(self.angle_diff_c) > 1.5 :
 
-                    self.move_tug.angular.z = 0.05
+                    self.move_tug.angular.z = 0.07
                     self.cmd_pub.publish(self.move_tug)
 
-                elif self.angle_diff_c > 0.1 and self.angle_diff_c < 1.5:
-                        # self.update_frame()
-                        self.move_tug.angular.z = -0.05
+                    if self.distance > 1.5:
+                
+                        self.move_tug.linear.x = -0.07
                         self.cmd_pub.publish(self.move_tug)
 
-                elif abs(self.angle_diff_c) <= 0.1:
+                    else:
+
+                        self.move_tug.linear.x = 0.0
+                        self.cmd_pub.publish(self.move_tug)
+
+                elif self.angle_diff_c > 0.06 and self.angle_diff_c < 0.1:
+                        # self.update_frame()
+
+                        if self.distance != 0.0 and self.angle_diff_c != 0.0:
+                            self.move_tug.angular.z = -0.07
+                            self.cmd_pub.publish(self.move_tug)
+
+                        if self.distance > 0.5:
+
+                            self.move_tug.linear.x = -0.1
+                            self.cmd_pub.publish(self.move_tug)
+
+                        else:
+
+                            self.move_tug.linear.x = 0.0
+                            self.cmd_pub.publish(self.move_tug)
+
+                elif abs(self.angle_diff_c) <= 0.02:
 
                     self.move_tug.angular.z = 0.0
                     self.cmd_pub.publish(self.move_tug) 
 
-                    self.center_aling = True
+                    if self.distance > 0.5:
 
-                # print(self.left_align)
-                # print(self.right_align)
-                print(self.center_aling)
+                        self.move_tug.linear.x = -0.1
+                        self.cmd_pub.publish(self.move_tug)
 
+                    else:
+                        self.move_tug.linear.x = 0.0
+                        self.cmd_pub.publish(self.move_tug)
+                else:
+                
+                    if self.load_flag:
+                        self.move_tug.linear.x = 0.0
+                        self.move_tug.angular.z = 0.0
+                        self.cmd_pub.publish(self.move_tug)
+                        self.dock_flag = False
+                        self.dock_completed_flag = False
+                        self.get_logger().error("Switch Pressed")
+                        self.diagnostics.data = "Switch Pressed"
+                        self.docking_undocking_diagnostics.publish(self.diagnostics)
+                
+                    else:
+                        self.move_tug.linear.x = -0.08
+                        self.cmd_pub.publish(self.move_tug) 
             else:
                 self.move_tug.angular.z = 0.0
+                self.move_tug.linear.x = 0.0
                 self.cmd_pub.publish(self.move_tug) 
-                self.left_align = False
-                self.right_align = False
-                self.center_aling = False
-           
+
     def update_frame(self):
                     
         try:
@@ -284,10 +324,6 @@ class Dockpallet(Node):
 
         return yaw_z
     
-    # def get_frames(self):
-        
-    #     # if self.pallet_presence:
-
     def pallet_center_callback(self, msg):
         self.pallet_x = msg.translation.x / 1000
         self.pallet_y = msg.translation.y / 1000
@@ -299,10 +335,16 @@ class Dockpallet(Node):
         self.distance = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
         self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
 
-        self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
+        if self.pallet_presence:
+            self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
+            self.distance = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+        
+        else:
+            self.angle_diff_c = 0.0
+            self.distance = 0.0
 
-        # print(self.distance)
-        print(math.fabs(self.angle_diff_c))
+        print(self.distance)
+        print(self.angle_diff_c)
 
     def read_arduino(self):
         

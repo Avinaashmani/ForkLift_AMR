@@ -30,6 +30,7 @@ setup(
          'Dock_with_Pallet_05 = doozy_forklift.dock_with_pallet_05:main',
          'Dock_with_Pallet_06 = doozy_forklift.dock_with_pallet_06:main',
          'Dock_with_Pallet_07 = doozy_forklift.dock_with_pallet_07:main',
+         'Dock_with_Pallet_08 = doozy_forklift.dock_with_pallet_08:main',
          'Dock_tree = doozy_forklift.dock_tree_01:main',
          'Detect_Pallet_01 = doozy_forklift.detect_pallet_01:main',
          'Publish_TF = doozy_forklift.publish_tf_01:main',
