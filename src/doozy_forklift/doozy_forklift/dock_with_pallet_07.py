@@ -100,9 +100,7 @@ class Dockpallet(Node):
     def dock_func(self, request, response):
         
         if self.navigate_flag and request.data is True:
-            # print(self.dock_flag)
-            # print(self.navigate_flag)
-            
+
             self.dock_flag = True
             
             if self.dock_completed_flag is True:
@@ -137,90 +135,43 @@ class Dockpallet(Node):
                 
     def dock_load(self):
 
-
-        if self.load_flag:
-            self.move_tug.linear.x = 0.0
-            self.move_tug.angular.z = 0.0
-            self.cmd_pub.publish(self.move_tug)
-            self.dock_flag = False
-            self.dock_completed_flag = False
-            self.get_logger().error("Switch Pressed")
-            self.diagnostics.data = "Switch Pressed"
-            self.docking_undocking_diagnostics.publish(self.diagnostics)
-
-        else:
-
-            if self.dock_flag and self.navigate_flag :
+        if self.dock_flag and self.navigate_flag :
+            if self.pallet_presence:
 
                 print("-----Pallet Center------")
-                # print(self.angle_diff_c)
-                # print(self.distance)
-                # print("-----------------")
-
-                if abs(self.angle_diff_c) > 1.5 :
-
-                    self.move_tug.angular.z = 0.07
+                
+                if abs(self.distance_c) > 1.5 :
+                    self.move_tug.linear.x = -0.07
                     self.cmd_pub.publish(self.move_tug)
-
-                    if self.distance > 1.5:
+                    print("loop 0")
+                    
+                    if self.angle_diff_c > 1.90:
                 
-                        self.move_tug.linear.x = -0.07
+                        self.move_tug.angular.z = 0.07
+                        self.cmd_pub.publish(self.move_tug)
+                        print("loop 1")
+
+                    elif self.angle_diff_c < 1.95:
+                        self.move_tug.angular.z = -0.07
                         self.cmd_pub.publish(self.move_tug)
 
+                        print("loop 2")
+                    
+                    # elif abs(self.angle_diff_c) <= 0.002:
+
+                    #     self.move_tug.angular.z = 0.07
+                    #     self.cmd_pub.publish(self.move_tug) 
+                    #     print("loop 3")
+                    
                     else:
-
-                        self.move_tug.linear.x = 0.0
-                        self.cmd_pub.publish(self.move_tug)
-
-                elif self.angle_diff_c > 0.06 and self.angle_diff_c < 0.1:
-                        # self.update_frame()
-
-                        if self.distance != 0.0 and self.angle_diff_c != 0.0:
-                            self.move_tug.angular.z = -0.07
-                            self.cmd_pub.publish(self.move_tug)
-
-                        if self.distance > 0.5:
-
-                            self.move_tug.linear.x = -0.1
-                            self.cmd_pub.publish(self.move_tug)
-
-                        else:
-
-                            self.move_tug.linear.x = 0.0
-                            self.cmd_pub.publish(self.move_tug)
-
-                elif abs(self.angle_diff_c) <= 0.02:
-
-                    self.move_tug.angular.z = 0.0
-                    self.cmd_pub.publish(self.move_tug) 
-
-                    if self.distance > 0.5:
-
-                        self.move_tug.linear.x = -0.1
-                        self.cmd_pub.publish(self.move_tug)
-
-                    else:
-                        self.move_tug.linear.x = 0.0
-                        self.cmd_pub.publish(self.move_tug)
-                else:
-                
-                    if self.load_flag:
-                        self.move_tug.linear.x = 0.0
                         self.move_tug.angular.z = 0.0
                         self.cmd_pub.publish(self.move_tug)
-                        self.dock_flag = False
-                        self.dock_completed_flag = False
-                        self.get_logger().error("Switch Pressed")
-                        self.diagnostics.data = "Switch Pressed"
-                        self.docking_undocking_diagnostics.publish(self.diagnostics)
-                
-                    else:
-                        self.move_tug.linear.x = -0.08
-                        self.cmd_pub.publish(self.move_tug) 
-            else:
-                self.move_tug.angular.z = 0.0
-                self.move_tug.linear.x = 0.0
-                self.cmd_pub.publish(self.move_tug) 
+                        pass
+                else:
+                    self.move_tug.angular.z = 0.0
+                    self.move_tug.linear.x = 0.08
+                    self.cmd_pub.publish(self.move_tug) 
+                    print("Auto dock")
 
     def update_frame(self):
                     
@@ -332,18 +283,18 @@ class Dockpallet(Node):
         robot_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         
 
-        self.distance = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+        self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
         self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
 
         if self.pallet_presence:
             self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
-            self.distance = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+            self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
         
         else:
             self.angle_diff_c = 0.0
-            self.distance = 0.0
+            self.distance_c = 0.0
 
-        print(self.distance)
+        print(self.distance_c)
         print(self.angle_diff_c)
 
     def read_arduino(self):
@@ -359,8 +310,10 @@ class Dockpallet(Node):
                 if self.switch_prev_time is None:
                     self.switch_prev_time = time.time()
 
-                if time.time() - self.switch_prev_time > 0.5:
+                if time.time() - self.switch_prev_time > 1.0:
                     self.load_present = True
+                    self.get_logger().info("docking swithc triggered...")
+                    self.dock_flag = False
                     self.no_load_present = False
                 else:
                     self.load_present = False
@@ -385,6 +338,8 @@ class Dockpallet(Node):
             self.pallet_presence = True
         else:
             self.pallet_presence = False
+
+
 def main():
     rclpy.init()
     try:
