@@ -130,23 +130,22 @@ class Dockpallet(Node):
         self.root = Sequence('pallet_alignment', memory=True)
         
         self.check_pallet = Condition('Check_Camera')
-        self.align_right= Action('Pocket', distance=self.distance_r, angle_diff=self.angle_diff_r, switch_value=self.switch_value, node=self)
-        self.forward_1 = Action('Forward', distance=self.distance_r, angle_diff=self.angle_diff_r, switch_value=self.switch_value, node=self)
-        self.align_center_1 = Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
-        self.reverse_1 = Action('Reverse', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
-        self.align_left = Action('Pocket', distance=self.distance_l, angle_diff=self.angle_diff_l, switch_value=self.switch_value, node=self)
-        self.forward_2 = Action('Forward', distance=self.distance_l, angle_diff=self.angle_diff_l, switch_value=self.switch_value, node=self)
+        self.align_center_1= Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
+        self.forward_1 = Action('Forward', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
         self.align_center_2 = Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
-        self.auto_dock = Action('Auto_Dock', distance=self.distance_r, angle_diff=self.angle_diff_r, switch_value=self.switch_value, node=self)
+        # self.reverse_1 = Action('Reverse', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
+        # self.align_center_3 = Action('Pocket', distance=self.distance_l, angle_diff=self.angle_diff_l, switch_value=self.switch_value, node=self)
+        self.forward_2 = Action('Forward', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
+        self.align_center_4 = Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
+        self.auto_dock = Action('Auto_Dock', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
 
         self.root.add_children([
             self.check_pallet,
-            self.align_right,
-            self.forward_1,
             self.align_center_1,
-            self.align_left,
-            self.forward_2,
+            self.forward_1,
             self.align_center_2,
+            self.forward_2,
+            self.align_center_4,
             self.auto_dock
         ])
         
@@ -317,21 +316,25 @@ class Action(Behaviour):
             self.logger.debug(f"Moving Forward: distance={self.distance}")
             logging.level = logging.Level.DEBUG
             status = self.forward_align()
+            # time.sleep(2)
         
         elif self.name == 'Pocket':
             self.logger.debug(f"Centering Pocket: distance={self.distance}, angle_diff={self.angle_diff}")
             logging.level = logging.Level.DEBUG
             status = self.center_pocket()
+            # time.sleep(3)
 
         elif self.name == 'Reverse':
             self.logger.debug(f"Reversing: distance={self.distance}")
             logging.level = logging.Level.DEBUG
             status = self.reverse_align()
+            # time.sleep(1)
         
         elif self.name == 'Auto_Dock':
             self.logger.debug(f"Auto Docking: distance={self.distance}")
             logging.level = logging.Level.DEBUG
             status = self.auto_dock_align()
+            # time.sleep(1)
 
         self.node.publish_velocities(self.linear_vel, self.angular_vel)
         return status
@@ -340,7 +343,7 @@ class Action(Behaviour):
         if self.switch_value:
             self.angular_vel = 0.0
             self.linear_vel = 0.0
-            self.logger.error(f"Forward Alignment : Switch Triggered {self.distance}")
+            self.logger.error(f"Forward Alignment : Switch Triggered {self.distance} Angle {self.angle_diff}")
             logging.level = logging.Level.DEBUG
             return Status.FAILURE
         
@@ -348,14 +351,14 @@ class Action(Behaviour):
             if self.distance > 0.5 :
                 self.linear_vel = -0.1
                 self.angular_vel = 0.0
-                self.logger.info(f"Moving Forward: distance {self.distance}")
+                self.logger.info(f"Moving Forward: distance {self.distance} Angle {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
                 return Status.RUNNING
         
             else:
                 self.linear_vel = 0.0
                 self.angular_vel = 0.0
-                self.logger.info(f"Moving Forward: Completed! {self.distance}")
+                self.logger.info(f"Moving Forward: Completed! {self.distance} Angle {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
                 return Status.SUCCESS
 
@@ -369,7 +372,8 @@ class Action(Behaviour):
         
         else:          
             if self.angle_diff > 1.0:
-                self.angular_vel = 0.07
+                self.angular_vel = 0.04
+                self.linear_vel = 0.05
                 angular_speed = self.angular_vel
                 self.linear_vel = 0.0
                 linear_speed = self.linear_vel
@@ -377,13 +381,18 @@ class Action(Behaviour):
                 logging.level = logging.Level.DEBUG
                 return Status.RUNNING
 
-            elif self.angle_diff < 1.0 and self.angle_diff > 0.1:
-                self.angular_vel = -0.07
-                self.linear_vel = 0.0
+            elif self.angle_diff < 0.2 and self.angle_diff > 0.09:
+                self.angular_vel = -0.04
+                self.linear_vel = 0.05
                 self.logger.info(f"Center pallet Alignment : {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
                 return Status.RUNNING
-        
+            elif self.angle_diff == 0.0 :
+                self.angular_vel = 0.0
+                self.linear_vel = 0.0
+                self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+                logging.level = logging.Level.DEBUG
+                return Status.SUCCESS                
             else:
                 self.angular_vel = 0.0
                 self.linear_vel = 0.0
