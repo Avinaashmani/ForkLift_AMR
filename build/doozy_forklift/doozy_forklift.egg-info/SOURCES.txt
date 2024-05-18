@@ -23,6 +23,8 @@ doozy_forklift/dock_with_pallet_05.py
 doozy_forklift/dock_with_pallet_06.py
 doozy_forklift/dock_with_pallet_07.py
 doozy_forklift/dock_with_pallet_08.py
+doozy_forklift/dock_with_pallet_09.py
+doozy_forklift/dock_with_pallet_10.py
 doozy_forklift/publish_tf_01.py
 doozy_forklift/publish_tf_02.py
 resource/doozy_forklift

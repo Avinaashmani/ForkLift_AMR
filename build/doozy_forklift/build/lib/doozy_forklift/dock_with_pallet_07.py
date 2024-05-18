@@ -36,6 +36,8 @@ class Dockpallet(Node):
         self.load_present = False
         self.no_load_present = False
         self.switch_prev_time = False
+
+        self.reached_point_1 = False
         
         self.load_flag = False
         self.unload_flag = False
@@ -139,12 +141,15 @@ class Dockpallet(Node):
             if self.pallet_presence:
 
                 print("-----Pallet Center------")
+                
+                if abs(self.distance_c) > 1.5 :
+                    
+                    self.reached_point_1 = False
 
-                if abs(self.distance_c) > 0.8 :
                     self.move_tug.linear.x = -0.07
                     self.cmd_pub.publish(self.move_tug)
                     print("loop 0")
-
+                    
                     if self.angle_diff_c > 1.90:
                 
                         self.move_tug.angular.z = 0.07
@@ -163,16 +168,26 @@ class Dockpallet(Node):
                     #     self.cmd_pub.publish(self.move_tug) 
                     #     print("loop 3")
                     
-                    else:
-                        self.move_tug.angular.z = 0.0
-                        self.cmd_pub.publish(self.move_tug)
-                        pass
-            else:
-                self.move_tug.angular.z = 0.0
-                self.move_tug.linear.x = -0.08
-                self.cmd_pub.publish(self.move_tug) 
-                print("Auto dock")
+                else:
+                    self.move_tug.angular.z = 0.0
+                    self.move_tug.linear.x = 0.0
+                    self.cmd_pub.publish(self.move_tug)
+                    self.reached_point_1 = True
+                    pass
 
+                if self.reached_point_1:
+                    # reached_point_1
+                    if self.angle_diff_c > 0.0:
+                
+                        self.move_tug.angular.z = -0.08
+                        self.cmd_pub.publish(self.move_tug)
+                        print("loop 1")
+
+                    elif self.angle_diff_c < 0.09:
+                        self.move_tug.angular.z = 0.08
+                        self.cmd_pub.publish(self.move_tug)
+
+                        print("loop 2")
     def update_frame(self):
                     
         try:
