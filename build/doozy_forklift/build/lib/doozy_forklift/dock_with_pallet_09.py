@@ -181,6 +181,7 @@ class Dockpallet(Node):
         if self.pallet_presence:
             self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
             self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+            self.get_logger().info(f"Dist {self.distance_c} -- Yaw err {self.angle_diff_c}")
         
         else:
             self.angle_diff_c = 0.0
@@ -322,7 +323,6 @@ class Action(Behaviour):
             self.logger.debug(f"Centering Pocket: distance={self.distance}, angle_diff={self.angle_diff}")
             logging.level = logging.Level.DEBUG
             status = self.center_pocket()
-            # time.sleep(3)
 
         elif self.name == 'Reverse':
             self.logger.debug(f"Reversing: distance={self.distance}")
@@ -371,34 +371,61 @@ class Action(Behaviour):
             return Status.FAILURE
         
         else:          
-            if self.angle_diff > 1.0:
-                self.angular_vel = 0.04
-                self.linear_vel = 0.05
-                angular_speed = self.angular_vel
-                self.linear_vel = 0.0
-                linear_speed = self.linear_vel
-                self.logger.info(f"Center pallet Alignment : {self.angle_diff}")
-                logging.level = logging.Level.DEBUG
-                return Status.RUNNING
 
-            elif self.angle_diff < 0.2 and self.angle_diff > 0.09:
-                self.angular_vel = -0.04
-                self.linear_vel = 0.05
-                self.logger.info(f"Center pallet Alignment : {self.angle_diff}")
-                logging.level = logging.Level.DEBUG
-                return Status.RUNNING
-            elif self.angle_diff == 0.0 :
-                self.angular_vel = 0.0
-                self.linear_vel = 0.0
-                self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
-                logging.level = logging.Level.DEBUG
-                return Status.SUCCESS                
-            else:
-                self.angular_vel = 0.0
-                self.linear_vel = 0.0
-                self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
-                logging.level = logging.Level.DEBUG
-                return Status.SUCCESS
+            if self.angle_diff <= 1.97:
+                if self.angle_diff > 1.5:
+                    self.angular_vel = 0.04
+                    
+                    if self.distance > 0.9:
+                        self.linear_vel = -0.05
+
+                    self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
+                    logging.level = logging.Level.DEBUG
+                    return Status.RUNNING
+                
+                elif 0.1 <= self.angle_diff <= 1.5:
+                    self.angular_vel = 0.04
+                    
+                    if self.distance > 0.9:
+                        self.linear_vel = -0.05
+                    
+                    self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
+                    logging.level = logging.Level.DEBUG
+                    return Status.RUNNING
+                
+                elif 0.065 < self.angle_diff < 0.2:
+                    self.angular_vel = -0.04
+                    self.linear_vel = 0.05
+                    self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
+                    logging.level = logging.Level.DEBUG
+                    return Status.RUNNING
+                else:
+                    # self.angular_vel = 0.0
+                    # self.linear_vel = 0.0
+                    self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+                    logging.level = logging.Level.DEBUG
+                    return Status.SUCCESS
+            self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+            logging.level = logging.Level.DEBUG
+            return Status.SUCCESS
+            # elif self.angle_diff < 0.2 and self.angle_diff > 0.08:
+            #     self.angular_vel = -0.04
+            #     self.linear_vel = 0.07
+            #     self.logger.info(f"Center pallet Alignment : {self.angle_diff}")
+            #     logging.level = logging.Level.DEBUG
+            #     return Status.RUNNING
+            # elif self.angle_diff == 0.0 :
+            #     self.angular_vel = 0.0
+            #     self.linear_vel = 0.0
+            #     self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+            #     logging.level = logging.Level.DEBUG
+            #     return Status.SUCCESS                
+            # else:
+            #     self.angular_vel = 0.0
+            #     self.linear_vel = 0.0
+            #     self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+            #     logging.level = logging.Level.DEBUG
+            #     return Status.SUCCESS
 
     def reverse_align(self):
         if self.distance < 2.5:
