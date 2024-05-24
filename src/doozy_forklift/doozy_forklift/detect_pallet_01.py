@@ -41,6 +41,8 @@ class PalletDetection(Node):
             self.center.translation.y = float(response.json()['data']['detectionResult']['centerPoint']['X'])
             self.center.translation.z = float(response.json()['data']['detectionResult']['centerPoint']['Y'])
 
+            self.center.rotation.z = float (response.json()['data']['detectionResult']['angle'])
+
             pallet_present = response.json()['data']['detectionResult']['palletFound']
 
             print(f"Left Pocket: {self.left.translation.x}-> Center Pocket {self.center.translation.x}<-{self.right.translation.x} Right Pocket : Pallet Presence ===> {pallet_present}")

@@ -3,10 +3,12 @@
 import rclpy
 import tf2_ros
 import math
+import numpy
 import time
 import serial
 from math import sqrt, atan2
 from rclpy.node import Node
+from rclpy.time import Time
 from rclpy.executors import SingleThreadedExecutor
 from example_interfaces.srv import SetBool
 from geometry_msgs.msg import Twist, Transform
@@ -78,7 +80,7 @@ class Dockpallet(Node):
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
         # self.undock_service = self.create_service(SetBool, 'UnDocking', self.undock_func)
 
-        # self.create_timer(0.1, self.read_arduino)
+        self.create_timer(0.1, self.tb3_transform)
 
         self.distance_c = 0.0
         self.angle_diff_c = 0.0
@@ -92,6 +94,14 @@ class Dockpallet(Node):
         self.left_align = False
         self.right_align = False
         self.center_align = False
+
+        self.tb3_frame = 'base_link'
+        self.tb3_baseframe = 'odom'
+
+        self.tb3_x = 0.0
+        self.tb3_y = 0.0
+        self.tb3_z = 0.0
+        self.tb3_yaw = 0.0
 
         self.switch_value = False
 
@@ -138,20 +148,26 @@ class Dockpallet(Node):
     def dock_with_pallet(self):
         self.root = Sequence('pallet_alignment', memory=True)
         
-        self.check_pallet = Condition('Check_Camera')
+        self.check_pallet = Condition('Check_Camera', self.pallet_presence)
         self.align_center_1= Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
         self.forward_1 = Action('Forward', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
         self.align_center_2 = Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
-        # self.reverse_1 = Action('Reverse', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
-        # self.align_center_3 = Action('Pocket', distance=self.distance_l, angle_diff=self.angle_diff_l, switch_value=self.switch_value, node=self)
+        self.reverse_1 = Action('Reverse', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
+        self.align_center_3 = Action('Pocket', distance=self.distance_l, angle_diff=self.angle_diff_l, switch_value=self.switch_value, node=self)
         self.forward_2 = Action('Forward', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
         self.align_center_4 = Action('Pocket', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
         self.auto_dock = Action('Auto_Dock', distance=self.distance_c, angle_diff=self.angle_diff_c, switch_value=self.switch_value, node=self)
 
         self.root.add_children([
             self.check_pallet,
+            self.align_center_1, 
             self.forward_1,
+            self.reverse_1, 
+            self.align_center_3, 
+            self.forward_2,
+            self.align_center_4,
             self.auto_dock
+
         ])
         
         self.get_logger().debug("Behavior tree constructed")
@@ -174,30 +190,25 @@ class Dockpallet(Node):
         return yaw_z
     
     def pallet_center_callback(self, msg):
-        self.pallet_x = msg.translation.x / 1000
-        self.pallet_y = msg.translation.y / 1000
-        
-        pallet_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
-        robot_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
-        
-        self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
-        self.dist_diff = self.previous_dist - self.distance_c
-        self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
+        self.pallet_x = round (msg.translation.x / 1000, 2)
+        self.pallet_y = round (msg.translation.y / 1000, 2)
 
-        self.controlled_speed = self.distance_c * self.kp_d +  self.dist_diff * self.kd_d
+        angle_z = round(math.radians(msg.rotation.z), 2)
+        
+        delta_x = self.tb3_x - self.pallet_x
+        delta_y = self.tb3_y - self.pallet_y
+        desired_heading = round(math.atan2(delta_x, delta_y), 2)
+        heading_error = desired_heading - self.tb3_yaw
+        yaw_error = abs(angle_z) - abs(self.tb3_yaw)
 
         if self.pallet_presence:
-            self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
-            self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
-            self.get_logger().info(f"Dist {self.distance_c} -- Yaw err {self.angle_diff_c}")
+            # self.angle_diff_c = round((self.angle_difference / 3.14), 2)
+            self.distance_c = round(math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2))), 2)
+            self.get_logger().info(f"{heading_error} {yaw_error}")
         
         else:
             self.angle_diff_c = 0.0
             self.distance_c = 0.0
-        
-        self.previous_dist = self.distance_c
-        self.total_dist = self.total_dist + self.distance_c
-        self.get_logger().info(f"controlled speed : {self.controlled_speed}")
 
     def pallet_right_callback(self, msg):
         self.pallet_x = msg.translation.x / 1000
@@ -239,6 +250,28 @@ class Dockpallet(Node):
             self.pallet_presence = True
         else:
             self.pallet_presence = False
+
+    def tb3_transform(self):
+        
+        try:
+        
+            tb3_transform = self.tf_buffer.lookup_transform(self.tb3_baseframe, self.tb3_frame, Time())
+        
+            self.tb3_x = tb3_transform.transform.translation.x
+            self.tb3_y = tb3_transform.transform.translation.y
+            
+            tb3_rot_x = tb3_transform.transform.rotation.x
+            tb3_rot_y = tb3_transform.transform.rotation.y
+            tb3_rot_z = tb3_transform.transform.rotation.z
+            tb3_rot_w = tb3_transform.transform.rotation.w
+
+            self.tb3_yaw = self.euler_from_quaternion(tb3_rot_x, tb3_rot_y, 
+                                                      tb3_rot_z, tb3_rot_w)
+            
+            # self.get_logger().info(f"x: {round(self.tb3_x, 4)} y: {round(self.tb3_y, 4)} z: {round(self.tb3_yaw, 4)}")
+        
+        except(tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+            self.get_logger().error("LookupException: {0}".format(str(e)))
 
     def read_arduino(self):
         
@@ -283,10 +316,10 @@ class Dockpallet(Node):
 
 class Condition(Behaviour):
     
-    def __init__(self, name):
+    def __init__(self, name, pallet_present):
         super(Condition, self).__init__(name)
         self.name = name
-        # self.distance = distance
+        self.pallet = pallet_present
     
     def setup(self) :
         self.logger.debug(f"Action :: Setup {self.name}")
@@ -353,11 +386,11 @@ class Action(Behaviour):
 
     def forward_align(self):
 
-        if abs(self.controlled_speed) > 0.2:
-            self.controlled_speed = 0.2
+        # if abs(self.controlled_speed) > 0.2:
+        #     self.controlled_speed = 0.2
 
-        elif abs(self.controlled_speed) < 0.05:
-            self.controlled_speed = 0.05
+        # elif abs(self.controlled_speed) < 0.05:
+        #     self.controlled_speed = 0.05
 
         if self.switch_value:
             self.angular_vel = 0.0
@@ -367,15 +400,15 @@ class Action(Behaviour):
             return Status.FAILURE
         
         else:         
-            if self.distance > 0.5 :
-                self.linear_vel = -0.1
+            if self.distance < 1.5 :
+                self.linear_vel = 0.08
                 self.angular_vel = 0.0
                 self.logger.info(f"Moving Forward: distance {self.distance} Angle {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
                 return Status.RUNNING
         
             else:
-                self.linear_vel = 0.0
+                self.linear_vel = 0.08
                 self.angular_vel = 0.0
                 self.logger.info(f"Moving Forward: Completed! {self.distance} Angle {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
@@ -407,14 +440,14 @@ class Action(Behaviour):
                     self.angular_vel = 0.04
                     
                     if self.distance > 0.9:
-                        self.linear_vel = -0.05
+                        self.linear_vel = 0.05
                     
                     self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
                     logging.level = logging.Level.DEBUG
                     return Status.RUNNING
                 
-                elif 0.065 < self.angle_diff < 0.2:
-                    self.angular_vel = -0.04
+                elif 0.065 < self.angle_diff < 0.1:
+                    self.angular_vel = 0.04
                     self.linear_vel = 0.05
                     self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
                     logging.level = logging.Level.DEBUG
@@ -428,6 +461,11 @@ class Action(Behaviour):
             self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
             logging.level = logging.Level.DEBUG
             return Status.SUCCESS
+                
+            # self.logger.debug(f"Center pallet Alignment Completed! : {self.angle_diff}")
+            # logging.level = logging.Level.DEBUG
+            # return Status.SUCCESS
+        
             # elif self.angle_diff < 0.2 and self.angle_diff > 0.08:
             #     self.angular_vel = -0.04
             #     self.linear_vel = 0.07
@@ -448,37 +486,44 @@ class Action(Behaviour):
             #     return Status.SUCCESS
 
     def reverse_align(self):
-        if self.distance < 2.5:
-            if self.switch_value:
-                self.linear_vel = 0.0
-                self.angular_vel = 0.0
-                self.logger.error(f"Reversing: Switch Triggered distance {self.distance}")
-                logging.level = logging.Level.DEBUG
-                return Status.FAILURE
+        if self.switch_value:
+            self.linear_vel = 0.0
+            self.angular_vel = 0.0
+            self.logger.error(f"Reversing: Switch Triggered distance {self.distance}")
+            logging.level = logging.Level.DEBUG
+            return Status.FAILURE
             
-            else: 
-                self.linear_vel = 0.1
+        else: 
+            if self.distance > 1.5 or self.distance == 0.0:
+                self.linear_vel = 0.0
                 self.angular_vel = 0.0
                 self.logger.info(f"Reversing: distance {self.distance}")
                 logging.level = logging.Level.DEBUG
-                return Status.RUNNING
+                return Status.SUCCESS
         
-        else:
-            self.linear_vel = 0.0
-            self.angular_vel = 0.0
-            self.logger.debug(f"Reversing: Completed! {self.distance}")
-            logging.level = logging.Level.DEBUG
-            return Status.SUCCESS
-
+            else:
+                self.linear_vel = 0.15
+                self.angular_vel = 0.0
+                self.logger.info(f"Reversing: distance {self.distance}")
+                logging.level = logging.Level.DEBUG
+                # return Status.RUNNING
+        return Status.SUCCESS
+    
     def auto_dock_align(self):
-        if not self.switch_value:
-            self.linear_vel = -0.08
-            return Status.RUNNING
-        
-        else:
+        if self.switch_value:
             self.linear_vel = 0.0
             self.angular_vel = 0.0
-            return Status.SUCCESS
+            return Status.FAILURE
+        
+        else:
+            if self.distance == 0:
+                self.linear_vel = 0.0
+                self.angular_vel = 0.0
+                return Status.SUCCESS
+            else:
+                self.linear_vel = -0.05
+                self.angular_vel = 0.0
+                return Status.SUCCESS
         
     def terminate(self, new_status):
         self.logger.debug(f"Condition :: Termination {self.name} to {new_status}")

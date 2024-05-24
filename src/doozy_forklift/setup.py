@@ -33,10 +33,12 @@ setup(
          'Dock_with_Pallet_08 = doozy_forklift.dock_with_pallet_08:main',
          'Dock_with_Pallet_09 = doozy_forklift.dock_with_pallet_09:main',
          'Dock_with_Pallet_10 = doozy_forklift.dock_with_pallet_10:main',
+         'Dock_with_Pallet_11 = doozy_forklift.dock_with_pallet_11:main',
          'Dock_tree = doozy_forklift.dock_tree_01:main',
          'Detect_Pallet_01 = doozy_forklift.detect_pallet_01:main',
          'Publish_TF = doozy_forklift.publish_tf_01:main',
-         'Publish_TF_2 = doozy_forklift.publish_tf_02:main'
+         'Publish_TF_2 = doozy_forklift.publish_tf_02:main',
+         'Imu_pub = doozy_forklift.imu_publisher_01:main',
         ],
     },
 )

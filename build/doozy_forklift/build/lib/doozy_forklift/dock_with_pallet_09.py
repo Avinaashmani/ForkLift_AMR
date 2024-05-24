@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# DO NOT MAKE ANY CHANGES TO THESE #
+
 import rclpy
 import tf2_ros
 import math
@@ -39,6 +41,8 @@ class Dockpallet(Node):
         
         self.create_subscription(Bool, 'navigation_status', self.navigation_status_callback, 10)
         self.create_subscription(Transform, '/pallet_center', self.pallet_center_callback, 10)
+        self.create_subscription(Transform, '/pallet_right', self.pallet_right_callback, 10)
+        self.create_subscription(Transform, '/pallet_left', self.pallet_left_callback, 10)
         self.create_subscription(String, 'pallet_presence', self.pallet_present_callback, 10)
         
         self.port = '/dev/ttyUSB0'
@@ -175,17 +179,20 @@ class Dockpallet(Node):
         pallet_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         robot_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         
-        self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+        self.distance_c = round(math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2))), ndigits=2)
         self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
+        self.angle_diff_c = round(math.fabs(self.angle_difference) / 3.14, ndigits=2)
+
+        pocket_diff = self.distance_l - self.distance_r
 
         if self.pallet_presence:
-            self.angle_diff_c = math.fabs(self.angle_difference / 3.14)
-            self.distance_c = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
             self.get_logger().info(f"Dist {self.distance_c} -- Yaw err {self.angle_diff_c}")
+            # self.get_logger().info(str(abs(pocket_diff)*1000))
         
         else:
             self.angle_diff_c = 0.0
             self.distance_c = 0.0
+            self.get_logger().info(f"Dist {self.distance_c} -- Yaw err {self.angle_diff_c}")
 
     def pallet_right_callback(self, msg):
         self.pallet_x = msg.translation.x / 1000
@@ -194,16 +201,16 @@ class Dockpallet(Node):
         pallet_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         robot_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         
-        self.distance_r = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
-        self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
-
-        if self.pallet_presence:
-            self.angle_diff_r = math.fabs(self.angle_difference / 3.14)
-            self.distance_r = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
+        self.distance_r = round(math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2))), 2)
+        self.angle_difference = round(math.fabs((atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z) / 3.14), 2)
+        # print(self.distance_r)
+        # if self.pallet_presence:
+        #     self.angle_diff_r = math.fabs(self.angle_difference / 3.14)
+        #     self.distance_r = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
         
-        else:
-            self.angle_diff_r = 0.0
-            self.distance_r = 0.0
+        # else:
+        #     self.angle_diff_r = 0.0
+        #     self.distance_r = 0.0
     
     def pallet_left_callback(self, msg):
         self.pallet_x = msg.translation.x / 1000
@@ -212,15 +219,14 @@ class Dockpallet(Node):
         pallet_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         robot_angle_z = self.euler_from_quaternion(0.0, 0.0, 1.0, 0.0)
         
-        self.distance_l = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2)))
-        self.angle_difference = atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z
-
-        if self.pallet_presence:
-            self.angle_diff_l = math.fabs(self.angle_difference / 3.14)
-            self.distance_l = math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2))) 
-        else:
-            self.angle_diff_l = 0.0
-            self.distance_l = 0.0
+        self.distance_l = round (math.fabs(sqrt(pow(self.pallet_x - 0, 2) + pow(self.pallet_y - 0, 2))), 2)
+        self.angle_difference = round(math.fabs((atan2(0.0 - self.pallet_y , 0.0-self.pallet_x ) - robot_angle_z) / 3.14), 2)
+        # print(self.distance_l)
+        # if self.pallet_presence:
+        #     self.get_logger().info(self.distance_l)
+        # else:
+        #     self.angle_diff_l = 0.0
+        #     self.distance_l = 0.0
 
     def pallet_present_callback(self, msg):
         if msg.data == 'True':
@@ -393,7 +399,7 @@ class Action(Behaviour):
                     logging.level = logging.Level.DEBUG
                     return Status.RUNNING
                 
-                elif 0.065 < self.angle_diff < 0.2:
+                elif 0.065 < self.angle_diff < 0.1:
                     self.angular_vel = -0.04
                     self.linear_vel = 0.05
                     self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
