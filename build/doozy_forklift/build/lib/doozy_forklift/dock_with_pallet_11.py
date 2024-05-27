@@ -40,7 +40,6 @@ class Dockpallet(Node):
         # self.create_subscription(Transform, '/pallet_right', self.pallet_right_callback, 10)
         # self.create_subscription(Transform, '/pallet_left', self.pallet_left_callback, 10)
         self.create_subscription(String, 'pallet_presence', self.pallet_present_callback, 10)
-        self.create_subscription(Vector3, 'forklift_imu', self.imu_callback, 10)
         
         self.port = '/dev/ttyUSB0'
         self.baudrate = 9600
@@ -267,17 +266,14 @@ class Dockpallet(Node):
         twist.linear.x = linear_vel
         twist.angular.z = angular_vel
         self.cmd_pub.publish(twist)
-    
-    def imu_callback(self, msg):
-        self.imu_yaw = math.radians(msg.z)
 
 class PIDController:
-    def __init__(self, Kp, Ki, Kd, setpoint, output_limits=(-0.1, 0.1)):
-        self.Kp = Kp
-        self.Ki = Ki
-        self.Kd = Kd
-        self.setpoint = setpoint
-        self.output_limits = output_limits
+    def __init__(self):
+        self.Kp = 0.4
+        self.Ki = 0.0
+        self.Kd = 0.1
+        self.setpoint = 0.25
+        self.output_limits = (0.0, 0.1)
 
         self.integral = 0.0
         self.previous_error = 0.0

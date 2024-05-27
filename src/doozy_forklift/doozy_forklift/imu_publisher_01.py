@@ -14,7 +14,7 @@ class ImuReader(Node):
 
         self.ypr = Vector3()
 
-        self.imu_port = '/dev/ttyACM0'
+        self.imu_port = '/dev/ttyACM1'
         self.baudrate = 57600
 
         try:

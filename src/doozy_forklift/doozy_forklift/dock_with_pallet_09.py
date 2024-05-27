@@ -384,7 +384,7 @@ class Action(Behaviour):
                 self.angular_vel = -0.05
 
                 if self.distance > 0.9:
-                     self.linear_vel = 0.05
+                     self.linear_vel = -0.05
 
                 self.logger.debug(f"Center pallet Alignment : {self.angle_diff}")
                 logging.level = logging.Level.DEBUG
@@ -392,7 +392,7 @@ class Action(Behaviour):
             
             elif  self.angle_diff > 1.5:
  
-                self.angular_vel = 0.05
+                self.angular_vel = -0.05
                     
                 if self.distance > 0.9:
                      self.linear_vel = 0.05

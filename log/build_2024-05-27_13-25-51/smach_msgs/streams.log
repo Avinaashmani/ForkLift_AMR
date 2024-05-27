@@ -1,0 +1,7 @@
+[0.187s] Invoking command in '/home/avinaash/ForkLift_AMR/build/smach_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/executive_smach/smach_msgs -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/smach_msgs
+[0.198s] CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+[0.199s]   CMake 3.22 or higher is required.  You are running version 3.16.3
+[0.199s] 
+[0.199s] 
+[0.199s] -- Configuring incomplete, errors occurred!
+[0.366s] Invoked command in '/home/avinaash/ForkLift_AMR/build/smach_msgs' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake /home/avinaash/ForkLift_AMR/src/executive_smach/smach_msgs -DCMAKE_INSTALL_PREFIX=/home/avinaash/ForkLift_AMR/install/smach_msgs
