@@ -23,7 +23,7 @@ class ImuReader(Node):
             self.get_logger().error(f"Error opening serial port: {e}")
             return
 
-        self.create_timer(0.1, self.read_imu)
+        self.create_timer(0.03, self.read_imu)
     
     def read_imu(self):
         try:
