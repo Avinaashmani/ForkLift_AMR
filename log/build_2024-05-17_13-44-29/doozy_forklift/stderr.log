@@ -1,5 +1,0 @@
-  File "/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/dock_with_pallet_07.py", line 176
-    if not self.distance == 0.0 and self.angle_diff_c == 0.0
-                                                           ^
-SyntaxError: invalid syntax
-

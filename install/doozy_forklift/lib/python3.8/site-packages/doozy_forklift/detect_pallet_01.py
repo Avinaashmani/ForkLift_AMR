@@ -41,7 +41,7 @@ class PalletDetection(Node):
             self.center.translation.y = float(response.json()['data']['detectionResult']['centerPoint']['X'])
             self.center.translation.z = float(response.json()['data']['detectionResult']['centerPoint']['Y'])
 
-            self.center.rotation.z = float (response.json()['data']['detectionResult']['angle'])
+            self.center.rotation.z = float (response.json()['data']['detectionResult']['Angle'])
 
             pallet_present = response.json()['data']['detectionResult']['palletFound']
 

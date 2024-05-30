@@ -5,6 +5,7 @@ import math
 import time
 import serial
 import threading
+from numpy import pi
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 from example_interfaces.srv import SetBool
@@ -16,11 +17,15 @@ class SharedData:
         self.pallet_x = 0.0
         self.pallet_y = 0.0
         self.imu_yaw = 0.0
+        self.sick_angle = 0.0
+
         self.lock = threading.Lock()
 
 class Dockpallet(Node):
+
     def __init__(self, shared_data):
         super().__init__('pallet_dock')
+
         self.shared_data = shared_data
 
         self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
@@ -33,6 +38,10 @@ class Dockpallet(Node):
         self.dist_diff = 0.0
         self.total_dist = 0.0
         self.controlled_speed = 0.0
+
+        self.previous_angle = 0.0
+        self.angle_diff = 0.0
+        self.controlled_angle = 0.0
 
         self.angle_diff_c = 0.0
         self.angle_z = 0.0
@@ -59,8 +68,22 @@ class Dockpallet(Node):
         self.switch = Bool()
 
         self.dock_service = self.create_service(SetBool, 'Docking', self.dock_func)
-        self.create_timer(0.1, self.dock_with_pallet)
+        # self.create_timer(0.1, self.dock_with_pallet)
         # self.create_timer(0.1, self.read_arduino)
+
+        # PID coefficients
+        self.kp_distance = 0.5
+        self.ki_distance = 0.1
+        self.kd_distance = 0.1
+        self.kp_angle = 1.0
+        self.ki_angle = 0.1
+        self.kd_angle = 0.1
+
+        # PID state
+        self.integral_distance = 0.0
+        self.integral_angle = 0.0
+        self.prev_error_distance = 0.0
+        self.prev_error_angle = 0.0
 
         self.get_logger().info("Initialized Dockpallet node")
 
@@ -84,50 +107,56 @@ class Dockpallet(Node):
         return response
 
     def dock_with_pallet(self):
+
         with self.shared_data.lock:
             self.pallet_x = self.shared_data.pallet_x
             self.pallet_y = self.shared_data.pallet_y
-            self.imu_yaw = self.shared_data.imu_yaw
+            self.imu_yaw = self.shared_data.sick_angle
 
         self.distance_c = round(math.fabs(math.sqrt((self.pallet_x ** 2) + (self.pallet_y ** 2))), 2)
-        self.angle_diff_c = round((math.atan2(self.pallet_y, self.pallet_x) - self.imu_yaw) / 3.14, 2)
+        self.angle_diff_c = 0.0
 
-        self.get_logger().info(f"distance {self.distance_c} -- angle {self.angle_diff_c}")
+        # PID control for distance
+        error_distance = self.distance_c
+        self.integral_distance += error_distance
+        derivative_distance = error_distance - self.prev_error_distance
+        control_signal_distance = (self.kp_distance * error_distance +
+                                   self.ki_distance * self.integral_distance +
+                                   self.kd_distance * derivative_distance)
+        self.prev_error_distance = error_distance
 
-    def read_arduino(self):
-        try:
-            self.arduino_01 = serial.Serial(self.port, self.baudrate, timeout=0.1)
-            switch_state = self.arduino_01.readline().decode().strip()
+        # Cap the linear velocity
+        control_signal_distance = max(min(control_signal_distance, 0.3), -0.3)
 
-            if switch_state == '1':
-                self.switch_value = True
-                self.switch.data = True
+        # PID control for angle
+        error_angle = self.angle_diff_c
+        self.integral_angle += error_angle
+        derivative_angle = error_angle - self.prev_error_angle
+        control_signal_angle = (self.kp_angle * error_angle +
+                                self.ki_angle * self.integral_angle +
+                                self.kd_angle * derivative_angle)
+        self.prev_error_angle = error_angle
 
-                if self.switch_prev_time is None:
-                    self.switch_prev_time = time.time()
-
-                if time.time() - self.switch_prev_time > 1.0:
-                    self.load_present = True
-                    self.get_logger().info("docking switch triggered...")
-                    self.dock_flag = False
-                    self.no_load_present = False
-                else:
-                    self.load_present = False
-                    self.no_load_present = False
-
+        # Cap the angular velocity
+        if abs(control_signal_angle) > 0.1:
+            if control_signal_angle > 0:
+                control_signal_angle = 0.1
             else:
-                self.switch_value = False
-                self.switch.data = False
-                self.switch_prev_time = None
-                self.no_load_present = True
-                self.load_present = False
+                control_signal_angle = -0.1
+        
+        elif abs(control_signal_angle) < 0.05:
+            if control_signal_angle > 0:
+                control_signal_angle = 0.05
+            else:
+                control_signal_angle = -0.05
 
-            self.switch_pub.publish(self.switch)
-            self.get_logger().info(f"Load present: {self.load_present} ----- No load present: {self.no_load_present}")
+        # Move the robot
+        self.move_tug.linear.x = -control_signal_distance
+        self.move_tug.angular.z = control_signal_angle
+        self.cmd_pub.publish(self.move_tug)
 
-        except serial.serialutil.SerialException as e:
-            self.get_logger().warn(e)
-
+        self.get_logger().info(f"distance {self.distance_c} -- angle {self.angle_diff_c} -- linear velocity {control_signal_distance} -- angular velocity {control_signal_angle}")
+        
     def navigation_callback(self, msg):
         self.navigate_flag = msg.data
 
@@ -143,6 +172,7 @@ class SICK(Node):
         with self.shared_data.lock:
             self.shared_data.pallet_x = round(msg.translation.x / 1000, 2)
             self.shared_data.pallet_y = round(msg.translation.y / 1000, 2)
+            self.shared_data.sick_angle = round(msg.rotation.z, 2)
 
         if not self.shared_data.pallet_presence:
             with self.shared_data.lock:

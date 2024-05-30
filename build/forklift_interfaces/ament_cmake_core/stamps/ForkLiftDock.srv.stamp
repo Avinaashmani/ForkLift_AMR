@@ -1,5 +1,0 @@
-bool dock_request
-bool undock_request
----
-bool dock_response
-bool undock_response

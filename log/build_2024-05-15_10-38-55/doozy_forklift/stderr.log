@@ -1,5 +1,0 @@
-  File "/home/avinaash/ForkLift_AMR/install/doozy_forklift/lib/python3.8/site-packages/doozy_forklift/detect_pallet_01.py", line 46
-    print(f"Left Pocket: {self.left.translation.x}-> Center Pocket {self.center.translation.x}<-{self.right.translation.x}
-                                                                                                                          ^
-SyntaxError: EOL while scanning string literal
-

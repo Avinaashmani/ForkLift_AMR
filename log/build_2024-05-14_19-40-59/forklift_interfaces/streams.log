@@ -1,5 +1,0 @@
-[0.195s] Invoking command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_interfaces -- -j16 -l16
-[0.206s] CMake Error: The current CMakeCache.txt directory /home/avinaash/ForkLift_AMR/build/forklift_interfaces/CMakeCache.txt is different than the directory /home/doozy/ForkLift_AMR/build/forklift_interfaces where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-[0.209s] No such file or directory
-[0.210s] CMake Error: Generator: execution of make failed. Make command was: /usr/bin/gmake -j16 -l16 && 
-[0.214s] Invoked command in '/home/avinaash/ForkLift_AMR/build/forklift_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/avinaash/ForkLift_AMR/install/doozy_forklift:/opt/ros/galactic /usr/bin/cmake --build /home/avinaash/ForkLift_AMR/build/forklift_interfaces -- -j16 -l16
