@@ -177,8 +177,8 @@ class Dockpallet(Node):
             self.controlled_angle = 0.0
 
         # Limit the maximum speed to prevent overshooting
-        max_linear_speed = 0.1  # Adjust based on your robot's dynamics
-        max_angular_speed = 0.2  # Adjust based on your robot's dynamics
+        max_linear_speed = 0.25  # Adjust based on your robot's dynamics
+        max_angular_speed = 0.10  # Adjust based on your robot's dynamics
 
         self.controlled_speed = max(-max_linear_speed, min(max_linear_speed, self.controlled_speed))
         self.controlled_angle = max(-max_angular_speed, min(max_angular_speed, self.controlled_angle))
@@ -199,8 +199,6 @@ class Dockpallet(Node):
             self.cmd_vel.angular.z = 0.0
             self.move_cmd.publish(self.cmd_vel)
             return
-
-        
 
         self.get_logger().info("Current position and rotation: distance = %.2f, angle = %.2f" % (distance, path_angle))
         self.get_logger().info("Current Speed and Angular vel: vel_x = %.2f, vel_z = %.2f" % (self.controlled_speed, self.controlled_angle))

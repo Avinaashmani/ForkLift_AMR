@@ -28,11 +28,16 @@ class ImuReader(Node):
 
         self.imu_port = '/dev/ttyACM1'
         self.baudrate = 57600
-        self.base_frame = 'odom'
+        self.base_frame = 'map'
         self.create_subscription(Imu, '/imu', self.imu_callback, 1)
         self.create_timer(0.03, self.read_imu)
     
     def read_imu(self):
+
+        x = round(self.x * 100, 3)
+        y = round(self.y * 100, 3)
+        z = round(self.z * 100, 3)
+        w = round(self.w * 100, 3)
 
         imu_tf = TransformStamped()
 
@@ -43,12 +48,12 @@ class ImuReader(Node):
         imu_tf.transform.translation.y = 0.0
         imu_tf.transform.translation.z = 0.0
 
-        imu_tf.transform.rotation.x = self.x
-        imu_tf.transform.rotation.y = self.y
-        imu_tf.transform.rotation.z = self.z
-        imu_tf.transform.rotation.w = self.w
+        imu_tf.transform.rotation.x = 0.0
+        imu_tf.transform.rotation.y = 0.0
+        imu_tf.transform.rotation.z = z 
+        imu_tf.transform.rotation.w = w
 
-        self.get_logger().info(f"{self.x} {self.y} {self.z} {self.w}")
+        self.get_logger().info(f"{x} {y} {z} {w}")
         self.imu_tf_bradcaster.sendTransform(imu_tf)
 
         # self.imu_pub.publish(self.ypr)
