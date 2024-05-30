@@ -39,6 +39,7 @@ setup(
          'Publish_TF = doozy_forklift.publish_tf_01:main',
          'Publish_TF_2 = doozy_forklift.publish_tf_02:main',
          'Imu_pub = doozy_forklift.imu_publisher_01:main',
+         'Imu_pub_2 = doozy_forklift.imu_publisher_02:main',
         ],
     },
 )
