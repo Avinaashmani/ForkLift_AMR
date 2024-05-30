@@ -88,7 +88,7 @@ class Dockpallet(Node):
         self.ki_distance = 0
         self.kd_distance = 0.1
 
-        self.kp_angle = 0.5
+        self.kp_angle = 0.55
         self.ki_angle = 0
         self.kd_angle = 30
 
@@ -100,6 +100,8 @@ class Dockpallet(Node):
         self.integral_angle = 0.0
         self.prev_error_distance = 0.0
         self.prev_error_angle = 0.0
+
+        self.phase_1 = False
 
         self.get_logger().info("Initialized Dockpallet node")
 
@@ -136,9 +138,10 @@ class Dockpallet(Node):
             self.dist_diff = self.shared_data.distance
             self.angle_diff = self.shared_data.yaw_diff
             self.path_angle_err = self.shared_data.path_angle_err
+            self.yaw_diff = self.shared_data.yaw_diff / 3.14
 
         distance = self.dist_diff
-        path_angle = self.angle_diff
+        path_angle = self.path_angle_err
 
         self.integral_distance += distance
         self.integral_angle += path_angle
@@ -187,17 +190,92 @@ class Dockpallet(Node):
         self.cmd_vel.linear.x  = -self.controlled_speed
 
         self.move_cmd.publish(self.cmd_vel)
-
+        print(self.yaw_diff)
         self.previous_distance = distance
         self.previous_angle = path_angle
 
-        if distance < 0.5 and abs(path_angle) < 0.02:
-            self.get_logger().info("Docking complete")
-            self.dock_completed_flag = True
+        if distance < 1.0:
+            self.controlled_angle = 0.0
+            self.controlled_speed = 0.0
+
+            self.get_logger().info("Current position and rotation: distance = %.2f, angle = %.2f" % (distance, path_angle))
+            print(self.yaw_diff)
+            if path_angle < 0:
+                
+                if 0 < abs(path_angle) <= 0.02:
+                    self.phase_1 = True
+                else:
+                    self.cmd_vel.angular.z = -0.07
+                    self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+
+            elif path_angle > 0:
+
+                if 0 < abs(path_angle) < 0.02:
+                    self.phase_1 = True
+                else:
+                    self.cmd_vel.angular.z = 0.07
+                    self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+
+        if self.phase_1 and distance > 0.3:
+            self.controlled_angle = 0.0
+            self.controlled_speed = 0.0
+            self.get_logger().info('in phase 2')
+            
+            if self.yaw_diff > 0:
+                
+                if 0 < abs(self.yaw_diff) >= 0.97:
+                    return
+
+                else:
+                    self.cmd_vel.angular.z = -0.07
+                    # self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+
+            elif self.yaw_diff < 0:
+
+                if 0 < abs(self.yaw_diff) >= 0.97:
+                    return
+
+                else:
+                    self.cmd_vel.angular.z = 0.07
+                    # self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+            
+
+        if distance < 0.3 :
+
             self.dock_flag = False
-            self.cmd_vel.linear.x = 0.0
-            self.cmd_vel.angular.z = 0.0
-            self.move_cmd.publish(self.cmd_vel)
+            self.phase_1 = False
+            self.dock_completed_flag = True
+            self.get_logger().info ("Docking completed.. ")
+
+
+            if self.yaw_diff > 0:
+                
+                if 0 < abs(self.yaw_diff) >= 0.98:
+                    self.dock_flag = False
+                    self.dock_completed_flag = True
+                    self.get_logger().info ("Docking completed.. ")
+
+                else:
+                    self.cmd_vel.angular.z = -0.08
+                    # self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+
+            elif self.yaw_diff < 0:
+
+                if 0 < abs(self.yaw_diff) >= 0.98:
+                    self.dock_flag = False
+                    self.dock_completed_flag = True
+                    self.get_logger().info ("Docking completed.. ")
+
+                else:
+                    self.cmd_vel.angular.z = 0.08
+                    # self.cmd_vel.linear.x = -0.10
+                    self.move_cmd.publish(self.cmd_vel)
+
             return
 
         self.get_logger().info("Current position and rotation: distance = %.2f, angle = %.2f" % (distance, path_angle))
@@ -305,7 +383,7 @@ class ReadTf(Node):
             self.shared_data.pallet_y = self.pallet_y
             self.shared_data.pallet_angle = self.pallet_angle
             self.shared_data.distance = self.distance
-            self.shared_data.yaw_diff = angle_err_pallet - angle_err_robot
+            self.shared_data.yaw_diff = 0.0 - self.tb3_angle
             self.shared_data.path_angle_err = angle_err_pallet - angle_err_robot
 
     def update_frame(self, target_frame, robot_frame):
