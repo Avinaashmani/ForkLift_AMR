@@ -200,82 +200,60 @@ class Dockpallet(Node):
 
             self.get_logger().info("Current position and rotation: distance = %.2f, angle = %.2f" % (distance, path_angle))
             print(self.yaw_diff)
-            if path_angle < 0:
-                
-                if 0 < abs(path_angle) <= 0.02:
-                    self.phase_1 = True
-                else:
-                    self.cmd_vel.angular.z = -0.07
-                    self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
+
+            if 0 < abs(path_angle) <= 0.02:
+                self.phase_1 = True
+
+            elif path_angle < 0:
+                self.cmd_vel.angular.z = -0.07
+                self.cmd_vel.linear.x = -0.10
+                self.move_cmd.publish(self.cmd_vel)
 
             elif path_angle > 0:
 
-                if 0 < abs(path_angle) < 0.02:
-                    self.phase_1 = True
-                else:
-                    self.cmd_vel.angular.z = 0.07
-                    self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
+                self.cmd_vel.angular.z = 0.07
+                self.cmd_vel.linear.x = -0.10
+                self.move_cmd.publish(self.cmd_vel)
 
         if self.phase_1 and distance > 0.3:
+            
             self.controlled_angle = 0.0
             self.controlled_speed = 0.0
+            
             self.get_logger().info('in phase 2')
             
-            if self.yaw_diff > 0:
+            if 0 < abs(self.yaw_diff) >= 0.97:
                 
-                if 0 < abs(self.yaw_diff) >= 0.97:
-                    return
+                return
 
-                else:
-                    self.cmd_vel.angular.z = -0.07
-                    # self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
+            elif self.yaw_diff > 0:
+
+                self.cmd_vel.angular.z = -0.07
+                self.move_cmd.publish(self.cmd_vel)
 
             elif self.yaw_diff < 0:
 
-                if 0 < abs(self.yaw_diff) >= 0.97:
-                    return
-
-                else:
-                    self.cmd_vel.angular.z = 0.07
-                    # self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
-            
-
+                self.cmd_vel.angular.z = 0.07
+                self.move_cmd.publish(self.cmd_vel)
+    
         if distance < 0.3 :
 
-            self.dock_flag = False
-            self.phase_1 = False
-            self.dock_completed_flag = True
-            self.get_logger().info ("Docking completed.. ")
+            if 0 < abs(self.yaw_diff) >= 0.98:
+                self.dock_flag = False
+                self.dock_completed_flag = True
+                self.get_logger().info ("Docking completed.. ")
+                self.cmd_vel.angular.z = 0.0
+                self.cmd_vel.linear.x = 0.0
+                self.move_cmd.publish(self.cmd_vel)
 
-
-            if self.yaw_diff > 0:
-                
-                if 0 < abs(self.yaw_diff) >= 0.98:
-                    self.dock_flag = False
-                    self.dock_completed_flag = True
-                    self.get_logger().info ("Docking completed.. ")
-
-                else:
-                    self.cmd_vel.angular.z = -0.08
-                    # self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
+            elif self.yaw_diff > 0:
+                self.cmd_vel.angular.z = -0.08
+                self.move_cmd.publish(self.cmd_vel)
 
             elif self.yaw_diff < 0:
 
-                if 0 < abs(self.yaw_diff) >= 0.98:
-                    self.dock_flag = False
-                    self.dock_completed_flag = True
-                    self.get_logger().info ("Docking completed.. ")
-
-                else:
-                    self.cmd_vel.angular.z = 0.08
-                    # self.cmd_vel.linear.x = -0.10
-                    self.move_cmd.publish(self.cmd_vel)
-
+                self.cmd_vel.angular.z = 0.08
+                self.move_cmd.publish(self.cmd_vel)
             return
 
         self.get_logger().info("Current position and rotation: distance = %.2f, angle = %.2f" % (distance, path_angle))

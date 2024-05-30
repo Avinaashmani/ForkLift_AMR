@@ -411,13 +411,13 @@ def main():
 
     dockpallet = Dockpallet(shared_data)
     # imu = IMU(shared_data)
-    # sick = SICK(shared_data)
+    sick = SICK(shared_data)
     tf = ReadTf(shared_data)
 
     executor = MultiThreadedExecutor()
     executor.add_node(dockpallet)
     # executor.add_node(imu)
-    # executor.add_node(sick)
+    executor.add_node(sick)
     executor.add_node(tf)
 
     try:
