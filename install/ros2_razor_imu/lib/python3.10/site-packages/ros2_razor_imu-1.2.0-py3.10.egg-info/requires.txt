@@ -1,0 +1,6 @@
+setuptools
+pyserial
+pyyaml
+transforms3d
+vpython
+wxPython

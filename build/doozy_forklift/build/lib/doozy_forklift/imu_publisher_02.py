@@ -33,7 +33,13 @@ class ImuReader(Node):
         self.create_timer(0.03, self.read_imu)
     
     def read_imu(self):
-
+        x = round(self.x, 2)
+        y = round(self.y, 2)
+        z = round(self.z, 2)
+        w = round(self.w, 2)
+        
+        self.yaw = round(self.euler_from_quaternion(x, y, z, w), 2)
+        
         imu_tf = TransformStamped()
 
         imu_tf.header.frame_id = self.base_frame
@@ -48,7 +54,7 @@ class ImuReader(Node):
         imu_tf.transform.rotation.z = self.z
         imu_tf.transform.rotation.w = self.w
 
-        self.get_logger().info(f"{self.x} {self.y} {self.z} {self.w}")
+        self.get_logger().info(f"{x} {y} {z} {w}")
         self.imu_tf_bradcaster.sendTransform(imu_tf)
 
         # self.imu_pub.publish(self.ypr)
@@ -89,10 +95,10 @@ class ImuReader(Node):
       
     def imu_callback(self, msg):
 
-        self.x = round(msg.orientation.x, 4)
-        self.y = round(msg.orientation.y, 4)
-        self.z = round(msg.orientation.z, 4)
-        self.w = round(msg.orientation.w, 4)
+        self.x = msg.orientation.x
+        self.y = msg.orientation.y
+        self.z = msg.orientation.z
+        self.w = msg.orientation.w
 
 def main():
     rclpy.init()

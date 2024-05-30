@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ros2_razor_imu
+Version: 1.2.0
+Summary: ros2_razor_imu is a package that provides a ROS2 driver for the Sparkfun Razor IMU 9DOF.
+Author: Kristof Robot, Tang Tiong Yew, Paul Bouchier, Peter Bartz
+Maintainer: Kristof Robot
+License: BSD
+Keywords: ROS2
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: pyserial
+Requires-Dist: pyyaml
+Requires-Dist: transforms3d
+Requires-Dist: vpython
+Requires-Dist: wxPython

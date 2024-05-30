@@ -1,0 +1,36 @@
+[0.875s] Invoking command in '/home/doozy/ForkLift_AMR/src/ros2_razor_imu': PYTHONPATH=/home/doozy/ForkLift_AMR/build/ros2_razor_imu/prefix_override:/home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_razor_imu build --build-base /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build install --record /home/doozy/ForkLift_AMR/build/ros2_razor_imu/install.log --single-version-externally-managed install_data
+[1.100s] running egg_info
+[1.117s] writing ../../build/ros2_razor_imu/ros2_razor_imu.egg-info/PKG-INFO
+[1.118s] writing dependency_links to ../../build/ros2_razor_imu/ros2_razor_imu.egg-info/dependency_links.txt
+[1.118s] writing entry points to ../../build/ros2_razor_imu/ros2_razor_imu.egg-info/entry_points.txt
+[1.118s] writing requirements to ../../build/ros2_razor_imu/ros2_razor_imu.egg-info/requires.txt
+[1.118s] writing top-level names to ../../build/ros2_razor_imu/ros2_razor_imu.egg-info/top_level.txt
+[1.154s] reading manifest file '../../build/ros2_razor_imu/ros2_razor_imu.egg-info/SOURCES.txt'
+[1.154s] adding license file 'LICENSE'
+[1.154s] writing manifest file '../../build/ros2_razor_imu/ros2_razor_imu.egg-info/SOURCES.txt'
+[1.154s] running build
+[1.155s] running build_py
+[1.155s] copying src/ros2_razor_imu/display_3D_visualization.py -> /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build/lib/ros2_razor_imu
+[1.155s] copying src/ros2_razor_imu/imu_node.py -> /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build/lib/ros2_razor_imu
+[1.155s] copying src/ros2_razor_imu/__init__.py -> /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build/lib/ros2_razor_imu
+[1.155s] copying src/ros2_razor_imu/lib/serial_commands.py -> /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build/lib/ros2_razor_imu/lib
+[1.156s] copying src/ros2_razor_imu/lib/__init__.py -> /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build/lib/ros2_razor_imu/lib
+[1.156s] running install
+[1.160s] running install_lib
+[1.178s] running install_data
+[1.178s] copying resource/ros2_razor_imu -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ament_index/resource_index/packages
+[1.178s] copying package.xml -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu
+[1.179s] copying launch/razor-pub-and-display.launch.py -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/launch
+[1.179s] copying launch/razor-pub.launch.py -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/launch
+[1.179s] copying launch/razor-pub-diags.launch.py -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/launch
+[1.179s] copying launch/razor-display.launch.py -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/launch
+[1.179s] copying config/razor_diags.yaml -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/config
+[1.179s] copying config/razor.yaml -> /home/doozy/ForkLift_AMR/install/ros2_razor_imu/share/ros2_razor_imu/config
+[1.179s] running install_egg_info
+[1.197s] removing '/home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/python3.10/site-packages/ros2_razor_imu-1.2.0-py3.10.egg-info' (and everything under it)
+[1.197s] Copying ../../build/ros2_razor_imu/ros2_razor_imu.egg-info to /home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/python3.10/site-packages/ros2_razor_imu-1.2.0-py3.10.egg-info
+[1.198s] running install_scripts
+[1.347s] Installing display_3D_visualization_node script to /home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/ros2_razor_imu
+[1.347s] Installing imu_node script to /home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/ros2_razor_imu
+[1.347s] writing list of installed files to '/home/doozy/ForkLift_AMR/build/ros2_razor_imu/install.log'
+[1.366s] Invoked command in '/home/doozy/ForkLift_AMR/src/ros2_razor_imu' returned '0': PYTHONPATH=/home/doozy/ForkLift_AMR/build/ros2_razor_imu/prefix_override:/home/doozy/ForkLift_AMR/install/ros2_razor_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_razor_imu build --build-base /home/doozy/ForkLift_AMR/build/ros2_razor_imu/build install --record /home/doozy/ForkLift_AMR/build/ros2_razor_imu/install.log --single-version-externally-managed install_data
