@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/forklift_robot
+
+Name: forklift_robot
+Description: Description of forklift_robot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

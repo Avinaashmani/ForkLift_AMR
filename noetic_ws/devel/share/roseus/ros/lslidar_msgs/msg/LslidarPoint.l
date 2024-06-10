@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/lslidar_msgs/share/roseus/ros/lslidar_msgs/msg/LslidarPoint.l

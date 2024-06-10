@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/lslidar_driver/share/lslidar_driver/cmake/lslidar_driverConfig.cmake

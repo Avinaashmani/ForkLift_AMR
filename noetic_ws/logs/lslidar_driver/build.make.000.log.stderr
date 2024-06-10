@@ -1,0 +1,13 @@
+In file included from [01m[K/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/src/input.cc:18[m[K:
+[01m[K/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/include/lslidar_driver/input.h:32:10:[m[K [01;31m[Kfatal error: [m[Kpcap.h: No such file or directory
+   32 | #include [01;31m[K<pcap.h>[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/lslidar_input.dir/build.make:63: CMakeFiles/lslidar_input.dir/src/input.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2411: CMakeFiles/lslidar_input.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/src/lsiosr.cpp:[m[K In member function ‘[01m[Kint lslidar_driver::LSIOSR::close()[m[K’:
+[01m[K/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/src/lsiosr.cpp:386:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  386 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+make: *** [Makefile:141: all] Error 2

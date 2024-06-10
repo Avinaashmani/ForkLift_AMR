@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/pallet_bot/lib/pkgconfig/pallet_bot.pc

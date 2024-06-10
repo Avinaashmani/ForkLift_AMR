@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/pallet_bot
+
+Name: pallet_bot
+Description: Description of pallet_bot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

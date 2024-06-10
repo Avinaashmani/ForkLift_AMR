@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/amrfork_bot
+
+Name: amrfork_bot
+Description: Description of amrfork_bot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/lslidar_driver
+
+Name: lslidar_driver
+Description: Description of lslidar_driver
+Version: 1.2.0
+Cflags: -I/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/include
+Libs: -L${prefix}/lib 
+Requires: roscpp diagnostic_updater nodelet pcl_ros pcl_conversions lslidar_msgs

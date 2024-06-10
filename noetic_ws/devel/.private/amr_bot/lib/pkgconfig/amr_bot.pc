@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/amr_bot
+
+Name: amr_bot
+Description: Description of amr_bot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

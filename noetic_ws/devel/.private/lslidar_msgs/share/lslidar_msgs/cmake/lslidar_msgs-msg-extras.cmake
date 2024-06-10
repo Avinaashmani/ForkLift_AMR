@@ -1,0 +1,2 @@
+set(lslidar_msgs_MESSAGE_FILES "/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_msgs/msg/LslidarPacket.msg;/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_msgs/msg/LslidarPoint.msg;/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_msgs/msg/LslidarScan.msg;/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_msgs/msg/LslidarSweep.msg;/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_msgs/msg/LslidarDifop.msg")
+set(lslidar_msgs_SERVICE_FILES "")

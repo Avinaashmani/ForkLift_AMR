@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/forklift_bot/lib/pkgconfig/forklift_bot.pc

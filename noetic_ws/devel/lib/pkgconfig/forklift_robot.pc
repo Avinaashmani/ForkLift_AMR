@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/forklift_robot/lib/pkgconfig/forklift_robot.pc

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/include/lslidar_driver/lsiosr.h
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+termios.h
+-
+errno.h
+-
+unistd.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdint.h
+-
+fstream
+-
+iostream
+-
+
+/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/src/lsiosr.cpp
+lslidar_driver/lsiosr.h
+/home/avinaash/noetic_ws/src/3. LSLIDAR_M10_N10_ROS_V2.5.3_231110/lslidar_driver/src/lslidar_driver/lsiosr.h
+

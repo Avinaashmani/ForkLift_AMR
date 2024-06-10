@@ -1,0 +1,11 @@
+body_joint_controller:
+  ros__parameters:
+    joint_states_controller:
+    type: "effort_controllers/JointPositionController"
+    publish_rate: 25
+  
+  body_trajectory_controller:
+    ros_parameters:
+    type: "effort_controllers/JointPositionController"
+    joint: fork_joint
+    # pid: {p: 100.0, i: 0.01, d: 10.0}

@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/amrfork_bot/lib/pkgconfig/amrfork_bot.pc

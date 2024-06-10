@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/pallet_bot/share/pallet_bot/cmake/pallet_botConfig-version.cmake

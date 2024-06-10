@@ -1,0 +1,1 @@
+/home/avinaash/noetic_ws/devel/.private/lslidar_driver/lib/pkgconfig/lslidar_driver.pc

@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/rospy
+
+Name: rospy
+Description: Description of rospy
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

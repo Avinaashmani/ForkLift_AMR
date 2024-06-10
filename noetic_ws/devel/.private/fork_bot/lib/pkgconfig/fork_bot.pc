@@ -1,0 +1,8 @@
+prefix=/home/avinaash/noetic_ws/devel/.private/fork_bot
+
+Name: fork_bot
+Description: Description of fork_bot
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
