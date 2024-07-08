@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="trial3_fork">
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="-0.000985951304991628 1.25045556628178E-05 0.0149675563690359"
+        rpy="0 0 0" />
+      <mass
+        value="9.4247779607694E-05" />
+      <inertia
+        ixx="7.06170779212468E-09"
+        ixy="3.86032204181578E-13"
+        ixz="4.62068299913868E-10"
+        iyy="7.09214051953621E-09"
+        iyz="-5.86028817761947E-12"
+        izz="7.75664091009642E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.231627960985343 -0.000639413850167303 -0.118566538327031"
+        rpy="0 0 0" />
+      <mass
+        value="5.37682193052439" />
+      <inertia
+        ixx="0.236486794589605"
+        ixy="-0.000892001504283899"
+        ixz="-0.224856062792506"
+        iyy="0.949604781026181"
+        iyz="-0.00024475635422504"
+        izz="1.00366495457815" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint"
+    type="fixed">
+    <origin
+      xyz="0.614561427802267 -0.00538365047577682 0.357410000753851"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_roller_link">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-16 -0.0300000000000001 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.296880505764236" />
+      <inertia
+        ixx="0.000209671857195991"
+        ixy="-9.61174503141587E-20"
+        ixz="1.77524184482933E-33"
+        iyy="0.000241215410933441"
+        iyz="-1.18430182019675E-19"
+        izz="0.000209671857195991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/l_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/l_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.19571238794372 0.234017472862179 -0.285000000000007"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_roller_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_roller_link">
+    <inertial>
+      <origin
+        xyz="-2.94209101525666E-15 0.440000000000008 -6.66133814775094E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.296880505764236" />
+      <inertia
+        ixx="0.000209671857195991"
+        ixy="-9.61174503141586E-20"
+        ixz="1.77524184482933E-33"
+        iyy="0.000241215410933441"
+        iyz="-1.18430182019675E-19"
+        izz="0.000209671857195991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/r_roller_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/r_roller_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_roller_joint"
+    type="continuous">
+    <origin
+      xyz="-1.19571238794372 -0.235982527137829 -0.285"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_roller_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="motor_link">
+    <inertial>
+      <origin
+        xyz="0.00137075768700923 0.0182497031557034 -0.109924586978009"
+        rpy="0 0 0" />
+      <mass
+        value="4.4486500446745" />
+      <inertia
+        ixx="0.0151435856083514"
+        ixy="0.000734537080591917"
+        ixz="-8.6446468379195E-05"
+        iyy="0.0167852179723807"
+        iyz="0.000204858818386351"
+        izz="0.0202726085499277" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_joint"
+    type="revolute">
+    <origin
+      xyz="0.139891552049961 -0.000982527137839195 -0.104"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.000368121493260487 0.0211638160747093 1.67088674007942E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.21637660223564" />
+      <inertia
+        ixx="0.00444506841754728"
+        ixy="-6.57596508444286E-05"
+        ixz="1.36218641438688E-06"
+        iyy="0.00822459882497592"
+        iyz="2.3784843091165E-08"
+        izz="0.00444225537797155" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.000373906313857253 -0.0214967484532613 -0.169999999999722"
+      rpy="0 0 0" />
+    <parent
+      link="motor_link" />
+    <child
+      link="wheel_link" />
+    <axis
+      xyz="-0.0173909913544219 0.999848765273884 0" />
+  </joint>
+  <link
+    name="steer_link">
+    <inertial>
+      <origin
+        xyz="-4.55857573911089E-13 8.43991543320044E-13 -0.0298662179307794"
+        rpy="0 0 0" />
+      <mass
+        value="0.14815238319712" />
+      <inertia
+        ixx="9.39329267252087E-05"
+        ixy="-2.47402517850109E-20"
+        ixz="1.44956139155634E-19"
+        iyy="9.39329267252086E-05"
+        iyz="2.30477378699055E-21"
+        izz="0.000161623781245691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steer_joint"
+    type="floating">
+    <origin
+      xyz="0.0020434 -0.11748 0.02"
+      rpy="0 0 0" />
+    <parent
+      link="motor_link" />
+    <child
+      link="steer_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="0 -1.40998324127395E-14 -0.0394999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.39709731141375" />
+      <inertia
+        ixx="0.000365362617943268"
+        ixy="6.5253044679986E-52"
+        ixz="-1.21245706409418E-36"
+        iyy="0.000365362617943268"
+        iyz="6.46109837352296E-20"
+        izz="0.000317677849131001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://trial3_fork/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.17236 -0.0022934 0.099"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
